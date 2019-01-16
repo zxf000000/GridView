@@ -14,7 +14,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 
 @property (strong, nonatomic) TestModel  *model;

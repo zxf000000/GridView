@@ -1,6 +1,6 @@
 
 target 'DemoTableViewController' do
 
-pod 'YYKit'
+# pod 'YYKit'
 
 end

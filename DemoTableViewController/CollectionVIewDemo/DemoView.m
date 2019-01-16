@@ -11,6 +11,7 @@
 #import "TestCollectionViewCell.h"
 #import "TestModel.h"
 #import "TitleLayout.h"
+#import "DemoCollectionViewCell.h"
 
 
 @interface DemoView () <DemoLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource, TitleLayoutDelegate>
@@ -135,7 +136,9 @@
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
-    [_collectionView registerNib:[UINib nibWithNibName:@"TestCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+//    [_collectionView registerClass:[TestCollectionViewCell class] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+    [_collectionView registerClass:[DemoCollectionViewCell class] forCellWithReuseIdentifier:@"DemoCollectionViewCell"];
+
     _collectionView.bounces = NO;
     
     layout.complete = ^(NSArray *attrs) {
@@ -154,7 +157,9 @@
     _topTitleView.dataSource = self;
     _topTitleView.delegate = self;
     _topTitleView.backgroundColor = [UIColor whiteColor];
-    [_topTitleView registerNib:[UINib nibWithNibName:@"TestCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+//    [_topTitleView registerClass:[TestCollectionViewCell class] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+    [_topTitleView registerClass:[DemoCollectionViewCell class] forCellWithReuseIdentifier:@"DemoCollectionViewCell"];
+
     _topTitleView.bounces = NO;
     
     layout.complete = ^(NSArray *attrs) {
@@ -165,20 +170,21 @@
     leftLayout.demoDelegaete = self;
     leftLayout.itemWidth = _itemWidth;
     leftLayout.itemHeight = _itemHeight;
-    
+
     _leftTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:leftLayout];
     [self addSubview:_leftTitleView];
     
     _leftTitleView.dataSource = self;
     _leftTitleView.delegate = self;
     _leftTitleView.backgroundColor = [UIColor whiteColor];
-    [_leftTitleView registerNib:[UINib nibWithNibName:@"TestCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+//    [_leftTitleView registerClass:[TestCollectionViewCell class] forCellWithReuseIdentifier:@"TestCollectionViewCell"];
+    [_leftTitleView registerClass:[DemoCollectionViewCell class] forCellWithReuseIdentifier:@"DemoCollectionViewCell"];
+
     _leftTitleView.bounces = NO;
     
     layout.complete = ^(NSArray *attrs) {
         [self addLinesForAttrs:attrs];
     };
-    
 }
 
 #pragma mark titleLayoutDelegate
@@ -257,21 +263,17 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    TestCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestCollectionViewCell" forIndexPath:indexPath];
-    
-    
+//    TestCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestCollectionViewCell" forIndexPath:indexPath];
+    DemoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DemoCollectionViewCell" forIndexPath:indexPath];
     if (collectionView == self.collectionView) {
         cell.model = self.datas[indexPath.item];
     } else if (collectionView == self.topTitleView) {
         cell.model = self.topTitles[indexPath.item];
         cell.backgroundColor = [UIColor colorWithRed:245.f/255.f green:246.f/255.f blue:239.f/255.f alpha:1];
-        
     } else if (collectionView == self.leftTitleView) {
         cell.model = self.leftTitles[indexPath.item];
         cell.backgroundColor = [UIColor colorWithRed:245.f/255.f green:246.f/255.f blue:239.f/255.f alpha:1];
-        
     }
-    
     return cell;
 }
 
@@ -321,10 +323,6 @@
                 shapeLayer.fillColor = [UIColor clearColor].CGColor;
                 shapeLayer.path = path.CGPath;
                 [self.collectionView.layer addSublayer:shapeLayer];
-//                for (UIView *view in self.collectionView.subviews) {
-//                    NSLog(@"subVIew ------->>>  %@",view);
-//                }
-                
             }
             
             count += 1;

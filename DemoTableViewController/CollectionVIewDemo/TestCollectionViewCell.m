@@ -9,43 +9,58 @@
 #import "TestCollectionViewCell.h"
 
 @interface TestCollectionViewCell ()
+@property (strong, nonatomic) CATextLayer *titleLayer;
 
 @property (strong, nonatomic) CAShapeLayer  *bgLayer;
 
 @property (strong, nonatomic) CAShapeLayer  *borderLayer;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelCenterXConstant;
-
 @end
 
 @implementation TestCollectionViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    self.borderLayer = [CAShapeLayer layer];
-    [self.layer addSublayer:self.borderLayer];
-    _bgLayer = [[CAShapeLayer alloc] init];
-    [self.layer insertSublayer:_bgLayer atIndex:0];
-    
-    self.backgroundColor = [UIColor clearColor];
-    self.bgLayer.hidden = YES;
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
 
+        _borderLayer = [CAShapeLayer layer];
+        [self.layer addSublayer:_borderLayer];
+
+        _bgLayer = [[CAShapeLayer alloc] init];
+        [self.layer insertSublayer:_bgLayer atIndex:0];
+
+        self.backgroundColor = [UIColor clearColor];
+        _bgLayer.hidden = YES;
+
+        _titleLayer = [CATextLayer layer];
+
+        //set layer font
+        UIFont *font = [UIFont systemFontOfSize:10];
+        CFStringRef fontName = (__bridge CFStringRef)font.fontName;
+        CGFontRef fontRef = CGFontCreateWithFontName(fontName);
+        _titleLayer.font = fontRef;
+        _titleLayer.fontSize = font.pointSize;
+        CGFontRelease(fontRef);
+
+
+        _titleLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
+        _titleLayer.alignmentMode = kCAAlignmentCenter;//字体的对齐方式
+        _titleLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
+        [self.layer addSublayer:_titleLayer];
+    }
+    return self;
 }
+
 
 - (void)setModel:(TestModel *)model {
     _model = model;
-    
-    
-    _titleLabel.text = model.title;
 
-    [self bringSubviewToFront:self.titleLabel];
-    
+    _titleLayer.string = model.title;
     [self setNeedsLayout];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
     CGFloat margin = 2;
@@ -59,9 +74,12 @@
     self.borderLayer.lineWidth = 1;
     self.borderLayer.strokeColor = [UIColor colorWithWhite:0.5 alpha:1].CGColor;
     self.borderLayer.fillColor = [UIColor clearColor].CGColor;
-    
-    
-    
+
+
+    self.titleLayer.frame = CGRectMake(0, (height - 20)/ 2, width, 20);
+
+
+
     UIBezierPath *path = [UIBezierPath bezierPath];
 
     switch (self.model.bgType) {
@@ -71,15 +89,14 @@
             
             CGFloat radius = width > height ? height / 2 - margin : width / 2 - margin;
             [path addArcWithCenter:CGPointMake(width / 2, height / 2) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
-            
-            _titleLabel.textColor = [UIColor whiteColor];
-            
+            self.titleLayer.foregroundColor =[UIColor whiteColor].CGColor;//字体的颜色 文本颜色
+
         }
             break;
         case BgTypeNone:
         {
             self.bgLayer.hidden = YES;
-            _titleLabel.textColor = [UIColor blackColor];
+            self.titleLayer.foregroundColor =[UIColor blackColor].CGColor;//字体的颜色 文本颜色
             
             break;
         }
@@ -96,8 +113,8 @@
             [path addLineToPoint:(CGPointMake(length + leftPadding, length + topPadding))];
             [path addLineToPoint:(CGPointMake(leftPadding, length + topPadding))];
             [path closePath];
-            
-            _titleLabel.textColor = [UIColor whiteColor];
+
+            self.titleLayer.foregroundColor =[UIColor whiteColor].CGColor;//字体的颜色 文本颜色
             
             break;
         }
@@ -111,9 +128,9 @@
             [path addLineToPoint:(CGPointMake(width, height))];
             [path addLineToPoint:(CGPointMake(0, height))];
             [path closePath];
-            
-            
-            _titleLabel.textColor = [UIColor whiteColor];
+
+
+            self.titleLayer.foregroundColor =[UIColor whiteColor].CGColor;//字体的颜色 文本颜色
             
         }
             break;

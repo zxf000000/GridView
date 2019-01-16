@@ -307,7 +307,12 @@
 		1F4C6072B1CF37B441551B78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = ___FULLUSERNAME___;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					1F4C6E15D610B5C6756FF073 = {
+						DevelopmentTeam = 6Y58RU5LV6;
+					};
+				};
 			};
 			buildConfigurationList = 1F4C65EFFFCD75470AFDEB09 /* Build configuration list for PBXProject "DemoTableViewController" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -534,7 +539,9 @@
 			baseConfigurationReference = 88FF6C7D106632B7CF88954F /* Pods-DemoTableViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6Y58RU5LV6;
 				INFOPLIST_FILE = DemoTableViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxf.test.DemoTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,7 +633,9 @@
 			baseConfigurationReference = BBE0A2BCEB92F216FB03374B /* Pods-DemoTableViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6Y58RU5LV6;
 				INFOPLIST_FILE = DemoTableViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxf.test.DemoTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";

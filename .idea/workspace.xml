@@ -2,13 +2,376 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8b3a93-6ab0-4a54-95ff-9cc9479cb6fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/DemoTableViewController.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.xib" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/CALayer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/CALayer+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/MKAnnotationView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSArray+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSAttributedString+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSBundle+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSData+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSDate+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSDictionary+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSKeyedUnarchiver+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSNotificationCenter+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSNumber+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSObject+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSObject+YYAddForARC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSObject+YYAddForKVO.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSObject+YYModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSParagraphStyle+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSString+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSThread+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/NSTimer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIApplication+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIBarButtonItem+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIBezierPath+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIButton+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIColor+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIControl+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIDevice+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIFont+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIGestureRecognizer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIImage+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIImageView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIPasteboard+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIScreen+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIScrollView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UITableView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UITextField+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/UIView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYAnimatedImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYAsyncLayer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYCGUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYClassInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYDiskCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYDispatchQueuePool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYFileHash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYFrameImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYGestureRecognizer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYImageCoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYKVStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYKeychain.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYKit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYKitMacro.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYLabel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYMemoryCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYReachability.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYSentinel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYSpriteSheetImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextArchiver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextAttribute.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextContainerView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextDebugOption.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextEffectWindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextInput.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextKeyboardManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextLayout.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextLine.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextMagnifier.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextParser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextRubyAnnotation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextRunDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextSelectionView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTextView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYThreadSafeArray.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYThreadSafeDictionary.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTimer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYTransaction.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYWeakProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYWebImageManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/YYWebImageOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/YYKit/_YYWebImageSetter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/CALayer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/CALayer+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/MKAnnotationView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSArray+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSAttributedString+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSBundle+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSData+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSDate+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSDictionary+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSKeyedUnarchiver+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSNotificationCenter+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSNumber+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSObject+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSObject+YYAddForARC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSObject+YYAddForKVO.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSObject+YYModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSParagraphStyle+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSString+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSThread+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/NSTimer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIApplication+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIBarButtonItem+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIBezierPath+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIButton+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIColor+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIControl+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIDevice+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIFont+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIGestureRecognizer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIImage+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIImageView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIPasteboard+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIScreen+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIScrollView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UITableView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UITextField+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/UIView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/decode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/demux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/encode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/extras.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/format_constants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/mux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/mux_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/WebP/types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYAnimatedImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYAsyncLayer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYCGUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYClassInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYDiskCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYDispatchQueuePool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYFileHash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYFrameImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYGestureRecognizer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYImageCoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYKVStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYKeychain.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYKit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYKitMacro.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYLabel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYMemoryCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYReachability.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYSentinel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYSpriteSheetImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextArchiver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextAttribute.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextContainerView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextDebugOption.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextEffectWindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextInput.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextKeyboardManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextLayout.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextLine.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextMagnifier.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextParser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextRubyAnnotation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextRunDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextSelectionView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTextView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYThreadSafeArray.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYThreadSafeDictionary.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTimer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYTransaction.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYWeakProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYWebImageManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/YYWebImageOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/YYKit/_YYWebImageSetter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-DemoTableViewController/Pods-DemoTableViewController.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/YYKit/YYKit-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/YYKit/YYKit-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/YYKit/YYKit.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/decode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/demux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/encode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/extras.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/format_constants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/mux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/mux_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/Headers/types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/Vendor/WebP.framework/WebP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSArray+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSArray+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSBundle+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSBundle+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSData+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSData+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSDate+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSDate+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSDictionary+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSDictionary+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSKeyedUnarchiver+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSKeyedUnarchiver+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSNotificationCenter+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSNotificationCenter+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSNumber+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSNumber+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForARC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForARC.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForKVO.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForKVO.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSString+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSString+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSThread+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSThread+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSTimer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSTimer+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Quartz/CALayer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Quartz/CALayer+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Quartz/YYCGUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Quartz/YYCGUtilities.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIApplication+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIApplication+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIBarButtonItem+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIBarButtonItem+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIBezierPath+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIBezierPath+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIColor+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIColor+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIControl+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIControl+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIDevice+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIDevice+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIFont+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIFont+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIGestureRecognizer+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIGestureRecognizer+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIImage+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIImage+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIScreen+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIScreen+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIScrollView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIScrollView+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UITableView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UITableView+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UITextField+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UITextField+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIView+YYAdd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIView+YYAdd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Base/YYKitMacro.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYDiskCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYDiskCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYKVStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYKVStorage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYMemoryCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Cache/YYMemoryCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/CALayer+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/CALayer+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/MKAnnotationView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/MKAnnotationView+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/UIButton+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/UIButton+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/UIImageView+YYWebImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/UIImageView+YYWebImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/_YYWebImageSetter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/Categories/_YYWebImageSetter.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYAnimatedImageView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYAnimatedImageView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYFrameImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYFrameImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImageCache.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImageCache.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImageCoder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYImageCoder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYSpriteSheetImage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYSpriteSheetImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYWebImageManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYWebImageManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYWebImageOperation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Image/YYWebImageOperation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Model/NSObject+YYModel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Model/NSObject+YYModel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Model/YYClassInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Model/YYClassInfo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextContainerView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextContainerView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextDebugOption.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextDebugOption.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextEffectWindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextEffectWindow.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextInput.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextInput.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextKeyboardManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextKeyboardManager.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextLayout.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextLayout.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextLine.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextLine.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextMagnifier.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextMagnifier.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextSelectionView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/Component/YYTextSelectionView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/NSAttributedString+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/NSAttributedString+YYText.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/NSParagraphStyle+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/NSParagraphStyle+YYText.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/UIPasteboard+YYText.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/UIPasteboard+YYText.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextArchiver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextArchiver.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextAttribute.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextAttribute.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextParser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextParser.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextRubyAnnotation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextRubyAnnotation.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextRunDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextRunDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextUtilities.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/String/YYTextUtilities.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/YYLabel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/YYLabel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/YYTextView.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Text/YYTextView.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYAsyncLayer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYAsyncLayer.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYDispatchQueuePool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYDispatchQueuePool.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYFileHash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYFileHash.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYGestureRecognizer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYGestureRecognizer.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYKeychain.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYKeychain.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYReachability.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYReachability.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYSentinel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYSentinel.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYThreadSafeArray.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYThreadSafeArray.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYThreadSafeDictionary.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYThreadSafeDictionary.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYTimer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYTimer.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYTransaction.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYTransaction.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYWeakProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/Utility/YYWeakProxy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/YYKit/YYKit/YYKit.h" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,32 +379,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_7028410D-3730-4E8B-A18B-C4194DAE57ED" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_d50f8b53d706446b45f6fe3fb91d02c2c0f52810" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1586">
-              <caret line="178" column="55" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="105" column="1" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
+            <state relative-caret-position="709">
+              <caret line="266" column="13" selection-start-line="266" selection-start-column="13" selection-end-line="266" selection-end-column="13" />
               <folding>
                 <element signature="e#135#155#0" expanded="true" />
               </folding>
@@ -50,58 +395,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="appcode.project-settings://c1fb03d6">
+          <provider selected="true" editor-type-id="AppCode.ProjectSettings" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state relative-caret-position="350">
+              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-              <folding>
-                <element signature="e#104#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoDataModel.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoDataModel.h">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+              <folding>
+                <element signature="e#149#172#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,8 +465,12 @@
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.h" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.m" />
       </list>
     </option>
   </component>
@@ -168,6 +504,15 @@
               <item name="DemoTableViewController" type="fcab9f18:XcodeViewNode" />
               <item name="CollectionVIewDemo" type="fcab9f18:XcodeViewNode" />
             </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="DemoTableViewController" type="1d218c8b:XcodeProjectNode" />
+              <item name="Pods" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -196,17 +541,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="DemoTableViewController" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DemoTableViewController" TARGET_NAME="DemoTableViewController" CONFIG_NAME="Debug" SCHEME_NAME="DemoTableViewController" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="DemoTableViewController" RUN_TARGET_NAME="DemoTableViewController" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <embedded_app_extension_list />
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -225,11 +559,12 @@
       <workItem from="1547169964246" duration="9000" />
       <workItem from="1547540160188" duration="5039000" />
       <workItem from="1547621838417" duration="3267000" />
+      <workItem from="1547625725629" duration="2316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24016000" />
+    <option name="totallyTimeSpent" value="26332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2067" height="1337" extended-state="0" />
@@ -242,7 +577,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.023696683" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.12954186" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -250,7 +585,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.07187994" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.032385465" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -310,13 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1288">
           <caret line="46" column="34" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CATextLayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2156">
-          <caret line="77" column="61" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -384,6 +712,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoLayout.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4984">
+          <caret line="178" column="55" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -391,6 +747,41 @@
           <folding>
             <element signature="e#104#137#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="467" column="41" selection-start-line="467" selection-start-column="41" selection-end-line="467" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CATextLayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -408,57 +799,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1586">
-          <caret line="178" column="55" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoLayout.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TitleLayout.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/TestCollectionViewCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="308">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="105" column="1" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
+        <state relative-caret-position="709">
+          <caret line="266" column="13" selection-start-line="266" selection-start-column="13" selection-end-line="266" selection-end-column="13" />
           <folding>
             <element signature="e#135#155#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding>
+            <element signature="e#149#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="appcode.project-settings://c1fb03d6">
+      <provider selected="true" editor-type-id="AppCode.ProjectSettings" />
     </entry>
   </component>
   <component name="masterDetails">
