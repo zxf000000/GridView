@@ -1,6 +1,8 @@
 
+
+
 target 'DemoTableViewController' do
 
-# pod 'YYKit'
+pod 'YYText'
 
 end

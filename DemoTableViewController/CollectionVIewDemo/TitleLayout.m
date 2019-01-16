@@ -83,8 +83,6 @@
     CGFloat x = (model.column ) * self.itemWidth;
     attrs.frame = CGRectMake(x, y, size.width, size.height);
 
-    NSLog(@"frame =========>>>>>>>> %@", NSStringFromCGRect(attrs.frame));
-
     return attrs;
 }
 

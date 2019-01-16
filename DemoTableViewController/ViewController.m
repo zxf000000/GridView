@@ -25,11 +25,11 @@
 }
 
 - (void)tap {
-//    DemoViewController *demoViewController = [[DemoViewController alloc]init];
-//    [self.navigationController pushViewController:demoViewController animated:YES];
+    DemoViewController *demoViewController = [[DemoViewController alloc]init];
+    [self.navigationController pushViewController:demoViewController animated:YES];
     
-    CollectionViewController *vc = [[CollectionViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    CollectionViewController *vc = [[CollectionViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

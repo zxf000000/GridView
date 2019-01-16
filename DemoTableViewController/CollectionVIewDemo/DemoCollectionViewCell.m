@@ -7,10 +7,11 @@
 //
 
 #import "DemoCollectionViewCell.h"
+#import <YYLabel.h>
 
 @interface DemoCollectionViewCell ()
-@property (strong, nonatomic) UILabel *titleLabel;
-
+//@property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) YYLabel *titleLabel;
 @property (strong, nonatomic) CAShapeLayer  *bgLayer;
 
 @property (strong, nonatomic) CAShapeLayer  *borderLayer;
@@ -31,9 +32,12 @@
         self.backgroundColor = [UIColor clearColor];
         _bgLayer.hidden = YES;
 
-        _titleLabel = [[UILabel alloc] init];
+        _titleLabel = [[YYLabel alloc] init];
         _titleLabel.font = [UIFont systemFontOfSize:10];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+//        _titleLabel.displaysAsynchronously = YES;
+//        _titleLabel.ignoreCommonProperties = YES;
+
         [self addSubview:_titleLabel];
     }
     return self;
@@ -42,8 +46,8 @@
 
 - (void)setModel:(TestModel *)model {
     _model = model;
-
     _titleLabel.text = model.title;
+
     [self setNeedsLayout];
 }
 
@@ -65,6 +69,7 @@
     self.borderLayer.fillColor = [UIColor clearColor].CGColor;
 
     self.titleLabel.frame = self.bounds;
+
 
     UIBezierPath *path = [UIBezierPath bezierPath];
 
