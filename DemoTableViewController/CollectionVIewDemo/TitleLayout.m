@@ -52,12 +52,10 @@
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
     
     for (int i = 0; i < count; i++) {
-        
         // 创建位置
         NSIndexPath * indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         // 获取indexPath位置上cell对应的布局属性
         UICollectionViewLayoutAttributes * attrs = [self layoutAttributesForItemAtIndexPath:indexPath];
-        
         [self.attrsArr addObject:attrs];
     }
     if (self.complete) {
@@ -79,15 +77,14 @@
     if ([self.titleDelegaete respondsToSelector:@selector(titleLayout:modelForIndexPath:)]) {
         model = [self.titleDelegaete titleLayout:self modelForIndexPath:indexPath];
     }
-    size = CGSizeMake(self.itemWidth * model.width, self.itemHeight);
-    
-    if (_lastX + size.width > [self collectionViewContentSize].width) {
-        _lastX = 0;
-        _lastY += size.height;
-    }
-    
-    attrs.frame = CGRectMake(_lastX, _lastY, size.width, size.height);
-    _lastX += size.width;
+    size = CGSizeMake(self.itemWidth * model.width, self.itemHeight * model.height);
+
+    CGFloat y = (model.row ) * self.itemHeight;
+    CGFloat x = (model.column ) * self.itemWidth;
+    attrs.frame = CGRectMake(x, y, size.width, size.height);
+
+    NSLog(@"frame =========>>>>>>>> %@", NSStringFromCGRect(attrs.frame));
+
     return attrs;
 }
 
@@ -114,3 +111,6 @@
 - (CGSize)collectionViewContentSize{
     return  CGSizeMake(_columnsCount * self.itemWidth, _lastY + self.itemHeight);
 }
+
+
+@end

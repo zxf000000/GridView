@@ -49,16 +49,6 @@
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
     CGFloat margin = 2;
-    if (self.model.height > 1) {
-        self.layer.masksToBounds = NO;
-//        self.labelCenterXConstant.constant = self.bounds.size.height * self.model.height / 2.f;
-        self.labelCenterXConstant.constant = 10.f;
-
-    } else {
-        self.layer.masksToBounds = YES;
-        self.labelCenterXConstant.constant = 0.f;
-    }
-    
     UIBezierPath *borderPath = [UIBezierPath bezierPath];
     [borderPath moveToPoint:(CGPointMake(0 , 0))];
     [borderPath addLineToPoint:(CGPointMake(width, 0))];
@@ -67,7 +57,7 @@
     [borderPath closePath];
     self.borderLayer.path = borderPath.CGPath;
     self.borderLayer.lineWidth = 1;
-    self.borderLayer.strokeColor = [UIColor redColor].CGColor;
+    self.borderLayer.strokeColor = [UIColor colorWithWhite:0.5 alpha:1].CGColor;
     self.borderLayer.fillColor = [UIColor clearColor].CGColor;
     
     

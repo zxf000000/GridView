@@ -10,10 +10,10 @@
 #import "DemoLayout.h"
 #import "TestCollectionViewCell.h"
 #import "TestModel.h"
+#import "TitleLayout.h"
 
 
-
-@interface DemoView () <DemoLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DemoView () <DemoLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource, TitleLayoutDelegate>
 
 
 @property (nonatomic, assign) CGFloat itemWidth;
@@ -30,6 +30,7 @@
 @property (strong, nonatomic) UICollectionView  *topTitleView;
 @property (strong, nonatomic) UICollectionView  *leftTitleView;
 
+@property(nonatomic, strong) UILabel *titleLabel;
 
 @end
 
@@ -58,17 +59,36 @@
         self.datas = array.copy;
         
         NSMutableArray *topArr = [NSMutableArray arrayWithCapacity:20];
-        for (NSInteger i = 0 ; i < 20 ; i ++) {
+        for (NSInteger i = 0 ; i < 2 ; i ++) {
             TestModel *model;
-            
             if (i == 0) {
-                model = [[TestModel alloc] initWithWidth:1 height:2 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
-            } else if (i == 2 || i == 6) {
-                model = [[TestModel alloc] initWithWidth:2 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                for (int j = 0; j < 18; ++j) {
+                    if (j == 0) {
+                        model = [[TestModel alloc] initWithWidth:1 height:2 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                    } else if (j == 2 || j == 6) {
+                        model = [[TestModel alloc] initWithWidth:2 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                    } else {
+                        model = [[TestModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                    }
+                    model.row = i;
+                    if (j <= 2) {
+                        model.column = j;
+                    } else if (j > 2 && j <= 6) {
+                        model.column = j + 1;
+                    } else {
+                        model.column = j + 2;
+                    }
+                    [topArr addObject:model];
+                }
             } else {
-                model = [[TestModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                for (int j = 0; j < 19; ++j) {
+                    model = [[TestModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:@"头部标题"];
+                    model.row = i;
+                    model.column = j + 1;
+                    [topArr addObject:model];
+                }
             }
-            [topArr addObject:model];
+
         }
         self.topTitles = topArr.copy;
         
@@ -90,13 +110,20 @@
     self.collectionView.frame = CGRectMake(50, 50, self.bounds.size.width - 50, self.bounds.size.height - 50);
     self.topTitleView.frame = CGRectMake(50, 0, self.bounds.size.width - 50, 50);
     self.leftTitleView.frame = CGRectMake(0, 50, 50, self.bounds.size.height - 50);
-
+    self.titleLabel.frame = CGRectMake(0, 0, 50, 50);
 }
 
 - (void)setupUI {
     
     self.backgroundColor = [UIColor yellowColor];
-    
+
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.text = @"总标题";
+    _titleLabel.font = [UIFont systemFontOfSize:13];
+    _titleLabel.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:_titleLabel];
+
     DemoLayout *layout = [[DemoLayout alloc] init];
     layout.demoDelegaete = self;
     layout.itemWidth = _itemWidth;
@@ -116,8 +143,8 @@
     };
     
     
-    DemoLayout *topLayout = [[DemoLayout alloc] init];
-    topLayout.demoDelegaete = self;
+    TitleLayout *topLayout = [[TitleLayout alloc] init];
+    topLayout.titleDelegaete = self;
     topLayout.itemWidth = _itemWidth;
     topLayout.itemHeight = _itemHeight;
     
@@ -154,6 +181,17 @@
     
 }
 
+#pragma mark titleLayoutDelegate
+- (TestModel *)titleLayout:(TitleLayout *)layout modelForIndexPath:(NSIndexPath *)indexPath {
+    return self.topTitles[indexPath.item];
+}
+
+- (NSInteger)columnCountForTitleLayout:(TitleLayout *)layout {
+    return 20;
+}
+
+
+#pragma mark demoLayoutDelegate
 - (TestModel *)demoLayout:(DemoLayout *)layout modelForIndexPath:(NSIndexPath *)indexPath {
     if (layout.collectionView == self.collectionView) {
         return self.datas[indexPath.item];

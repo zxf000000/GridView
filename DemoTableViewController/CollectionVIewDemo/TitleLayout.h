@@ -18,7 +18,7 @@
 
 - (CGSize)titleLayout:(TitleLayout *)layout sizeForCellAtIndexPath:(NSIndexPath *)indexPath;
 
-- (NSInteger)columnCountForDemoLayout:(TitleLayout *)layout;
+- (NSInteger)columnCountForTitleLayout:(TitleLayout *)layout;
 
 - (NSInteger)rowCountForTitleLayout:(TitleLayout *)layout;
 
