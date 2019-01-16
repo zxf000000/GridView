@@ -1,2 +1,2 @@
 # GridView
-GridView Based UICollectionVIew
+GridView Based UICollectionView
