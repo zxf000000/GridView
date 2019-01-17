@@ -17,11 +17,12 @@
 
 @property(nonatomic, copy) NSMutableArray *frames;
 
+@property(nonatomic, assign) CGFloat itemWidth;
+@property(nonatomic, assign) CGFloat itemHeight;
+
 @end
 
-@implementation DemoTableView {
-
-}
+@implementation DemoTableView
 
 - (instancetype)initWithRowCount:(NSInteger)rowCount columnCount:(NSInteger)columnCount frame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -55,6 +56,13 @@
 }
 
 - (void)caculateSize {
+
+    // 计算高度
+//    CGFloat horizontalPadding;
+//    if ([self.demoDelegate respondsToSelector:@selector(demoTableView:widthForColumn:)]) {
+//        [self.demoDelegate demoTableView:self widthForColumn:0];
+//    }
+
     CGFloat horizontalPadding = [self horizontalPadding];
     // 高度自适应
     // 宽度平均
@@ -107,11 +115,17 @@
     self.contentSize = CGSizeMake(horizontalPadding * self.columnCount, [_actualYs.lastObject doubleValue]);
 }
 
-
 - (void)strokeTable {
 
     [self addLines];
 
+    [self drawItems];
+
+    [self addTestLines];
+    [self setNeedsDisplay];
+}
+
+- (void)drawItems {
     // 计算所有textLayer的frame
     CGFloat horizontalPadding = [self horizontalPadding];
     for (int i = 0; i < self.rowCount; i++) {
@@ -124,9 +138,6 @@
             [array addObject:NSStringFromCGRect(CGRectMake(x, y, horizontalPadding, height))];
         }
     }
-
-    [self addTestLines];
-    [self setNeedsDisplay];
 }
 
 - (void)addTestLines {
