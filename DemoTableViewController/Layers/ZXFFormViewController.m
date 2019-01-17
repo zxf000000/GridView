@@ -7,6 +7,7 @@
 #import "ZXFFormSheetView.h"
 #import "ZXFFormItemLayout.h"
 #import "YYFPSLabel.h"
+#import "ZXFFormItemLayer.h"
 
 
 @interface ZXFFormViewController() <ZXFFormSheetViewDelegate,ZXFFormSheetViewDataSource>
@@ -84,8 +85,9 @@
 }
 
 - (CALayer *)sheetView:(ZXFFormSheetView *)sheet itemForIndex:(NSInteger)index {
-    CALayer *layer = [CALayer layer];
-    layer.backgroundColor = [UIColor redColor].CGColor;
+
+    ZXFFormItemLayer *layer = [[ZXFFormItemLayer alloc]init];
+
     return layer;
 }
 
