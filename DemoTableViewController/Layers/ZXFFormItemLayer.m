@@ -30,15 +30,25 @@
     _textLayer.string = [NSString stringWithFormat:@"%zd",number];
 }
 
+- (void)setHasBg:(BOOL)hasBg {
+    _hasBg = hasBg;
+    if (!_hasBg) {
+        _textLayer.foregroundColor = [UIColor blackColor].CGColor;
+        _bgLayer.hidden = YES;
+        return;
+    }
+    _bgLayer.hidden = NO;
+
+}
+
 - (void)setupUI {
     _textLayer = [CATextLayer zxf_textLayerWithFrame:CGRectMake(0, 0, 50, 25) text:@"test" font:[UIFont systemFontOfSize:9] color:[UIColor whiteColor]];
-
+    _textLayer.foregroundColor = [UIColor whiteColor].CGColor;
     _bgLayer = [CAShapeLayer layer];
     _bgLayer.backgroundColor = [UIColor blueColor].CGColor;
     _bgLayer.fillColor = [UIColor colorWithRed:0.5 green:0.5 blue:0 alpha:1].CGColor;
     _bgLayer.strokeColor = [UIColor colorWithRed:0.5 green:0 blue:0 alpha:1].CGColor;
     [self addSublayer:_bgLayer];
-
     [self addSublayer:_textLayer];
 
 }
@@ -46,6 +56,9 @@
 
     [self.textLayer caculateFrameFor:self.bounds];
 
+    if (!self.hasBg) {
+        return;
+    }
     CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
     CGFloat radius = 10;
     UIBezierPath *path = [UIBezierPath bezierPath];

@@ -11,4 +11,7 @@
 
 @property(nonatomic, assign) NSInteger number;
 
+@property (nonatomic, assign) BOOL hasBg;
+
+
 @end

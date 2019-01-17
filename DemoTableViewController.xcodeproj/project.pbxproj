@@ -25,6 +25,9 @@
 		1F4C6DDA87C641785B7094AB /* CATextLayer+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C61AE6540032EF63D5E75 /* CATextLayer+Quick.m */; };
 		1F4C6E6FDBA70847FAB94DD0 /* ZXFFormSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C616F891EFEBBCCB7F457 /* ZXFFormSheetView.m */; };
 		1F4C6FDD29B52D1AE3CEF481 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C671A627FF609393C367D /* DemoViewController.m */; };
+		8761277B21F07A2300A81DEE /* TestMovementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8761277A21F07A2300A81DEE /* TestMovementsView.m */; };
+		8761277F21F07B8700A81DEE /* ZXFTopTitleViewDelegare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8761277E21F07B8700A81DEE /* ZXFTopTitleViewDelegare.m */; };
+		8761278221F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8761278121F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m */; };
 		87A089F721EDE60C00A9BCE8 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A089F621EDE60C00A9BCE8 /* CollectionViewController.m */; };
 		87A089FA21EDE70E00A9BCE8 /* DemoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A089F921EDE70E00A9BCE8 /* DemoLayout.m */; };
 		87A089FD21EDE8FB00A9BCE8 /* DemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A089FC21EDE8FB00A9BCE8 /* DemoCollectionViewCell.m */; };
@@ -91,6 +94,12 @@
 		1F4C6E8242E48282F383570F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1F4C6EAEF54F90A1EC12579C /* DemoGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoGridView.m; sourceTree = "<group>"; };
 		1F4C6FFA1D6C669F8C89C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		8761277921F07A2300A81DEE /* TestMovementsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMovementsView.h; sourceTree = "<group>"; };
+		8761277A21F07A2300A81DEE /* TestMovementsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMovementsView.m; sourceTree = "<group>"; };
+		8761277D21F07B8700A81DEE /* ZXFTopTitleViewDelegare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXFTopTitleViewDelegare.h; sourceTree = "<group>"; };
+		8761277E21F07B8700A81DEE /* ZXFTopTitleViewDelegare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXFTopTitleViewDelegare.m; sourceTree = "<group>"; };
+		8761278021F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXFLeftTitleViewDelegate.h; sourceTree = "<group>"; };
+		8761278121F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXFLeftTitleViewDelegate.m; sourceTree = "<group>"; };
 		87A089F521EDE60C00A9BCE8 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		87A089F621EDE60C00A9BCE8 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		87A089F821EDE70E00A9BCE8 /* DemoLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoLayout.h; sourceTree = "<group>"; };
@@ -194,6 +203,7 @@
 		1F4C68772C848DF84866A44F /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				8761277C21F07B6D00A81DEE /* Delegates */,
 				1F4C616F891EFEBBCCB7F457 /* ZXFFormSheetView.m */,
 				1F4C6CE0A86A86C190339D95 /* ZXFFormSheetView.h */,
 				1F4C6113A5170CB7B37F0C27 /* ZXFFormViewController.m */,
@@ -204,6 +214,8 @@
 				1F4C664F28FFC2A20637116A /* CATextLayer+Quick.h */,
 				1F4C6E79B3E15A4F5CF298F9 /* ZXFFormItemLayer.m */,
 				1F4C6AB5576187893BBD348D /* ZXFFormItemLayer.h */,
+				8761277921F07A2300A81DEE /* TestMovementsView.h */,
+				8761277A21F07A2300A81DEE /* TestMovementsView.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -233,6 +245,17 @@
 				BBE0A2BCEB92F216FB03374B /* Pods-DemoTableViewController.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8761277C21F07B6D00A81DEE /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8761277D21F07B8700A81DEE /* ZXFTopTitleViewDelegare.h */,
+				8761277E21F07B8700A81DEE /* ZXFTopTitleViewDelegare.m */,
+				8761278021F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.h */,
+				8761278121F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		87A089F421EDE5F000A9BCE8 /* CollectionVIewDemo */ = {
@@ -434,15 +457,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D8899F21EEBE3A00762662 /* TestModel.m in Sources */,
+				8761278221F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m in Sources */,
 				1F4C60A49983044F34E3AF7F /* main.m in Sources */,
 				87A089FD21EDE8FB00A9BCE8 /* DemoCollectionViewCell.m in Sources */,
 				1F4C6AC5D1F7F9945FC0CA87 /* AppDelegate.m in Sources */,
 				1F4C62A7424C107D40780A8C /* DemoTableViewController.xcdatamodeld in Sources */,
+				8761277F21F07B8700A81DEE /* ZXFTopTitleViewDelegare.m in Sources */,
 				87D889C621EF0BAD00762662 /* TitleLayout.m in Sources */,
 				87D889C321EEECE400762662 /* DemoView.m in Sources */,
 				1F4C6400E8E19E821893FDC8 /* ViewController.m in Sources */,
 				87D889C021EED1DF00762662 /* YYFPSLabel.m in Sources */,
 				1F4C68375E4117CD8DA5D429 /* DemoTableView.m in Sources */,
+				8761277B21F07A2300A81DEE /* TestMovementsView.m in Sources */,
 				1F4C6FDD29B52D1AE3CEF481 /* DemoViewController.m in Sources */,
 				87D889BF21EED1DF00762662 /* YYWeakProxy.m in Sources */,
 				1F4C63F010E80C683F6A4586 /* DemoGridView.m in Sources */,

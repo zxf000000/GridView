@@ -129,22 +129,18 @@ typedef void(^CompleteHandle)(void);
 
 
 - (void)caculateFramesWithComplete:(CompleteHandle)complete {
-    NSAssert([self.dataSource respondsToSelector:@selector(sheetView:layoutForIndex:)], @"必须实现datasource方法");
-    NSAssert([self.dataSource respondsToSelector:@selector(numberOfItemsForFormView:)], @"必须实现datasource方法");
-
+    NSAssert([self.formDataSource respondsToSelector:@selector(sheetView:layoutForIndex:)], @"必须实现datasource方法");
+    NSAssert([self.formDataSource respondsToSelector:@selector(numberOfItemsForFormView:)], @"必须实现datasource方法");
 
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // 获取item数量
-        if ([self.dataSource respondsToSelector:@selector(numberOfItemsForFormView:)]) {
-            self.numberOfItems = [self.dataSource numberOfItemsForFormView:self];
+        if ([self.formDataSource respondsToSelector:@selector(numberOfItemsForFormView:)]) {
+            self.numberOfItems = [self.formDataSource numberOfItemsForFormView:self];
         }
-
-        NSMutableSet *lineSet = [NSMutableSet set];
-
         // 计算所有item位置
         for (NSInteger index = 0 ; index < self.numberOfItems; index++ ) {
-            ZXFFormItemLayout *layout = [self.dataSource sheetView:self layoutForIndex:index];
+            ZXFFormItemLayout *layout = [self.formDataSource sheetView:self layoutForIndex:index];
             CGFloat x = [self xForColumn:layout.column];
             CGFloat y = [self yForRow:layout.row];
             CGFloat width = layout.width * self.baseWidth;
@@ -205,7 +201,7 @@ typedef void(^CompleteHandle)(void);
 
 - (void)drawItems {
 
-    NSAssert([self.dataSource respondsToSelector:@selector(sheetView:itemForIndex:)], @"必须实现datasource方法");
+    NSAssert([self.formDataSource respondsToSelector:@selector(sheetView:itemForIndex:)], @"必须实现datasource方法");
 
     [self.layer insertSublayer:self.itemAssistLayer above:self.bgAssistLayer];
 
@@ -214,7 +210,7 @@ typedef void(^CompleteHandle)(void);
 
         ZXFFormItemLayout *layout = self.layouts[index];
 
-        CALayer *layer = [self.dataSource sheetView:self itemForIndex:index];
+        CALayer *layer = [self.formDataSource sheetView:self itemForIndex:index];
         layer.frame = layout.frame;
         if (layout.hasLinePoint) {
             [self.layer insertSublayer:layer above:self.itemAssistLayer];
@@ -261,10 +257,10 @@ typedef void(^CompleteHandle)(void);
     if ([self.delegate respondsToSelector:@selector(sheetView:colorForColumn:)]) {
         // 纵向颜色
         for (NSInteger columnIndex = 0 ; columnIndex < self.columnCount; columnIndex++ ) {
-            if (![self.delegate sheetView:self colorForColumn:columnIndex]) {
+            if (![self.formDelegate sheetView:self colorForColumn:columnIndex]) {
                 continue;
             }
-            UIColor *color = [self.delegate sheetView:self colorForColumn:columnIndex];
+            UIColor *color = [self.formDelegate sheetView:self colorForColumn:columnIndex];
             CALayer *colorLayer = [CALayer layer];
             colorLayer.backgroundColor = color.CGColor;
             colorLayer.frame = CGRectMake([self xForColumn:columnIndex], 0, self.baseWidth, self.contentSize.height);
@@ -278,10 +274,10 @@ typedef void(^CompleteHandle)(void);
     if ([self.delegate respondsToSelector:@selector(sheetView:colorForRow:)]) {
         // 横向颜色
         for (NSInteger rowIndex = 0; rowIndex < self.rowCount; rowIndex++) {
-            if (![self.delegate sheetView:self colorForRow:rowIndex]) {
+            if (![self.formDelegate sheetView:self colorForRow:rowIndex]) {
                 continue;
             }
-            UIColor *color = [self.delegate sheetView:self colorForRow:rowIndex];
+            UIColor *color = [self.formDelegate sheetView:self colorForRow:rowIndex];
             CALayer *colorLayer = [CALayer layer];
             colorLayer.backgroundColor = color.CGColor;
             colorLayer.frame = CGRectMake( 0, [self yForRow:rowIndex], self.contentSize.width, self.baseHeight);
@@ -332,36 +328,36 @@ typedef void(^CompleteHandle)(void);
 
 - (void)initConfig {
 
-    if ([self.delegate respondsToSelector:@selector(numberOfRowsForFormView:)]) {
-        self.rowCount = [self.delegate numberOfRowsForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(numberOfRowsForFormView:)]) {
+        self.rowCount = [self.formDelegate numberOfRowsForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(numberOfColunmsForFormView:)]) {
-        self.columnCount = [self.delegate numberOfColunmsForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(numberOfColunmsForFormView:)]) {
+        self.columnCount = [self.formDelegate numberOfColunmsForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(baseWidthForFormView:)]) {
-        self.baseWidth = [self.delegate baseWidthForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(baseWidthForFormView:)]) {
+        self.baseWidth = [self.formDelegate baseWidthForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(baseHeightForFormView:)]) {
-        self.baseHeight = [self.delegate baseHeightForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(baseHeightForFormView:)]) {
+        self.baseHeight = [self.formDelegate baseHeightForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(verticalLineColorForFormView:)]) {
-        self.verticalLineColor = [self.delegate verticalLineColorForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(verticalLineColorForFormView:)]) {
+        self.verticalLineColor = [self.formDelegate verticalLineColorForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(horizontalLineColorForFormView:)]) {
-        self.horizontalLineColor = [self.delegate horizontalLineColorForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(horizontalLineColorForFormView:)]) {
+        self.horizontalLineColor = [self.formDelegate horizontalLineColorForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(hasHorizontalLineForFormView:)]) {
-        self.hasHorizontalLine = [self.delegate hasHorizontalLineForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(hasHorizontalLineForFormView:)]) {
+        self.hasHorizontalLine = [self.formDelegate hasHorizontalLineForFormView:self];
     }
 
-    if ([self.delegate respondsToSelector:@selector(hasVerticalLineForFormView:)]) {
-        self.hasVerticalLine = [self.delegate hasVerticalLineForFormView:self];
+    if ([self.formDelegate respondsToSelector:@selector(hasVerticalLineForFormView:)]) {
+        self.hasVerticalLine = [self.formDelegate hasVerticalLineForFormView:self];
     }
 
     self.contentSize = [self caculateContentSize];

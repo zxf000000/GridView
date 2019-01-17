@@ -15,8 +15,8 @@
 
 - (void)strokeForm;
 
-@property (nonatomic, weak) id<ZXFFormSheetViewDelegate> delegate;
-@property (nonatomic, weak) id<ZXFFormSheetViewDataSource> dataSource;
+@property (nonatomic, weak) id<ZXFFormSheetViewDelegate> formDelegate;
+@property (nonatomic, weak) id<ZXFFormSheetViewDataSource> formDataSource;
 
 
 @end
