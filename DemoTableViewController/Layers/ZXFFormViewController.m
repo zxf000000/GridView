@@ -32,6 +32,17 @@
 
     [self setupUI];
 
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_dataFormView strokeForm];
 
 }
 
@@ -71,23 +82,31 @@
     _dataFormView.delegate = self;
     _dataFormView.dataSource = self;
     _dataFormView.backgroundColor = [UIColor whiteColor];
-    [_dataFormView strokeForm];
+
 }
+
 
 #pragma mark - ZXFFormSheetViewDataSource
 
 - (NSInteger)numberOfItemsForFormView:(ZXFFormSheetView *)sheetView {
-    return 100;
+    return 1800;
 }
 
 - (ZXFFormItemLayout *)sheetView:(ZXFFormSheetView *)sheet layoutForIndex:(NSInteger)index {
-    return [ZXFFormItemLayout layoutWithRow:index / 30 column:index % 30 width:1 height:1];
+
+    if (index % 31 == 0) {
+        return [ZXFFormItemLayout layoutWithRow:index / 30 column:index % 30 width:1 height:1 hasLinePoint:YES lineSerialNumber:1];
+    } else if (index % 32 == 0) {
+        return [ZXFFormItemLayout layoutWithRow:index / 30 column:index % 30 width:1 height:1 hasLinePoint:YES lineSerialNumber:2];
+    } else {
+        return [ZXFFormItemLayout layoutWithRow:index / 30 column:index % 30 width:1 height:1 hasLinePoint:NO lineSerialNumber:-1];
+    }
 }
 
 - (CALayer *)sheetView:(ZXFFormSheetView *)sheet itemForIndex:(NSInteger)index {
 
     ZXFFormItemLayer *layer = [[ZXFFormItemLayer alloc]init];
-
+    layer.number = index;
     return layer;
 }
 
@@ -95,7 +114,7 @@
 #pragma mark - ZXFFormSheetViewDelegate
 
 - (NSInteger)numberOfRowsForFormView:(ZXFFormSheetView *)sheetView {
-    return 100;
+    return 60;
 }
 
 - (NSInteger)numberOfColunmsForFormView:(ZXFFormSheetView *)sheetView {
@@ -111,7 +130,7 @@
 }
 
 - (BOOL)hasHorizontalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return NO;
+    return YES;
 }
 
 - (BOOL)hasVerticalLineForFormView:(ZXFFormSheetView *)sheetView {
@@ -138,5 +157,9 @@
 }
 
 
+- (void)dealloc {
+    NSLog(@"==========+>>>>>>>>>>>>> 销毁");
+    
+}
 
 @end

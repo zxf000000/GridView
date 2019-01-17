@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIkit/UIKit.h>
 
 
 @interface ZXFFormItemLayout : NSObject
@@ -13,9 +14,26 @@
 @property(nonatomic, assign) NSInteger width;
 @property(nonatomic, assign) NSInteger height;
 
-- (instancetype)initWithRow:(NSInteger)row column:(NSInteger)column width:(NSInteger)width height:(NSInteger)height;
+@property(nonatomic, assign) BOOL hasLinePoint;
+@property(nonatomic, assign) NSInteger lineSerialNumber;
 
-+ (instancetype)layoutWithRow:(NSInteger)row column:(NSInteger)column width:(NSInteger)width height:(NSInteger)height;
+@property(nonatomic, assign, readonly) CGRect frame;
 
+- (instancetype)initWithRow:(NSInteger)row
+                     column:(NSInteger)column
+                      width:(NSInteger)width
+                     height:(NSInteger)height
+               hasLinePoint:(BOOL)hasLinePoint
+           lineSerialNumber:(NSInteger)lineSerialNumber;
+
++ (instancetype)layoutWithRow:(NSInteger)row
+                       column:(NSInteger)column
+                        width:(NSInteger)width
+                       height:(NSInteger)height
+                 hasLinePoint:(BOOL)hasLinePoint
+             lineSerialNumber:(NSInteger)lineSerialNumber;
+
+
+- (void)setFrame:(CGRect)frame;
 
 @end
