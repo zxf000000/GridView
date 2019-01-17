@@ -5,8 +5,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ZXFFormSheetViewDelegate;
+@class ZXFFormItemLayout;
 
+@protocol ZXFFormSheetViewDelegate;
+@protocol ZXFFormSheetViewDataSource;
 
 @interface ZXFFormSheetView : UIScrollView
 
@@ -14,6 +16,7 @@
 - (void)strokeForm;
 
 @property (nonatomic, weak) id<ZXFFormSheetViewDelegate> delegate;
+@property (nonatomic, weak) id<ZXFFormSheetViewDataSource> dataSource;
 
 
 @end
@@ -35,6 +38,21 @@
 - (UIColor *)verticalLineColorForFormView:(ZXFFormSheetView *)sheetView;
 - (UIColor *)horizontalLineColorForFormView:(ZXFFormSheetView *)sheetView;
 
+- (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForColumn:(NSInteger)index;
+- (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForRow:(NSInteger)index;
+
+
+@end
+
+@protocol ZXFFormSheetViewDataSource <NSObject>
+
+@required
+
+- (NSInteger)numberOfItemsForFormView:(ZXFFormSheetView *)sheetView;
+
+- (ZXFFormItemLayout *)sheetView:(ZXFFormSheetView *)sheet layoutForIndex:(NSInteger)index;
+
+- (CALayer *)sheetView:(ZXFFormSheetView *)sheet itemForIndex:(NSInteger)index;
 
 
 @end

@@ -10,10 +10,12 @@
 #import "DemoViewController.h"
 #import "CollectionViewController.h"
 #import "ZXFFormViewController.h"
+#import "YYFPSLabel.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
 @end
 
@@ -29,7 +31,24 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+
+    [self testFPSLabel];
+
 }
+
+
+- (void)testFPSLabel {
+    _fpsLabel = [YYFPSLabel new];
+    _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+    [_fpsLabel sizeToFit];
+    [[UIApplication sharedApplication].keyWindow addSubview:_fpsLabel];
+
+    // 如果直接用 self 或者 weakSelf，都不能解决循环引用问题
+
+    // 移除也不能使 label里的 timer invalidate
+    //        [_fpsLabel removeFromSuperview];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

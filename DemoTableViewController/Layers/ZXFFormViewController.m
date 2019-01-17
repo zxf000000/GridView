@@ -5,10 +5,14 @@
 
 #import "ZXFFormViewController.h"
 #import "ZXFFormSheetView.h"
+#import "ZXFFormItemLayout.h"
+#import "YYFPSLabel.h"
 
-@interface ZXFFormViewController() <ZXFFormSheetViewDelegate>
+
+@interface ZXFFormViewController() <ZXFFormSheetViewDelegate,ZXFFormSheetViewDataSource>
 
 @property(nonatomic, strong) ZXFFormSheetView *dataFormView;
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
 @end
 
@@ -56,7 +60,7 @@
     CGFloat kScreenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat kScreenHeight = [UIScreen mainScreen].bounds.size.height;
 
-    CGFloat kNavigationBarHeight = [UINavigationBar appearance].bounds.size.height;
+    CGFloat kNavigationBarHeight = self.navigationController.navigationBar.bounds.size.height;
 
 
     _dataFormView = [[ZXFFormSheetView alloc] init];
@@ -64,10 +68,26 @@
 
     [self.view addSubview:_dataFormView];
     _dataFormView.delegate = self;
+    _dataFormView.dataSource = self;
     _dataFormView.backgroundColor = [UIColor whiteColor];
     [_dataFormView strokeForm];
 }
 
+#pragma mark - ZXFFormSheetViewDataSource
+
+- (NSInteger)numberOfItemsForFormView:(ZXFFormSheetView *)sheetView {
+    return 100;
+}
+
+- (ZXFFormItemLayout *)sheetView:(ZXFFormSheetView *)sheet layoutForIndex:(NSInteger)index {
+    return [ZXFFormItemLayout layoutWithRow:index / 30 column:index % 30 width:1 height:1];
+}
+
+- (CALayer *)sheetView:(ZXFFormSheetView *)sheet itemForIndex:(NSInteger)index {
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = [UIColor redColor].CGColor;
+    return layer;
+}
 
 
 #pragma mark - ZXFFormSheetViewDelegate
@@ -85,11 +105,11 @@
 }
 
 - (CGFloat)baseHeightForFormView:(ZXFFormSheetView *)sheetView {
-    return 50;
+    return 25;
 }
 
 - (BOOL)hasHorizontalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return YES;
+    return NO;
 }
 
 - (BOOL)hasVerticalLineForFormView:(ZXFFormSheetView *)sheetView {
@@ -104,6 +124,16 @@
     return [UIColor grayColor];
 }
 
+- (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForColumn:(NSInteger)index {
+
+    return nil;
+//    return index % 2 == 0 ? [UIColor colorWithWhite:0.8 alpha:1] : [UIColor clearColor];
+
+}
+
+- (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForRow:(NSInteger)index {
+    return index % 2 == 0 ? [UIColor colorWithWhite:0.8 alpha:1] : [UIColor clearColor];
+}
 
 
 
