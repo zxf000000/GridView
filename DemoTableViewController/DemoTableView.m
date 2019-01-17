@@ -53,6 +53,7 @@
     for (NSInteger i = 0; i < _rowCount ; i++) {
         [_frames addObject:[NSMutableArray arrayWithCapacity:_columnCount]];
     }
+
 }
 
 - (void)caculateSize {
