@@ -53,11 +53,11 @@
 }
 
 - (BOOL)hasHorizontalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return YES;
+    return NO;
 }
 
 - (BOOL)hasVerticalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return YES;
+    return NO;
 }
 
 - (UIColor *)verticalLineColorForFormView:(ZXFFormSheetView *)sheetView {
@@ -76,7 +76,7 @@
 }
 
 - (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForRow:(NSInteger)index {
-    return index % 2 == 0 ? [UIColor colorWithWhite:0.8 alpha:1] : [UIColor clearColor];
+    return nil;
 }
 
 @end

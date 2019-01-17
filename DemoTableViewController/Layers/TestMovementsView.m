@@ -37,7 +37,7 @@
 }
 
 - (void)setupUI {
-
+//
     _dataFormView = [[ZXFFormSheetView alloc] init];
     [self addSubview:_dataFormView];
     _dataFormView.formDelegate = self;
@@ -105,6 +105,7 @@
         layer.hasBg = NO;
     }
     return layer;
+    
 }
 
 
@@ -127,11 +128,11 @@
 }
 
 - (BOOL)hasHorizontalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return YES;
+    return NO;
 }
 
 - (BOOL)hasVerticalLineForFormView:(ZXFFormSheetView *)sheetView {
-    return YES;
+    return NO;
 }
 
 - (UIColor *)verticalLineColorForFormView:(ZXFFormSheetView *)sheetView {
@@ -150,7 +151,9 @@
 }
 
 - (UIColor *)sheetView:(ZXFFormSheetView *)sheet colorForRow:(NSInteger)index {
-    return index % 2 == 0 ? [UIColor colorWithWhite:0.8 alpha:1] : [UIColor clearColor];
+//    return index % 2 == 0 ? [UIColor colorWithWhite:0.8 alpha:1] : nil;
+    return nil;
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8b3a93-6ab0-4a54-95ff-9cc9479cb6fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/Delegates/ZXFLeftTitleViewDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/Delegates/ZXFLeftTitleViewDelegate.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/Delegates/ZXFTopTitleViewDelegare.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/Delegates/ZXFTopTitleViewDelegare.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/TestMovementsView.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/TestMovementsView.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="113" column="42" lean-forward="true" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
+            <state relative-caret-position="239">
+              <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
               <folding>
                 <element signature="e#104#132#0" expanded="true" />
               </folding>
@@ -41,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayout.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -49,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
+            <state relative-caret-position="4248">
               <caret line="236" column="38" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="38" />
             </state>
           </provider>
@@ -70,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/main.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="306">
               <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
@@ -89,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -109,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="1548">
               <caret line="86" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="e#104#137#0" expanded="true" />
@@ -122,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -189,8 +177,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,11 +255,12 @@
       <workItem from="1547687011502" duration="34000" />
       <workItem from="1547687080037" duration="6025000" />
       <workItem from="1547694134595" duration="15794000" />
+      <workItem from="1547720124295" duration="110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51816000" />
+    <option name="totallyTimeSpent" value="51926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="2084" height="1337" extended-state="0" />
@@ -284,15 +273,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.58080316" weight="0.023696683" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.58031344" weight="0.023696683" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.41919687" side_tool="true" visible="true" weight="0.1263823" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4480901" weight="0.1263823" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4196866" side_tool="true" visible="true" weight="0.1263823" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4476004" weight="0.1263823" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,33 +550,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="236" column="38" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/main.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayout.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="239">
+          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
           <folding>
-            <element signature="e#104#137#0" expanded="true" />
+            <element signature="e#104#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,31 +563,14 @@
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayout.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.h">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#104#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="4248">
+          <caret line="236" column="38" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -633,13 +584,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.m">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/main.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="113" column="42" lean-forward="true" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormSheetView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="e#104#132#0" expanded="true" />
+            <element signature="e#104#137#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/Layers/ZXFFormItemLayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>

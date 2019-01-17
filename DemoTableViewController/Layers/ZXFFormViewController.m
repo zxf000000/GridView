@@ -13,7 +13,15 @@
 @interface ZXFFormViewController()
 
 @property(nonatomic, strong) TestMovementsView *dataFormView;
+@property(nonatomic, strong) TestMovementsView *dataFormView1;
+@property(nonatomic, strong) TestMovementsView *dataFormView2;
+
 @property (nonatomic, strong) YYFPSLabel *fpsLabel;
+
+@property (strong, nonatomic) UISegmentedControl  *segment;
+
+@property (strong, nonatomic) UIScrollView  *scrollView;
+
 
 @end
 
@@ -61,6 +69,10 @@
 
 #pragma mark - Private
 
+- (void)change {
+    [self.scrollView setContentOffset:(CGPointMake(self.view.bounds.size.width * self.segment.selectedSegmentIndex, 0)) animated:YES];
+}
+
 #pragma mark - UITableViewDataSource/delegate
 
 #pragma mark - YUZSuperclass
@@ -78,12 +90,31 @@
     CGFloat kScreenHeight = [UIScreen mainScreen].bounds.size.height;
 
     CGFloat kNavigationBarHeight = self.navigationController.navigationBar.bounds.size.height;
-
+    
+    self.segment = [[UISegmentedControl alloc] initWithItems:@[@"1",@"2",@"3"]];
+    [self.view addSubview:self.segment];
+    self.segment.frame = CGRectMake(0, 0, kScreenWidth, 40);
+    
+    [self.segment addTarget:self action:@selector(change) forControlEvents:(UIControlEventValueChanged)];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, kScreenWidth, kScreenHeight - kNavigationBarHeight)];
+    [self.view addSubview:self.scrollView];
 
     _dataFormView = [[TestMovementsView alloc] init];
     _dataFormView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - kNavigationBarHeight);
 
-    [self.view addSubview:_dataFormView];
+    [self.scrollView addSubview:_dataFormView];
+    
+    
+    _dataFormView1 = [[TestMovementsView alloc] init];
+    _dataFormView1.frame = CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight - kNavigationBarHeight);
+    
+    [self.scrollView addSubview:_dataFormView1];
+    
+    _dataFormView2 = [[TestMovementsView alloc] init];
+    _dataFormView2.frame = CGRectMake(kScreenWidth * 2, 0, kScreenWidth, kScreenHeight - kNavigationBarHeight);
+    
+    [self.scrollView addSubview:_dataFormView2];
 
 
 }

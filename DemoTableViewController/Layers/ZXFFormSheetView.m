@@ -123,8 +123,7 @@ typedef void(^CompleteHandle)(void);
 
         }];
     }];
-
-
+    
 }
 
 
@@ -223,31 +222,59 @@ typedef void(^CompleteHandle)(void);
 
 - (void)drawLines {
 
+//    [self.linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber * lineNumber, NSMutableArray * points, BOOL *stop) {
+//
+//        NSInteger count = 0;
+//        CGPoint lastPoint = CGPointZero;
+//        UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
+//        for (int pointIndex = 0, length = points.count; pointIndex < length; ++pointIndex) {
+//            ZXFFormItemLayout *layout = points[pointIndex];
+//            CGFloat x = layout.frame.origin.x + layout.frame.size.width / 2;
+//            CGFloat y = layout.frame.origin.y + layout.frame.size.height / 2;
+//            CGPoint point = CGPointMake(x, y);
+//            if (count != 0) {
+//                UIBezierPath *path = [UIBezierPath bezierPath];
+//                [path moveToPoint:lastPoint];
+//                [path addLineToPoint:point];
+//                CAShapeLayer *lineLayer = [CAShapeLayer layer];
+//                lineLayer.strokeColor = color.CGColor;
+//                lineLayer.lineWidth = 1.f;
+//                lineLayer.path = path.CGPath;
+//                [self.layer insertSublayer:lineLayer below:self.itemAssistLayer];
+//                [self.lineLayers addObject:lineLayer];
+//            }
+//            count += 1;
+//            lastPoint = point;
+//        }
+//
+//    }];
+    
     [self.linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber * lineNumber, NSMutableArray * points, BOOL *stop) {
-
+        
         NSInteger count = 0;
         CGPoint lastPoint = CGPointZero;
         UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
-        for (int pointIndex = 0, length = points.count; pointIndex < length; ++pointIndex) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        for (NSInteger pointIndex = 0, length = points.count; pointIndex < length; ++pointIndex) {
             ZXFFormItemLayout *layout = points[pointIndex];
             CGFloat x = layout.frame.origin.x + layout.frame.size.width / 2;
             CGFloat y = layout.frame.origin.y + layout.frame.size.height / 2;
             CGPoint point = CGPointMake(x, y);
-            if (count != 0) {
-                UIBezierPath *path = [UIBezierPath bezierPath];
-                [path moveToPoint:lastPoint];
+            if (count == 0) {
+                [path moveToPoint:point];
+            } else {
                 [path addLineToPoint:point];
-                CAShapeLayer *lineLayer = [CAShapeLayer layer];
-                lineLayer.strokeColor = color.CGColor;
-                lineLayer.lineWidth = 1.f;
-                lineLayer.path = path.CGPath;
-                [self.layer insertSublayer:lineLayer below:self.itemAssistLayer];
-                [self.lineLayers addObject:lineLayer];
             }
             count += 1;
             lastPoint = point;
         }
-
+        CAShapeLayer *lineLayer = [CAShapeLayer layer];
+        lineLayer.strokeColor = color.CGColor;
+        lineLayer.lineWidth = 1.f;
+        lineLayer.path = path.CGPath;
+        lineLayer.fillColor = [UIColor clearColor].CGColor;
+        [self.layer insertSublayer:lineLayer below:self.itemAssistLayer];
+        [self.lineLayers addObject:lineLayer];
     }];
 
 }
