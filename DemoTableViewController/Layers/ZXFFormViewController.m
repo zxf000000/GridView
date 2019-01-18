@@ -6,7 +6,6 @@
 #import "ZXFFormViewController.h"
 #import "ZXFFormSheetView.h"
 #import "ZXFFormItemLayout.h"
-#import "YYFPSLabel.h"
 #import "ZXFFormItemLayer.h"
 #import "TestMovementsView.h"
 
@@ -16,7 +15,6 @@
 @property(nonatomic, strong) TestMovementsView *dataFormView1;
 @property(nonatomic, strong) TestMovementsView *dataFormView2;
 
-@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
 @property (strong, nonatomic) UISegmentedControl  *segment;
 

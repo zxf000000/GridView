@@ -21,6 +21,7 @@
     NSArray *datas = jsonDic[@"page"][@"jbzs"];
     NSMutableArray *leftTitles = [NSMutableArray array];
     NSMutableArray *allDatas = [NSMutableArray array];
+    NSInteger redfbCount = 0;
     for (NSInteger i = 0, length = datas.count; i < length; ++i) {
         NSDictionary *singleRowData = datas[i];
         // 添加标题
@@ -29,6 +30,7 @@
         NSArray *openCodes = singleRowData[@"opencode"];
         // 红球分布 --- 主要数据
         NSArray *redfb = singleRowData[@"redfb"];
+        redfbCount = redfb.count;
         // 篮球
         NSString *blueCode = [singleRowData[@"bluecode"] lastObject];
         // 单独一行数据
@@ -50,10 +52,10 @@
         }
         // 添加后面几个
         NSString *sanfq = [singleRowData[@"sanfq"] lastObject];
-        [singleRowDataArr addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:sanfq row:i column:singleRowDataArr.count lineSerialNumber:0 type:YZMovementsModelPositionDefault]];
+        [singleRowDataArr addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:sanfq row:i column:redfbCount  lineSerialNumber:0 type:YZMovementsModelPositionDefault]];
         NSArray *sanfqArr = [sanfq componentsSeparatedByString:@":"];
         for (int sanfqindex = 0; sanfqindex < sanfqArr.count; ++sanfqindex) {
-            [singleRowDataArr addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:sanfqArr[sanfqindex] row:i column:singleRowDataArr.count + 2  lineSerialNumber:0 type:YZMovementsModelPositionDefault]];
+            [singleRowDataArr addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:sanfqArr[sanfqindex] row:i column:redfbCount + (sanfqindex * 2) + 2  lineSerialNumber:0 type:YZMovementsModelPositionDefault]];
         }
 
         [allDatas addObjectsFromArray:singleRowDataArr];
@@ -61,11 +63,11 @@
 
     NSMutableArray *topTitles = [NSMutableArray arrayWithCapacity:34];
     NSArray *otherTitles = @[@"三区比",@"一区",@"二区",@"三区"];
-    for (NSInteger titleIndex = 0 ; titleIndex < 34; titleIndex++) {
-        if (titleIndex < 30) {
+    for (NSInteger titleIndex = 0 ; titleIndex < otherTitles.count + redfbCount; titleIndex++) {
+        if (titleIndex < redfbCount) {
             [topTitles addObject:[YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:[NSString stringWithFormat:@"%zd",titleIndex + 1] row:0 column:titleIndex lineSerialNumber:0 type:YZMovementsModelPositionTop]];
         } else {
-            [topTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:otherTitles[titleIndex - 30] row:0 column:31 + (titleIndex - 31) * 2 lineSerialNumber:0 type:YZMovementsModelPositionTop]];
+            [topTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:otherTitles[titleIndex - 30] row:0 column:redfbCount + ((titleIndex - redfbCount) * 2) lineSerialNumber:0 type:YZMovementsModelPositionTop]];
         }
     }
     complete(leftTitles,topTitles,allDatas);

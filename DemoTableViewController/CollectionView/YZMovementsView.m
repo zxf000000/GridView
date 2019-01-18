@@ -6,20 +6,12 @@
 #import "YZMovementsView.h"
 #import "YZMovementCollectionViewLayout.h"
 #import "YZMovementsCollectionViewCell.h"
-#import "YZMovementsModel.h"
 
 @interface YZMovementsView() <YZMovementCollectionViewLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, assign) CGFloat itemWidth;
 @property (nonatomic, assign) CGFloat itemHeight;
 @property (strong, nonatomic) UICollectionView  *collectionView;
-
-@property (nonatomic,copy) NSArray *datas;
-@property (nonatomic,copy) NSArray  *leftTitles;
-
-@property (nonatomic,copy) NSArray  *topTitles;
-
-@property (strong, nonatomic) CAShapeLayer  *shapeLayer;
 
 @property (strong, nonatomic) UICollectionView  *topTitleView;
 @property (strong, nonatomic) UICollectionView  *leftTitleView;
@@ -34,9 +26,6 @@
 @property(nonatomic, assign) CGFloat topTitleHeight;
 @property(nonatomic, assign) CGFloat leftTitleWidth;
 
-@property(nonatomic, strong) UIColor *kTitleBgColor;
-@property(nonatomic, strong) UIColor *kDataColor;
-@property(nonatomic, strong) UIColor *kDataDarkColor;
 @end
 
 
@@ -77,7 +66,7 @@
     self.collectionView.frame = CGRectMake(_leftTitleWidth, _topTitleHeight, self.bounds.size.width - _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
     self.topTitleView.frame = CGRectMake(_leftTitleWidth, 0, self.bounds.size.width - _leftTitleWidth, _topTitleHeight);
     self.leftTitleView.frame = CGRectMake(0, _topTitleHeight, _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
-    self.titleLabel.frame = CGRectMake(0, 0, _topTitleHeight, _topTitleHeight);
+    self.titleLabel.frame = CGRectMake(0, 0, _leftTitleWidth, _topTitleHeight);
 }
 
 - (void)setupUI {
@@ -86,7 +75,7 @@
 
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = @"总标题";
-    _titleLabel.font = [UIFont systemFontOfSize:13];
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
     _titleLabel.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
     _titleLabel.textAlignment = NSTextAlignmentCenter;

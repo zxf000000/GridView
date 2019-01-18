@@ -51,7 +51,7 @@
 
     _indicatorView = [[UIActivityIndicatorView alloc]
                                                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    _indicatorView.center = self.view.center;
+    _indicatorView.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
     _indicatorView.bounds = CGRectMake(0, 0, 100, 100);
     [self.view addSubview:_indicatorView];
     [_indicatorView startAnimating];
@@ -62,7 +62,7 @@
         weakSelf.leftTitles = leftTitles;
         weakSelf.datas = allDatas;
         weakSelf.topTitles = topTitles;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (ino64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (ino64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.demoView reloadData];
             [weakSelf.indicatorView stopAnimating];
         });
@@ -95,7 +95,7 @@
     if (self.leftTitles.count == 0) {
         return 0;
     }
-    return self.datas.count % self.leftTitles.count == 0 ? self.datas.count / self.leftTitles.count : self.datas.count / self.leftTitles.count + 1;
+    return self.datas.count % self.leftTitles.count == 0 ? self.datas.count / self.leftTitles.count + 4 : self.datas.count / self.leftTitles.count + 1 + 4;
 }
 - (NSInteger)rowOfColumnsForMovementsView:(YZMovementsView *)view {
     return self.leftTitles.count;
@@ -135,7 +135,7 @@
 }
 
 - (CGSize)itemSizeForMovementsView:(YZMovementsView *)view {
-    return CGSizeMake(25, 25);
+    return CGSizeMake(30, 30);
 }
 
 - (void)dealloc {
