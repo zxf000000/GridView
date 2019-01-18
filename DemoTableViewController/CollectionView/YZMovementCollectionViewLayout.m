@@ -1,14 +1,14 @@
 //
-//  TitleLayout.m
+//  YZMomventCollectionViewLayout.m
 //  DemoTableViewController
 //
-//  Created by 云舟02 on 2019/1/16.
+//  Created by 云舟02 on 2019/1/18.
 //  Copyright © 2019 云舟02. All rights reserved.
 //
 
-#import "TitleLayout.h"
+#import "YZMovementCollectionViewLayout.h"
 
-@interface TitleLayout ()
+@interface YZMovementCollectionViewLayout()
 
 @property (nonatomic, assign) CGFloat lastX;
 @property (nonatomic, assign) CGFloat lastY;
@@ -18,11 +18,12 @@
 
 @property (nonatomic, assign) NSInteger columnsCount;
 
+@property(nonatomic, strong) NSMutableDictionary *linePoints;
 
 @end
 
+@implementation YZMovementCollectionViewLayout
 
-@implementation TitleLayout
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -35,22 +36,23 @@
  * 初始化
  */
 - (void)prepareLayout{
-    
+
     [super prepareLayout];
-    
+
     self.lastX = 0.f;
     self.lastY = 0.f;
-    
-    if ([self.titleDelegaete respondsToSelector:@selector(columnCountForTitleLayout:)]) {
-        _columnsCount = [self.titleDelegaete columnCountForTitleLayout:self];
+    self.linePoints = [NSMutableDictionary dictionary];
+
+    if ([self.delegate respondsToSelector:@selector(columnCountForTitleLayout:)]) {
+        _columnsCount = [self.delegate columnCountForTitleLayout:self];
     }
-    
+
     // 清楚之前所有的布局属性
     [self.attrsArr removeAllObjects];
-    
+
     // 开始创建每一个cell对应的布局属性
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    
+
     for (int i = 0; i < count; i++) {
         // 创建位置
         NSIndexPath * indexPath = [NSIndexPath indexPathForItem:i inSection:0];
@@ -59,7 +61,7 @@
         [self.attrsArr addObject:attrs];
     }
     if (self.complete) {
-        self.complete(self.attrsArr);
+        self.complete(self.attrsArr, self.linePoints);
     }
 }
 
@@ -68,20 +70,38 @@
  * 返回indexPath位置cell对应的布局属性
  */
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     // 创建布局属性
     UICollectionViewLayoutAttributes * attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    
+
     CGSize size = CGSizeZero;
-    TestModel *model;
-    if ([self.titleDelegaete respondsToSelector:@selector(titleLayout:modelForIndexPath:)]) {
-        model = [self.titleDelegaete titleLayout:self modelForIndexPath:indexPath];
+    YZMovementsModel *model;
+    if ([self.delegate respondsToSelector:@selector(titleLayout:modelForIndexPath:)]) {
+        model = [self.delegate titleLayout:self modelForIndexPath:indexPath];
     }
     size = CGSizeMake(self.itemWidth * model.width, self.itemHeight * model.height);
 
     CGFloat y = (model.row ) * self.itemHeight;
     CGFloat x = (model.column ) * self.itemWidth;
     attrs.frame = CGRectMake(x, y, size.width, size.height);
+
+    _lastY = y;
+
+
+    // 计算line count
+    if (model.hasLinePoint) {
+        NSNumber *lineNumber = @(model.lineSerialNumber);
+        model.frame = attrs.frame;
+        if (self.linePoints[lineNumber]) {
+            NSMutableArray *points = self.linePoints[lineNumber];
+            [points addObject:model];
+            self.linePoints[lineNumber] = points;
+        } else {
+            NSMutableArray *points = [NSMutableArray array];
+            [points addObject:model];
+            self.linePoints[lineNumber] = points;
+        }
+    }
 
     return attrs;
 }
@@ -90,7 +110,7 @@
  * 决定cell的高度
  */
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
-    
+
     return self.attrsArr;
 }
 
@@ -107,9 +127,8 @@
  * 内容的高度
  */
 - (CGSize)collectionViewContentSize{
-    
+
     return  CGSizeMake(_columnsCount * self.itemWidth, _lastY + self.itemHeight);
 }
-
 
 @end
