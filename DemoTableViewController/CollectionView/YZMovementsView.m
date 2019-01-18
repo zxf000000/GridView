@@ -31,18 +31,22 @@
 
 @property (nonatomic, weak) id<YZMovementsViewDelegate> delegate;
 
+@property(nonatomic, assign) CGFloat topTitleHeight;
+@property(nonatomic, assign) CGFloat leftTitleWidth;
 
+@property(nonatomic, strong) UIColor *kTitleBgColor;
+@property(nonatomic, strong) UIColor *kDataColor;
+@property(nonatomic, strong) UIColor *kDataDarkColor;
 @end
+
+
 
 @implementation YZMovementsView
 
 - (instancetype)initWithDelegate:(id<YZMovementsViewDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;
-        CGSize itemSize = [self.delegate itemSizeForMovementsView:self];
-        _itemWidth = itemSize.width;
-        _itemHeight = itemSize.height;
-        _lineLayers = [NSMutableArray array];
+        [self initConfig];
 
         [self setupUI];
         [self layoutIfNeeded];
@@ -50,13 +54,30 @@
     return self;
 }
 
+- (void)initConfig {
+    _lineLayers = [NSMutableArray array];
+
+    CGSize itemSize = [self.delegate itemSizeForMovementsView:self];
+    _itemWidth = itemSize.width;
+    _itemHeight = itemSize.height;
+
+    _topTitleHeight = _itemHeight * [self.delegate topTitleRowCountForMovementsView:self];
+    _leftTitleWidth = _itemWidth * [self.delegate leftTitleColumnCountForMovementsView:self];
+
+}
+
+- (void)reloadData {
+    [self.topTitleView reloadData];
+    [self.leftTitleView reloadData];
+    [self.collectionView reloadData];
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.collectionView.frame = CGRectMake(50, 50, self.bounds.size.width - 50, self.bounds.size.height - 50);
-    self.topTitleView.frame = CGRectMake(50, 0, self.bounds.size.width - 50, 50);
-    self.leftTitleView.frame = CGRectMake(0, 50, 50, self.bounds.size.height - 50);
-    self.titleLabel.frame = CGRectMake(0, 0, 50, 50);
+    self.collectionView.frame = CGRectMake(_leftTitleWidth, _topTitleHeight, self.bounds.size.width - _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
+    self.topTitleView.frame = CGRectMake(_leftTitleWidth, 0, self.bounds.size.width - _leftTitleWidth, _topTitleHeight);
+    self.leftTitleView.frame = CGRectMake(0, _topTitleHeight, _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
+    self.titleLabel.frame = CGRectMake(0, 0, _topTitleHeight, _topTitleHeight);
 }
 
 - (void)setupUI {
@@ -66,7 +87,8 @@
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = @"总标题";
     _titleLabel.font = [UIFont systemFontOfSize:13];
-    _titleLabel.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1];
+    _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
+    _titleLabel.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_titleLabel];
 
@@ -127,7 +149,6 @@
 
 }
 
-
 #pragma mark titleLayoutDelegate
 - (YZMovementsModel *)titleLayout:(YZMovementCollectionViewLayout *)layout modelForIndexPath:(NSIndexPath *)indexPath {
 
@@ -150,7 +171,6 @@
         return [self.delegate numberOfColumnsForMovementsView:self];
     }
 }
-
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;

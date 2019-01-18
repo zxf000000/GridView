@@ -16,10 +16,12 @@
 
 // 头部标题
 - (YZMovementsModel *)movementsView:(YZMovementsView *)view topTitleModelForIndex:(NSInteger)index;
+- (NSInteger)topTitleRowCountForMovementsView:(YZMovementsView *)view;
 - (NSInteger)numberOfTopTitleForMovementsView:(YZMovementsView *)view;
 
 // 左侧标题
 - (YZMovementsModel *)movementsView:(YZMovementsView *)view leftTitleModelForIndex:(NSInteger)index;
+- (NSInteger)leftTitleColumnCountForMovementsView:(YZMovementsView *)view;
 - (NSInteger)numberOfleftTitleForMovementsView:(YZMovementsView *)view;
 
 // 数据
@@ -34,5 +36,7 @@
 @interface YZMovementsView : UIView
 
 - (instancetype)initWithDelegate:(id<YZMovementsViewDelegate>)delegate;
+
+- (void)reloadData;
 
 @end

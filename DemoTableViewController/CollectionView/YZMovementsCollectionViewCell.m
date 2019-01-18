@@ -17,6 +17,10 @@
 
 @property (strong, nonatomic) CAShapeLayer  *borderLayer;
 
+@property(nonatomic, strong) UIColor *darkDataColor;
+@property(nonatomic, strong) UIColor *dataColor;
+@property(nonatomic, strong) UIColor *titleColor;
+
 @end
 
 @implementation YZMovementsCollectionViewCell
@@ -37,22 +41,48 @@
         _titleLabel.font = [UIFont systemFontOfSize:10];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
 
+
+
+        _titleColor = [UIColor colorWithRed:240/255.0 green:235/255.0 blue:229/255.0 alpha:1.0];
+        _dataColor = [UIColor colorWithRed:248/255.0 green:247/255.0 blue:243/255.0 alpha:1.0];
+        _darkDataColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
+
         [self addSubview:_titleLabel];
 
-        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
-
 
 - (void)setModel:(YZMovementsModel *)model {
     _model = model;
     _titleLabel.text = model.title;
 
-    if (model.row % 2 == 0) {
-        self.backgroundColor = [UIColor colorWithRed:245.f/255.f green:246.f/255.f blue:239.f/255.f alpha:1];
-    } else {
-        self.backgroundColor = [UIColor whiteColor];
+
+    switch (model.type) {
+        case YZMovementsModelPositionLeft: {
+            if (model.row % 2 == 0) {
+                self.backgroundColor = _titleColor;
+            } else {
+                self.backgroundColor = _dataColor;
+            }
+            break;
+        }
+        case YZMovementsModelPositionDefault:{
+            if (model.row % 2 == 0) {
+                self.backgroundColor = _darkDataColor;
+            } else {
+                self.backgroundColor = _dataColor;
+            }
+            break;
+        }
+        case YZMovementsModelPositionTop: {
+            if (model.row % 2 == 0) {
+                self.backgroundColor = _titleColor;
+            } else {
+                self.backgroundColor = _dataColor;
+            }
+            break;
+        }
     }
     [self setNeedsLayout];
 }
@@ -124,7 +154,6 @@
             [path addLineToPoint:(CGPointMake(0, height))];
             [path closePath];
 
-
             self.titleLabel.textColor = [UIColor whiteColor];
 
         }
@@ -133,8 +162,14 @@
 
     _bgLayer.path = path.CGPath;
     _bgLayer.lineWidth = 1;
-    _bgLayer.strokeColor = [UIColor redColor].CGColor;
-    _bgLayer.fillColor = [UIColor redColor].CGColor;
+    if (self.model.ballColor == YZMovementsModelBallColorRed) {
+        _bgLayer.strokeColor = [UIColor redColor].CGColor;
+        _bgLayer.fillColor = [UIColor redColor].CGColor;
+    } else if (self.model.ballColor == YZMovementsModelBallColorBlue){
+        _bgLayer.strokeColor = [UIColor blueColor].CGColor;
+        _bgLayer.fillColor = [UIColor blueColor].CGColor;
+    }
+
 
 }
 

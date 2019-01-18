@@ -16,17 +16,19 @@
                         title:(NSString *)title
                           row:(NSInteger)row
                        column:(NSInteger)column
-             lineSerialNumber:(NSInteger)lineSerialNumber {
+             lineSerialNumber:(NSInteger)lineSerialNumber
+        type:(YZMovementsModelPosition)type {
     self = [super init];
     if (self) {
-        self.width = width;
-        self.height = height;
-        self.hasLinePoint = hasLinePoint;
-        self.bgType = bgType;
-        self.title = title;
-        self.row = row;
-        self.column = column;
-        self.lineSerialNumber = lineSerialNumber;
+        _width = width;
+        _height = height;
+        _hasLinePoint = hasLinePoint;
+        _bgType = bgType;
+        _title = title;
+        _row = row;
+        _column = column;
+        _lineSerialNumber = lineSerialNumber;
+        _type = type;
     }
 
     return self;
@@ -39,9 +41,11 @@
                          title:(NSString *)title
                            row:(NSInteger)row
                         column:(NSInteger)column
-              lineSerialNumber:(NSInteger)lineSerialNumber {
+              lineSerialNumber:(NSInteger)lineSerialNumber
+                          type:(YZMovementsModelPosition)type {
     return [[self alloc]
-                  initWithWidth:width height:height hasLinePoint:hasLinePoint bgType:bgType title:title row:row column:column lineSerialNumber:lineSerialNumber];
+                  initWithWidth:width height:height hasLinePoint:hasLinePoint bgType:bgType title:title row:row column:column lineSerialNumber:lineSerialNumber type:
+    type];
 }
 
 

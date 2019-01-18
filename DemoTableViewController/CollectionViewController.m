@@ -7,15 +7,12 @@
 //
 
 #import "CollectionViewController.h"
-//#import "DemoLayout.h"
-//#import "TestCollectionViewCell.h"
-//#import "TestModel.h"
-//#import "DemoView.h"
+
 #import "YZMovementsView.h"
 #import "YZMovementsModel.h"
+#import "YZMovementsConvertTool.h"
 
 @interface CollectionViewController () <YZMovementsViewDelegate>
-
 
 @property (strong, nonatomic) YZMovementsView  *demoView;
 
@@ -25,61 +22,16 @@
 
 @property (strong, nonatomic) UISegmentedControl  *segment;
 
+@property(nonatomic, strong) UIActivityIndicatorView *indicatorView;
+
 @end
 
 @implementation CollectionViewController
 
-- (instancetype)init {
-    if (self = [super init]) {
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:2400];
-        for (NSInteger i = 0, length = 2400; i < length; i++) {
-            YZMovementsModel *model;
-            NSString *title = [NSString stringWithFormat:@"%zd",i % 10];
-            if (i == 2 || i == 6) {
-                model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:title row:i / 80 column:i % 80 lineSerialNumber:0];
-            } else if (i > 10 && i %20 == 1) {
-                model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeCircle) title:title row:i / 80 column:i % 80 lineSerialNumber:1];
-            } else if (i > 10 && i %22 == 1) {
-                model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeSquare) title:title row:i / 80 column:i % 80 lineSerialNumber:2];
-            } else if (i > 10 && i %23 == 1) {
-                model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeFull) title:title row:i / 80 column:i % 80 lineSerialNumber:3];
-            } else {
-                model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:title row:i / 80 column:i % 80 lineSerialNumber:0];
-            }
-            [array addObject:model];
-        }
-        _datas = array.copy;
-
-        NSMutableArray *topArr = [NSMutableArray arrayWithCapacity:20];
-        for (NSInteger i = 0 ; i < 2 ; i ++) {
-            YZMovementsModel *model;
-            if (i == 0) {
-                NSArray *titles = @[@"基本",@"第一位",@"第二位",@"第三位",@"第四位",@"第五位",@"第六位",@"第七位"];
-                for (int j = 0; j < 8; ++j) {
-                    model = [[YZMovementsModel alloc] initWithWidth:10 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:titles[j] row:i column:j*10 lineSerialNumber:0];
-                    [topArr addObject:model];
-                }
-            } else {
-                for (int j = 0; j < 80; ++j) {
-                    model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd",j % 10] row:i column:j lineSerialNumber:0];
-                    [topArr addObject:model];
-                }
-            }
-        }
-        _topTitles = topArr.copy;
-
-        NSMutableArray *leftArr = [NSMutableArray arrayWithCapacity:500];
-        for (NSInteger i = 0 ; i < 30 ; i ++) {
-            YZMovementsModel *model = [[YZMovementsModel alloc] initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd",18131 + i] row:i / 1 column:i % 1 lineSerialNumber:0];
-            [leftArr addObject:model];
-        }
-        _leftTitles = leftArr.copy;
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
     self.navigationController.navigationBar.translucent = NO;
     
@@ -87,16 +39,44 @@
     
     _demoView = [[YZMovementsView alloc] initWithDelegate:self];
 
-    _demoView.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height - 30);
+    _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
     [self.view addSubview:_demoView];
 
     _demoView.backgroundColor = [UIColor redColor];
     
-    _segment = [[UISegmentedControl alloc] initWithItems:@[@"基本",@"第一位",@"第二位",@"第三位",@"第四位",@"第五位",@"第六位",@"第七位"]];
-    [_segment addTarget:self action:@selector(change) forControlEvents:(UIControlEventValueChanged)];
-    _segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
-    [self.view addSubview:_segment];
-    
+//    _segment = [[UISegmentedControl alloc] initWithItems:@[@"基本",@"第一位",@"第二位",@"第三位",@"第四位",@"第五位",@"第六位",@"第七位"]];
+//    [_segment addTarget:self action:@selector(change) forControlEvents:(UIControlEventValueChanged)];
+//    _segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+//    [self.view addSubview:_segment];
+
+    _indicatorView = [[UIActivityIndicatorView alloc]
+                                               initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _indicatorView.center = self.view.center;
+    _indicatorView.bounds = CGRectMake(0, 0, 100, 100);
+    [self.view addSubview:_indicatorView];
+    [_indicatorView startAnimating];
+
+    __weak typeof(self) weakSelf = self;
+
+    [YZMovementsConvertTool convertQilecaiJsonToModelsWithFile:@"qilecai" complete:^(NSArray *leftTitles, NSArray *topTitles, NSArray *allDatas) {
+        weakSelf.leftTitles = leftTitles;
+        weakSelf.datas = allDatas;
+        weakSelf.topTitles = topTitles;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (ino64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        });
+    }];
+//
+//    [YZMovementsConvertTool convertJsonToModelsWithFile:@"movements" complete:^(NSArray *leftTitles, NSArray *topTitles, NSArray *allDatas) {
+//        weakSelf.leftTitles = leftTitles;
+//        weakSelf.datas = allDatas;
+//        weakSelf.topTitles = topTitles;
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (ino64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf.demoView reloadData];
+//            [weakSelf.indicatorView stopAnimating];
+//        });
+//    }];
 
 }
 
@@ -106,17 +86,19 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    _demoView.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height - 30);
-    _segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+    _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
 
 }
 
 // 行列数
 - (NSInteger)numberOfColumnsForMovementsView:(YZMovementsView *)view {
-    return 80;
+    if (self.leftTitles.count == 0) {
+        return 0;
+    }
+    return self.datas.count % self.leftTitles.count == 0 ? self.datas.count / self.leftTitles.count : self.datas.count / self.leftTitles.count + 1;
 }
 - (NSInteger)rowOfColumnsForMovementsView:(YZMovementsView *)view {
-    return 30;
+    return self.leftTitles.count;
 }
 
 // 头部标题
@@ -126,6 +108,9 @@
 - (NSInteger)numberOfTopTitleForMovementsView:(YZMovementsView *)view {
     return self.topTitles.count;
 }
+- (NSInteger)topTitleRowCountForMovementsView:(YZMovementsView *)view {
+    return 1;
+}
 
 // 左侧标题
 - (YZMovementsModel *)movementsView:(YZMovementsView *)view leftTitleModelForIndex:(NSInteger)index {
@@ -134,6 +119,10 @@
 
 - (NSInteger)numberOfleftTitleForMovementsView:(YZMovementsView *)view {
     return self.leftTitles.count;
+}
+
+- (NSInteger)leftTitleColumnCountForMovementsView:(YZMovementsView *)view {
+    return 2;
 }
 
 // 数据
@@ -146,7 +135,7 @@
 }
 
 - (CGSize)itemSizeForMovementsView:(YZMovementsView *)view {
-    return CGSizeMake(50, 25);
+    return CGSizeMake(25, 25);
 }
 
 - (void)dealloc {

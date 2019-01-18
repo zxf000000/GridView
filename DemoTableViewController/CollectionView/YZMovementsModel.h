@@ -15,6 +15,19 @@ typedef NS_ENUM(NSInteger, BgType) {
     BgTypeFull,
     BgTypeNone,
 };
+
+typedef NS_ENUM(NSInteger, YZMovementsModelPosition) {
+    YZMovementsModelPositionLeft,
+    YZMovementsModelPositionTop,
+    YZMovementsModelPositionDefault
+};
+
+typedef NS_ENUM(NSInteger, YZMovementsModelBallColor) {
+    YZMovementsModelBallColorRed,
+    YZMovementsModelBallColorBlue,
+    YZMovementsModelBallColorOther
+};
+
 @interface YZMovementsModel : NSObject
 @property (nonatomic, assign) NSInteger width;
 @property (nonatomic, assign) NSInteger height;
@@ -32,6 +45,10 @@ typedef NS_ENUM(NSInteger, BgType) {
 
 @property(nonatomic, assign) NSInteger lineSerialNumber;
 
+@property(nonatomic, assign) YZMovementsModelPosition type;
+
+@property(nonatomic, assign) YZMovementsModelBallColor ballColor;
+
 - (instancetype)initWithWidth:(NSInteger)width
                        height:(NSInteger)height
                  hasLinePoint:(BOOL)hasLinePoint
@@ -39,7 +56,8 @@ typedef NS_ENUM(NSInteger, BgType) {
                         title:(NSString *)title
                           row:(NSInteger)row
                        column:(NSInteger)column
-             lineSerialNumber:(NSInteger)lineSerialNumber;
+             lineSerialNumber:(NSInteger)lineSerialNumber
+                         type:(YZMovementsModelPosition)type;
 
 + (instancetype)modelWithWidth:(NSInteger)width
                         height:(NSInteger)height
@@ -48,7 +66,9 @@ typedef NS_ENUM(NSInteger, BgType) {
                          title:(NSString *)title
                            row:(NSInteger)row
                         column:(NSInteger)column
-              lineSerialNumber:(NSInteger)lineSerialNumber;
+              lineSerialNumber:(NSInteger)lineSerialNumber
+                          type:(YZMovementsModelPosition)type;
+
 
 
 @end
