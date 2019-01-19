@@ -212,7 +212,8 @@
             color = [UIColor blueColor];
         }
         CGPoint lastCenter;
-        CGFloat offsetOblique = (strongSelf.itemHeight - 2) / 2;
+        CGFloat offsetOblique = (strongSelf.itemHeight - YZMovementsCellBallMargin * 2) / 2;
+        CGFloat radius = offsetOblique;
         for (NSInteger pointIndex = 0, length = points.count; pointIndex < length; ++pointIndex) {
 
             YZMovementsModel *model = points[pointIndex];
@@ -221,32 +222,65 @@
 
             CGPoint lastLinePoint = CGPointMake(0, 0);
             CGPoint currentLinePoint;
-            CGPoint currentPoint = CGPointMake(model.frame.origin.x + model.frame.size.width / 2, model.frame.origin.y + model.frame.size.height / 2);
+            CGPoint currentCenter = CGPointMake(model.frame.origin.x + model.frame.size.width / 2, model.frame.origin.y + model.frame.size.height / 2);
+
+            // 计算角度
+            CGFloat offsetX = currentCenter.x - lastCenter.x;
+            CGFloat offsetY = currentCenter.y - lastCenter.y;
+
+
+            CGFloat distance = sqrt(offsetX * offsetX + offsetY * offsetY);
+
+            CGFloat xMinus = radius / (distance / offsetX);
+            CGFloat yMinus = radius / (distance / offsetY);
+
             if (count == 0) {
 
             } else {
-                if (lastCenter.x > currentPoint.x) {
-                    CGFloat lastX = lastCenter.x - offsetOblique;
-                    CGFloat lastY = lastCenter.y;
-                    CGFloat currentX = currentPoint.x  + offsetOblique;
-                    CGFloat currentY = currentPoint.y;
+//                if (lastCenter.x > currentCenter.x) {
+
+                    CGFloat lastX = lastCenter.x + xMinus;
+                    CGFloat lastY = lastCenter.y + yMinus;
+                    CGFloat currentX = currentCenter.x - xMinus;
+                    CGFloat currentY = currentCenter.y - yMinus;
                     lastLinePoint = CGPointMake(lastX, lastY);
                     currentLinePoint = CGPointMake(currentX, currentY);
-                } else if (lastCenter.x < currentPoint.x) {
-                    CGFloat lastX = lastCenter.x + offsetOblique;
-                    CGFloat lastY = lastCenter.y;
-                    CGFloat currentX = currentPoint.x  - offsetOblique;
-                    CGFloat currentY = currentPoint.y;
-                    lastLinePoint = CGPointMake(lastX, lastY);
-                    currentLinePoint = CGPointMake(currentX, currentY);
-                } else {
-                    CGFloat lastX = lastCenter.x;
-                    CGFloat lastY = lastCenter.y + offsetOblique;
-                    CGFloat currentX = currentPoint.x;
-                    CGFloat currentY = currentPoint.y - offsetOblique;
-                    lastLinePoint = CGPointMake(lastX, lastY);
-                    currentLinePoint = CGPointMake(currentX, currentY);
-                }
+
+//                    CGFloat lastX = lastCenter.x - offsetOblique;
+//                    CGFloat lastY = lastCenter.y;
+//                    CGFloat currentX = currentCenter.x  + offsetOblique;
+//                    CGFloat currentY = currentCenter.y;
+//                    lastLinePoint = CGPointMake(lastX, lastY);
+//                    currentLinePoint = CGPointMake(currentX, currentY);
+//                } else if (lastCenter.x < currentCenter.x) {
+//
+//                    CGFloat lastX = lastCenter.x + xMinus;
+//                    CGFloat lastY = lastCenter.y - yMinus;
+//                    CGFloat currentX = currentCenter.x  - xMinus;
+//                    CGFloat currentY = currentCenter.y + yMinus;
+//                    lastLinePoint = CGPointMake(lastX, lastY);
+//                    currentLinePoint = CGPointMake(currentX, currentY);
+
+//                    CGFloat lastX = lastCenter.x + offsetOblique;
+//                    CGFloat lastY = lastCenter.y;
+//                    CGFloat currentX = currentCenter.x  - offsetOblique;
+//                    CGFloat currentY = currentCenter.y;
+//                    lastLinePoint = CGPointMake(lastX, lastY);
+//                    currentLinePoint = CGPointMake(currentX, currentY);
+//                } else {
+//                    CGFloat lastX = lastCenter.x;
+//                    CGFloat lastY = lastCenter.y + yMinus;
+//                    CGFloat currentX = currentCenter.x;
+//                    CGFloat currentY = currentCenter.y - yMinus;
+//                    lastLinePoint = CGPointMake(lastX, lastY);
+//                    currentLinePoint = CGPointMake(currentX, currentY);
+//                    CGFloat lastX = lastCenter.x;
+//                    CGFloat lastY = lastCenter.y + offsetOblique;
+//                    CGFloat currentX = currentCenter.x;
+//                    CGFloat currentY = currentCenter.y - offsetOblique;
+//                    lastLinePoint = CGPointMake(lastX, lastY);
+//                    currentLinePoint = CGPointMake(currentX, currentY);
+//                }
                 [path moveToPoint:lastLinePoint];
                 [path addLineToPoint:currentLinePoint];
 

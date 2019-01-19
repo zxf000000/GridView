@@ -9,7 +9,7 @@
 #import "YZMovementsCollectionViewCell.h"
 #import <YYText.h>
 #import "YZMovementsModel.h"
-
+CGFloat const YZMovementsCellBallMargin = 5.f;
 @interface YZMovementsCollectionViewCell()
 
 @property (strong, nonatomic) YYLabel *titleLabel;
@@ -92,7 +92,7 @@
 
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
-    CGFloat margin = 2;
+    CGFloat margin = YZMovementsCellBallMargin;
 //    UIBezierPath *borderPath = [UIBezierPath bezierPath];
 //    [borderPath moveToPoint:(CGPointMake(0 , 0))];
 //    [borderPath addLineToPoint:(CGPointMake(width, 0))];
