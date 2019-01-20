@@ -10,11 +10,12 @@
 #import "DemoViewController.h"
 #import "CollectionViewController.h"
 #import "ZXFFormViewController.h"
+#import "YYFPSLabel.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
-
+@property(nonatomic, strong) YYFPSLabel *fpsLabel;
 @end
 
 @implementation ViewController
@@ -29,6 +30,9 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+
+    self.fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(100, self.navigationController.navigationBar.bounds.size.height, 50, 30)];
+    [self.navigationController.view addSubview:self.fpsLabel];
 
 }
 

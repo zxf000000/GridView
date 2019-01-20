@@ -15,11 +15,16 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 @property (strong, nonatomic) YYLabel *titleLabel;
 @property (strong, nonatomic) CAShapeLayer  *bgLayer;
 
-@property (strong, nonatomic) CAShapeLayer  *borderLayer;
+@property (strong, nonatomic) CAShapeLayer  *leftBorderLayer;
+@property(nonatomic, strong) CAShapeLayer *rightBorderLayer;
 
 @property(nonatomic, strong) UIColor *darkDataColor;
 @property(nonatomic, strong) UIColor *dataColor;
 @property(nonatomic, strong) UIColor *titleColor;
+
+@property(nonatomic, strong) UIBezierPath *circlepath;
+@property(nonatomic, strong) UIBezierPath *squarePath;
+@property(nonatomic, strong) UIBezierPath *allPath;
 
 @end
 
@@ -27,11 +32,21 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-//
-//        _borderLayer = [CAShapeLayer layer];
-//        [self.layer addSublayer:_borderLayer];
+
+        _rightBorderLayer = [CAShapeLayer layer];
+        _rightBorderLayer.lineWidth = 0.25;
+        _rightBorderLayer.strokeColor = [UIColor colorWithWhite:0.5 alpha:1].CGColor;
+        _rightBorderLayer.fillColor = [UIColor clearColor].CGColor;
+        [self.layer addSublayer:_rightBorderLayer];
+
+        _leftBorderLayer = [CAShapeLayer layer];
+        _leftBorderLayer.lineWidth = 0.25;
+        _leftBorderLayer.strokeColor = [UIColor colorWithWhite:0.5 alpha:1].CGColor;
+        _leftBorderLayer.fillColor = [UIColor clearColor].CGColor;
+        [self.layer addSublayer:_leftBorderLayer];
 
         _bgLayer = [[CAShapeLayer alloc] init];
+        _bgLayer.lineWidth = 1;
         [self.layer insertSublayer:_bgLayer atIndex:0];
 
         self.backgroundColor = [UIColor clearColor];
@@ -48,6 +63,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         _darkDataColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
 
         [self addSubview:_titleLabel];
+
 
     }
     return self;
@@ -84,6 +100,15 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
             break;
         }
     }
+
+    if (self.model.ballColor == YZMovementsModelBallColorRed) {
+        _bgLayer.strokeColor = [UIColor redColor].CGColor;
+        _bgLayer.fillColor = [UIColor redColor].CGColor;
+    } else if (self.model.ballColor == YZMovementsModelBallColorBlue){
+        _bgLayer.strokeColor = [UIColor blueColor].CGColor;
+        _bgLayer.fillColor = [UIColor blueColor].CGColor;
+    }
+
     [self setNeedsLayout];
 }
 
@@ -93,16 +118,16 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
     CGFloat margin = YZMovementsCellBallMargin;
-//    UIBezierPath *borderPath = [UIBezierPath bezierPath];
-//    [borderPath moveToPoint:(CGPointMake(0 , 0))];
-//    [borderPath addLineToPoint:(CGPointMake(width, 0))];
-//    [borderPath addLineToPoint:(CGPointMake(width, height))];
-//    [borderPath addLineToPoint:(CGPointMake(0, height))];
-//    [borderPath closePath];
-//    self.borderLayer.path = borderPath.CGPath;
-//    self.borderLayer.lineWidth = 0.25;
-//    self.borderLayer.strokeColor = [UIColor colorWithWhite:0.5 alpha:1].CGColor;
-//    self.borderLayer.fillColor = [UIColor clearColor].CGColor;
+
+    UIBezierPath *leftBorderPath = [UIBezierPath bezierPath];
+    [leftBorderPath moveToPoint:(CGPointMake(0 , 0))];
+    [leftBorderPath addLineToPoint:(CGPointMake(0, height))];
+    self.leftBorderLayer.path = leftBorderPath.CGPath;
+
+    UIBezierPath *rightBorderPath = [UIBezierPath bezierPath];
+    [rightBorderPath moveToPoint:(CGPointMake(width , 0))];
+    [rightBorderPath addLineToPoint:(CGPointMake(width, height))];
+    self.rightBorderLayer.path = rightBorderPath.CGPath;
 
     self.titleLabel.frame = self.bounds;
 
@@ -112,8 +137,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         case BgTypeCircle:
         {
             self.bgLayer.hidden = NO;
-            CGFloat radius = width > height ? height / 2 - margin : width / 2 - margin;
-            [path addArcWithCenter:CGPointMake(width / 2, height / 2) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+            self.bgLayer.path = self.circlepath.CGPath;
             self.titleLabel.textColor = [UIColor whiteColor];
 
         }
@@ -122,71 +146,76 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         {
             self.bgLayer.hidden = YES;
             self.titleLabel.textColor = [UIColor blackColor];
-
             break;
         }
         case BgTypeSquare:
         {
             self.bgLayer.hidden = NO;
-
-            CGFloat length = width > height ? height - margin * 2 : width - margin * 2;
-            CGFloat leftPadding = (width - length)/2;
-            CGFloat topPadding = margin;
-
-            [path moveToPoint:(CGPointMake(leftPadding , topPadding))];
-            [path addLineToPoint:(CGPointMake(leftPadding + length, topPadding))];
-            [path addLineToPoint:(CGPointMake(length + leftPadding, length + topPadding))];
-            [path addLineToPoint:(CGPointMake(leftPadding, length + topPadding))];
-            [path closePath];
-
+            self.bgLayer.path = self.squarePath.CGPath;
             self.titleLabel.textColor = [UIColor whiteColor];
-
             break;
         }
         default:
         {
             self.bgLayer.hidden = NO;
-
-
-            [path moveToPoint:(CGPointMake(0 , 0))];
-            [path addLineToPoint:(CGPointMake(width, 0))];
-            [path addLineToPoint:(CGPointMake(width, height))];
-            [path addLineToPoint:(CGPointMake(0, height))];
-            [path closePath];
-
+            _bgLayer.path = self.allPath.CGPath;
             self.titleLabel.textColor = [UIColor whiteColor];
-
         }
             break;
     }
+}
 
-    _bgLayer.path = path.CGPath;
-    _bgLayer.lineWidth = 1;
-    if (self.model.ballColor == YZMovementsModelBallColorRed) {
-        _bgLayer.strokeColor = [UIColor redColor].CGColor;
-        _bgLayer.fillColor = [UIColor redColor].CGColor;
-    } else if (self.model.ballColor == YZMovementsModelBallColorBlue){
-        _bgLayer.strokeColor = [UIColor blueColor].CGColor;
-        _bgLayer.fillColor = [UIColor blueColor].CGColor;
+- (UIBezierPath *)circlepath {
+    if (!_circlepath) {
+        _circlepath = [UIBezierPath bezierPath];
+        CGFloat radius = (MIN(self.bounds.size.width, self.bounds.size.height)) / 2 - YZMovementsCellBallMargin;
+        [_circlepath addArcWithCenter:CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     }
+    return _circlepath;
+}
 
+- (UIBezierPath *)squarePath {
+    if (!_squarePath) {
+        _squarePath = [UIBezierPath bezierPath];
+        CGFloat length = MIN(self.bounds.size.width, self.bounds.size.height) - YZMovementsCellBallMargin * 2;
+        CGFloat leftPadding = (MAX(self.bounds.size.width, self.bounds.size.height) - MIN(self.bounds.size.width, self.bounds.size.height))/2;
+        CGFloat topPadding = YZMovementsCellBallMargin;
 
+        [_squarePath moveToPoint:(CGPointMake(leftPadding , topPadding))];
+        [_squarePath addLineToPoint:(CGPointMake(leftPadding + length, topPadding))];
+        [_squarePath addLineToPoint:(CGPointMake(length + leftPadding, length + topPadding))];
+        [_squarePath addLineToPoint:(CGPointMake(leftPadding, length + topPadding))];
+        [_squarePath closePath];
+    }
+    return _squarePath;
+}
+
+- (UIBezierPath *)allPath {
+    if (_allPath) {
+        _allPath = [UIBezierPath bezierPath];
+        [_allPath moveToPoint:(CGPointMake(0 , 0))];
+        [_allPath addLineToPoint:(CGPointMake(self.bounds.size.width, 0))];
+        [_allPath addLineToPoint:(CGPointMake(self.bounds.size.width, self.bounds.size.height))];
+        [_allPath addLineToPoint:(CGPointMake(0, self.bounds.size.height))];
+        [_allPath closePath];
+    }
+    return _allPath;
 }
 
 - (void)drawRect:(CGRect)rect {
-
-    [[UIColor colorWithWhite:0.5 alpha:1] setStroke];
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(0, rect.size.height)];
-    path.lineWidth = 0.25;
-    [path stroke];
-
-    UIBezierPath *path1 = [UIBezierPath bezierPath];
-    [path1 moveToPoint:CGPointMake(rect.size.width, 0)];
-    [path1 addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
-    path1.lineWidth = 0.25;
-    [path1 stroke];
+//
+//    [[UIColor colorWithWhite:0.5 alpha:1] setStroke];
+//    UIBezierPath *path = [UIBezierPath bezierPath];
+//    [path moveToPoint:CGPointMake(0, 0)];
+//    [path addLineToPoint:CGPointMake(0, rect.size.height)];
+//    path.lineWidth = 0.25;
+//    [path stroke];
+//
+//    UIBezierPath *path1 = [UIBezierPath bezierPath];
+//    [path1 moveToPoint:CGPointMake(rect.size.width, 0)];
+//    [path1 addLineToPoint:CGPointMake(rect.size.width, rect.size.height)];
+//    path1.lineWidth = 0.25;
+//    [path1 stroke];
 
 }
 

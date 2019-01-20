@@ -10,12 +10,14 @@
 		1F4C60A49983044F34E3AF7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6A605CA1AAF19A25CDB7 /* main.m */; };
 		1F4C61605385D029850E809B /* YZMovementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C612132E59ADB0389CE3E /* YZMovementsView.m */; };
 		1F4C61EF96D0D13F40364D43 /* DemoTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C69BC5793F0C29DF3457F /* DemoTableViewControllerTests.m */; };
+		1F4C62A17AD71DDDA37BB597 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */; };
 		1F4C62A7424C107D40780A8C /* DemoTableViewController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C684CCD440D5D02012FFD /* DemoTableViewController.xcdatamodeld */; };
 		1F4C6372B4A8970F1EDC63C9 /* ZXFFormItemLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6E79B3E15A4F5CF298F9 /* ZXFFormItemLayer.m */; };
 		1F4C63F010E80C683F6A4586 /* DemoGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6EAEF54F90A1EC12579C /* DemoGridView.m */; };
 		1F4C6400E8E19E821893FDC8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6E8242E48282F383570F /* ViewController.m */; };
 		1F4C64AF66A71E54F8A957C0 /* YZMovementsConvertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C63303D2AB90C6C646260 /* YZMovementsConvertTool.m */; };
 		1F4C64BE8A5FCAB94299250F /* YZMovementsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6760CFA3173928263404 /* YZMovementsCollectionView.m */; };
+		1F4C65632F450DE9FCE57B29 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C636BF145B5EE69742F65 /* YYFPSLabel.m */; };
 		1F4C66C070DD54CB747CB4FB /* DemoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C634C5DFE21E042596073 /* DemoDataModel.m */; };
 		1F4C68375E4117CD8DA5D429 /* DemoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C64CB2EACBFEEC98CECFD /* DemoTableView.m */; };
 		1F4C695147E796D9FAF0E73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6E01F85FE6BC095D045A /* Assets.xcassets */; };
@@ -79,6 +81,7 @@
 		1F4C62CE2D3C8C72E7D6C02E /* ZXFFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFFormViewController.h; sourceTree = "<group>"; };
 		1F4C63303D2AB90C6C646260 /* YZMovementsConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsConvertTool.m; sourceTree = "<group>"; };
 		1F4C634C5DFE21E042596073 /* DemoDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoDataModel.m; sourceTree = "<group>"; };
+		1F4C636BF145B5EE69742F65 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		1F4C64466C4C024F8AB0F978 /* YZMovementsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsView.h; sourceTree = "<group>"; };
 		1F4C64CB2EACBFEEC98CECFD /* DemoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableView.m; sourceTree = "<group>"; };
 		1F4C6643DB399D79A0CAC29B /* ZXFFormItemLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFFormItemLayout.h; sourceTree = "<group>"; };
@@ -88,7 +91,9 @@
 		1F4C671A627FF609393C367D /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		1F4C6760CFA3173928263404 /* YZMovementsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsCollectionView.m; sourceTree = "<group>"; };
 		1F4C677C55CA7D8CC2939D97 /* qilecai.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qilecai.json; sourceTree = "<group>"; };
+		1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		1F4C6830D9C8C025DF7379A9 /* DemoTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4C685BD3687707B63427A5 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		1F4C685E5643105C973989B2 /* YZMovementsConvertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsConvertTool.h; sourceTree = "<group>"; };
 		1F4C68730461A17BD972F1C3 /* DemoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDataModel.h; sourceTree = "<group>"; };
 		1F4C69A951E1E4A76B8189CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		1F4C6A38F644FC7B876ED0B5 /* DemoGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoGridView.h; sourceTree = "<group>"; };
 		1F4C6A605CA1AAF19A25CDB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F4C6AB5576187893BBD348D /* ZXFFormItemLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFFormItemLayer.h; sourceTree = "<group>"; };
+		1F4C6B5F138C621A4A54928B /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		1F4C6C0E8E71D84FC149D7FC /* DemoTableViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTableViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4C6C2CA282755244424011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F4C6CB5EC32DDADE83932EA /* DemoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableView.h; sourceTree = "<group>"; };
@@ -166,6 +172,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4C60A51AC8738206955B30 /* FPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1F4C636BF145B5EE69742F65 /* YYFPSLabel.m */,
+				1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */,
+				1F4C6B5F138C621A4A54928B /* YYFPSLabel.h */,
+				1F4C685BD3687707B63427A5 /* YYWeakProxy.h */,
+			);
+			path = FPSLabel;
+			sourceTree = "<group>";
+		};
 		1F4C61ADD1868B4156CF55AA /* DemoTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +211,7 @@
 				1F4C68772C848DF84866A44F /* Layers */,
 				1F4C63303D2AB90C6C646260 /* YZMovementsConvertTool.m */,
 				1F4C685E5643105C973989B2 /* YZMovementsConvertTool.h */,
+				1F4C60A51AC8738206955B30 /* FPSLabel */,
 			);
 			path = DemoTableViewController;
 			sourceTree = "<group>";
@@ -512,6 +530,8 @@
 				1F4C61605385D029850E809B /* YZMovementsView.m in Sources */,
 				1F4C64BE8A5FCAB94299250F /* YZMovementsCollectionView.m in Sources */,
 				1F4C64AF66A71E54F8A957C0 /* YZMovementsConvertTool.m in Sources */,
+				1F4C65632F450DE9FCE57B29 /* YYFPSLabel.m in Sources */,
+				1F4C62A17AD71DDDA37BB597 /* YYWeakProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
