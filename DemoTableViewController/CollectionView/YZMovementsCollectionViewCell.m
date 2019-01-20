@@ -64,7 +64,6 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 
         [self addSubview:_titleLabel];
 
-
     }
     return self;
 }
@@ -72,8 +71,6 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 - (void)setModel:(YZMovementsModel *)model {
     _model = model;
     _titleLabel.text = model.title;
-
-
     switch (model.type) {
         case YZMovementsModelPositionLeft: {
             if (model.row % 2 == 0) {
