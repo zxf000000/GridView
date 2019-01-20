@@ -6,44 +6,32 @@
 #import "YZMovementsView.h"
 #import "YZMovementCollectionViewLayout.h"
 #import "YZMovementsCollectionViewCell.h"
-#import "YZMovementsModel.h"
 
-@interface YZMovementsView() <YZMovementCollectionViewLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface YZMovementsView () <YZMovementCollectionViewLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, assign) CGFloat itemWidth;
-@property (nonatomic, assign) CGFloat itemHeight;
-@property (strong, nonatomic) UICollectionView  *collectionView;
+@property(nonatomic, assign) CGFloat itemWidth;
+@property(nonatomic, assign) CGFloat itemHeight;
+@property(strong, nonatomic) UICollectionView *collectionView;
 
-@property (nonatomic,copy) NSArray *datas;
-@property (nonatomic,copy) NSArray  *leftTitles;
-
-@property (nonatomic,copy) NSArray  *topTitles;
-
-@property (strong, nonatomic) CAShapeLayer  *shapeLayer;
-
-@property (strong, nonatomic) UICollectionView  *topTitleView;
-@property (strong, nonatomic) UICollectionView  *leftTitleView;
+@property(strong, nonatomic) UICollectionView *topTitleView;
+@property(strong, nonatomic) UICollectionView *leftTitleView;
 
 @property(nonatomic, strong) UILabel *titleLabel;
 
 
 @property(nonatomic, strong) NSMutableArray *lineLayers;
 
-@property (nonatomic, weak) id<YZMovementsViewDelegate> delegate;
+@property(nonatomic, weak) id <YZMovementsViewDelegate> delegate;
 
 @property(nonatomic, assign) CGFloat topTitleHeight;
 @property(nonatomic, assign) CGFloat leftTitleWidth;
 
-@property(nonatomic, strong) UIColor *kTitleBgColor;
-@property(nonatomic, strong) UIColor *kDataColor;
-@property(nonatomic, strong) UIColor *kDataDarkColor;
 @end
-
 
 
 @implementation YZMovementsView
 
-- (instancetype)initWithDelegate:(id<YZMovementsViewDelegate>)delegate {
+- (instancetype)initWithDelegate:(id <YZMovementsViewDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;
         [self initConfig];
@@ -77,7 +65,7 @@
     self.collectionView.frame = CGRectMake(_leftTitleWidth, _topTitleHeight, self.bounds.size.width - _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
     self.topTitleView.frame = CGRectMake(_leftTitleWidth, 0, self.bounds.size.width - _leftTitleWidth, _topTitleHeight);
     self.leftTitleView.frame = CGRectMake(0, _topTitleHeight, _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
-    self.titleLabel.frame = CGRectMake(0, 0, _topTitleHeight, _topTitleHeight);
+    self.titleLabel.frame = CGRectMake(0, 0, _leftTitleWidth, _topTitleHeight);
 }
 
 - (void)setupUI {
@@ -86,9 +74,9 @@
 
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.text = @"总标题";
-    _titleLabel.font = [UIFont systemFontOfSize:13];
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
-    _titleLabel.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
+    _titleLabel.backgroundColor = [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_titleLabel];
 
@@ -150,6 +138,7 @@
 }
 
 #pragma mark titleLayoutDelegate
+
 - (YZMovementsModel *)titleLayout:(YZMovementCollectionViewLayout *)layout modelForIndexPath:(NSIndexPath *)indexPath {
 
     if (layout.collectionView == self.collectionView) {
@@ -209,9 +198,9 @@
         [layer removeFromSuperlayer];
     }
     [self.lineLayers removeAllObjects];
-    
+
     __weak typeof(self) weakSelf = self;
-    [linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber * lineNumber, NSMutableArray * points, BOOL *stop) {
+    [linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber *lineNumber, NSMutableArray *points, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSInteger count = 0;
         UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
@@ -223,7 +212,8 @@
             color = [UIColor blueColor];
         }
         CGPoint lastCenter;
-        CGFloat offsetOblique = (strongSelf.itemHeight - 2) / 2;
+        CGFloat offsetOblique = (strongSelf.itemHeight - YZMovementsCellBallMargin * 2) / 2;
+        CGFloat radius = offsetOblique;
         for (NSInteger pointIndex = 0, length = points.count; pointIndex < length; ++pointIndex) {
 
             YZMovementsModel *model = points[pointIndex];
@@ -232,32 +222,28 @@
 
             CGPoint lastLinePoint = CGPointMake(0, 0);
             CGPoint currentLinePoint;
-            CGPoint currentPoint = CGPointMake(model.frame.origin.x + model.frame.size.width / 2, model.frame.origin.y + model.frame.size.height / 2);
+            CGPoint currentCenter = CGPointMake(model.frame.origin.x + model.frame.size.width / 2, model.frame.origin.y + model.frame.size.height / 2);
+
+            // 计算角度
+            CGFloat offsetX = currentCenter.x - lastCenter.x;
+            CGFloat offsetY = currentCenter.y - lastCenter.y;
+
+
+            CGFloat distance = (CGFloat) sqrt(offsetX * offsetX + offsetY * offsetY);
+
+            CGFloat xMinus = radius / (distance / offsetX);
+            CGFloat yMinus = radius / (distance / offsetY);
+
             if (count == 0) {
 
             } else {
-                if (lastCenter.x > currentPoint.x) {
-                    CGFloat lastX = lastCenter.x - offsetOblique;
-                    CGFloat lastY = lastCenter.y;
-                    CGFloat currentX = currentPoint.x  + offsetOblique;
-                    CGFloat currentY = currentPoint.y;
-                    lastLinePoint = CGPointMake(lastX, lastY);
-                    currentLinePoint = CGPointMake(currentX, currentY);
-                } else if (lastCenter.x < currentPoint.x) {
-                    CGFloat lastX = lastCenter.x + offsetOblique;
-                    CGFloat lastY = lastCenter.y;
-                    CGFloat currentX = currentPoint.x  - offsetOblique;
-                    CGFloat currentY = currentPoint.y;
-                    lastLinePoint = CGPointMake(lastX, lastY);
-                    currentLinePoint = CGPointMake(currentX, currentY);
-                } else {
-                    CGFloat lastX = lastCenter.x;
-                    CGFloat lastY = lastCenter.y + offsetOblique;
-                    CGFloat currentX = currentPoint.x;
-                    CGFloat currentY = currentPoint.y - offsetOblique;
-                    lastLinePoint = CGPointMake(lastX, lastY);
-                    currentLinePoint = CGPointMake(currentX, currentY);
-                }
+                CGFloat lastX = lastCenter.x + xMinus;
+                CGFloat lastY = lastCenter.y + yMinus;
+                CGFloat currentX = currentCenter.x - xMinus;
+                CGFloat currentY = currentCenter.y - yMinus;
+                lastLinePoint = CGPointMake(lastX, lastY);
+                currentLinePoint = CGPointMake(currentX, currentY);
+                    
                 [path moveToPoint:lastLinePoint];
                 [path addLineToPoint:currentLinePoint];
 

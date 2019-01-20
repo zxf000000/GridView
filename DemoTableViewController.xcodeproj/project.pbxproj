@@ -42,8 +42,6 @@
 		87D8899B21EEBC4900762662 /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D8899921EEBC4900762662 /* TestCollectionViewCell.m */; };
 		87D8899C21EEBC4900762662 /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D8899A21EEBC4900762662 /* TestCollectionViewCell.xib */; };
 		87D8899F21EEBE3A00762662 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D8899E21EEBE3A00762662 /* TestModel.m */; };
-		87D889BF21EED1DF00762662 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D889BB21EED1DF00762662 /* YYWeakProxy.m */; };
-		87D889C021EED1DF00762662 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D889BD21EED1DF00762662 /* YYFPSLabel.m */; };
 		87D889C321EEECE400762662 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D889C221EEECE400762662 /* DemoView.m */; };
 		87D889C621EF0BAD00762662 /* TitleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D889C521EF0BAD00762662 /* TitleLayout.m */; };
 		8F9E53D536EAB7E92F6384F4 /* libPods-DemoTableViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E2D8BD9D674B921F55047C /* libPods-DemoTableViewController.a */; };
@@ -133,10 +131,6 @@
 		87D8899A21EEBC4900762662 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 		87D8899D21EEBE3A00762662 /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		87D8899E21EEBE3A00762662 /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
-		87D889BB21EED1DF00762662 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
-		87D889BC21EED1DF00762662 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
-		87D889BD21EED1DF00762662 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
-		87D889BE21EED1DF00762662 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		87D889C121EEECE400762662 /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
 		87D889C221EEECE400762662 /* DemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
 		87D889C421EF0BAD00762662 /* TitleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleLayout.h; sourceTree = "<group>"; };
@@ -178,7 +172,6 @@
 				87A089F521EDE60C00A9BCE8 /* CollectionViewController.h */,
 				87A089F621EDE60C00A9BCE8 /* CollectionViewController.m */,
 				872944AC21F161A60048170A /* CollectionView */,
-				87D889BA21EED1DF00762662 /* YYFPSLabel */,
 				87A089F421EDE5F000A9BCE8 /* CollectionVIewDemo */,
 				1F4C664629CE45CF9D2EB540 /* Info.plist */,
 				1F4C6E01F85FE6BC095D045A /* Assets.xcassets */,
@@ -322,18 +315,6 @@
 				87D889C521EF0BAD00762662 /* TitleLayout.m */,
 			);
 			path = CollectionVIewDemo;
-			sourceTree = "<group>";
-		};
-		87D889BA21EED1DF00762662 /* YYFPSLabel */ = {
-			isa = PBXGroup;
-			children = (
-				87D889BB21EED1DF00762662 /* YYWeakProxy.m */,
-				87D889BC21EED1DF00762662 /* YYFPSLabel.h */,
-				87D889BD21EED1DF00762662 /* YYFPSLabel.m */,
-				87D889BE21EED1DF00762662 /* YYWeakProxy.h */,
-			);
-			name = YYFPSLabel;
-			path = "../../../Downloads/YYFPSLabel-master/YYFPSLabel/YYFPSLabel";
 			sourceTree = "<group>";
 		};
 		C7ACA1E760DED1658738C0CA /* Frameworks */ = {
@@ -512,11 +493,9 @@
 				87D889C621EF0BAD00762662 /* TitleLayout.m in Sources */,
 				87D889C321EEECE400762662 /* DemoView.m in Sources */,
 				1F4C6400E8E19E821893FDC8 /* ViewController.m in Sources */,
-				87D889C021EED1DF00762662 /* YYFPSLabel.m in Sources */,
 				1F4C68375E4117CD8DA5D429 /* DemoTableView.m in Sources */,
 				8761277B21F07A2300A81DEE /* TestMovementsView.m in Sources */,
 				1F4C6FDD29B52D1AE3CEF481 /* DemoViewController.m in Sources */,
-				87D889BF21EED1DF00762662 /* YYWeakProxy.m in Sources */,
 				1F4C63F010E80C683F6A4586 /* DemoGridView.m in Sources */,
 				1F4C66C070DD54CB747CB4FB /* DemoDataModel.m in Sources */,
 				87A089FA21EDE70E00A9BCE8 /* DemoLayout.m in Sources */,

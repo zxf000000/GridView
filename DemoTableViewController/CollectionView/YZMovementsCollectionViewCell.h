@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class YZMovementsModel;
 
+extern CGFloat const YZMovementsCellBallMargin;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YZMovementsCollectionViewCell : UICollectionViewCell
