@@ -7,6 +7,10 @@
 @class YZMovementsModel;
 @class YZMovementsView;
 
+
+typedef void(^LoadDataCompleteHandle)(void);
+
+
 @protocol YZMovementsViewDelegate<NSObject>
 
 @required

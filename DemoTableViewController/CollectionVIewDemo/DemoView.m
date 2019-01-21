@@ -119,7 +119,7 @@
     self.backgroundColor = [UIColor yellowColor];
 
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.text = @"总标题";
+    _titleLabel.text = @"期号";
     _titleLabel.font = [UIFont systemFontOfSize:13];
     _titleLabel.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1];
     _titleLabel.textAlignment = NSTextAlignmentCenter;

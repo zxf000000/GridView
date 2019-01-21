@@ -24,7 +24,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -40,9 +39,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"UICollectionView实现";
+        cell.textLabel.text = @"UICollectionView(七星彩)";
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"CAShapeLayer实现";
+        cell.textLabel.text = @"UICollectionView(七乐彩)";
+    } else if (indexPath.row == 2) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/基本走势)";
+    } else if (indexPath.row == 3) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/大小分析)";
+    } else if (indexPath.row == 4) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/奇偶分析)";
+    } else  if (indexPath.row == 5) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/质和分析)";
+    } else if (indexPath.row == 6) {
+        cell.textLabel.text = @"UICollectionView(七乐彩/大小)";
     } else {
         cell.textLabel.text = @"CAShapeLayer(1)";
     }
@@ -50,17 +59,32 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 8;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        CollectionViewController *vc = [[CollectionViewController alloc] init];
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:1];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
-        DemoViewController *demoViewController = [[DemoViewController alloc]init];
-        [self.navigationController pushViewController:demoViewController animated:YES];
-    } else {
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:2];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 2){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:3];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 3){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:4];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 4){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:5];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 5){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:6];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 6){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:7];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else  {
         ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];
         [self.navigationController pushViewController:formVC animated:YES];
     }

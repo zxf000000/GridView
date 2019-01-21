@@ -9,6 +9,10 @@
 #import "YZMovementsCollectionViewCell.h"
 #import <YYText.h>
 #import "YZMovementsModel.h"
+
+#define ssRGBHex(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 CGFloat const YZMovementsCellBallMargin = 5.f;
 @interface YZMovementsCollectionViewCell()
 
@@ -98,12 +102,33 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         }
     }
 
-    if (self.model.ballColor == YZMovementsModelBallColorRed) {
-        _bgLayer.strokeColor = [UIColor redColor].CGColor;
-        _bgLayer.fillColor = [UIColor redColor].CGColor;
-    } else if (self.model.ballColor == YZMovementsModelBallColorBlue){
-        _bgLayer.strokeColor = [UIColor blueColor].CGColor;
-        _bgLayer.fillColor = [UIColor blueColor].CGColor;
+    switch (self.model.ballColor) {
+
+        case YZMovementsModelBallColorRed:
+        {
+            _bgLayer.strokeColor = [UIColor redColor].CGColor;
+            _bgLayer.fillColor = [UIColor redColor].CGColor;
+        }
+        break;
+        case YZMovementsModelBallColorBlue:{
+            _bgLayer.strokeColor = [UIColor blueColor].CGColor;
+            _bgLayer.fillColor = [UIColor blueColor].CGColor;
+        }
+        break;
+        case YZMovementsModelBallColorBig: {
+            _bgLayer.strokeColor = ssRGBHex(0xFFDCB9).CGColor;
+            _bgLayer.fillColor = ssRGBHex(0xFFDCB9).CGColor;
+        }
+        break;
+        case YZMovementsModelBallColorSmall: {
+            _bgLayer.strokeColor = ssRGBHex(0xC9F4E9).CGColor;
+            _bgLayer.fillColor = ssRGBHex(0xC9F4E9).CGColor;
+        }
+        break;
+        case YZMovementsModelBallColorOther: {
+
+        }
+        break;
     }
 
     [self setNeedsLayout];
@@ -128,15 +153,14 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 
     self.titleLabel.frame = self.bounds;
 
-    UIBezierPath *path = [UIBezierPath bezierPath];
-
     switch (self.model.bgType) {
         case BgTypeCircle:
         {
             self.bgLayer.hidden = NO;
             self.bgLayer.path = self.circlepath.CGPath;
-            self.titleLabel.textColor = [UIColor whiteColor];
-
+            if (self.model.ballColor == YZMovementsModelBallColorRed || self.model.ballColor == YZMovementsModelBallColorBlue) {
+                self.titleLabel.textColor = [UIColor whiteColor];
+            }
         }
             break;
         case BgTypeNone:
@@ -149,14 +173,18 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         {
             self.bgLayer.hidden = NO;
             self.bgLayer.path = self.squarePath.CGPath;
-            self.titleLabel.textColor = [UIColor whiteColor];
+            if (self.model.ballColor == YZMovementsModelBallColorRed || self.model.ballColor == YZMovementsModelBallColorBlue) {
+                self.titleLabel.textColor = [UIColor whiteColor];
+            }
             break;
         }
         default:
         {
             self.bgLayer.hidden = NO;
             _bgLayer.path = self.allPath.CGPath;
-            self.titleLabel.textColor = [UIColor whiteColor];
+            if (self.model.ballColor == YZMovementsModelBallColorRed || self.model.ballColor == YZMovementsModelBallColorBlue) {
+                self.titleLabel.textColor = [UIColor whiteColor];
+            }
         }
             break;
     }
@@ -188,7 +216,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 }
 
 - (UIBezierPath *)allPath {
-    if (_allPath) {
+    if (!_allPath) {
         _allPath = [UIBezierPath bezierPath];
         [_allPath moveToPoint:(CGPointMake(0 , 0))];
         [_allPath addLineToPoint:(CGPointMake(self.bounds.size.width, 0))];

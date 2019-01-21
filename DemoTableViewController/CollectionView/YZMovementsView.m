@@ -26,6 +26,8 @@
 @property(nonatomic, assign) CGFloat topTitleHeight;
 @property(nonatomic, assign) CGFloat leftTitleWidth;
 
+@property(nonatomic, assign) BOOL pagingEnabled;
+
 @end
 
 
@@ -54,10 +56,12 @@
 
 }
 
+
 - (void)reloadData {
     [self.topTitleView reloadData];
     [self.leftTitleView reloadData];
     [self.collectionView reloadData];
+
 }
 
 - (void)layoutSubviews {
@@ -73,7 +77,7 @@
     self.backgroundColor = [UIColor yellowColor];
 
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.text = @"总标题";
+    _titleLabel.text = @"期号";
     _titleLabel.font = [UIFont systemFontOfSize:14];
     _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
     _titleLabel.backgroundColor = [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0];
@@ -84,7 +88,6 @@
     layout.delegate = self;
     layout.itemWidth = _itemWidth;
     layout.itemHeight = _itemHeight;
-
     _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:layout];
     _collectionView.backgroundColor = [UIColor redColor];
     [self addSubview:_collectionView];
@@ -168,6 +171,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
     if (collectionView == self.collectionView) {
+
         return [self.delegate numberOfItemForMovementsView:self];
 
     } else if (collectionView == self.topTitleView) {
