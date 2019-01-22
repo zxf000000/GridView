@@ -23,40 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd8b3a93-6ab0-4a54-95ff-9cc9479cb6fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3D.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Ddaxiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Djiou.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Dzhihe.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/qiledaxiao.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/qilejiou.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/BaseDataSource/YZBaseMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/BaseDataSource/YZBaseMovementsDataSource.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DDaxiaoMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DDaxiaoMovementsDataSource.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DMovementsDataSource.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionVIewDemo/DemoView.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/movements.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/movements.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/qilecai.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/qilecai.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/ViewController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/YZMovementsConvertTool.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoTableViewController/YZMovementsConvertTool.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m" afterDir="false" />
-    </list>
+    <list default="true" id="dd8b3a93-6ab0-4a54-95ff-9cc9479cb6fb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,8 +143,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="364">
+              <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
               <folding>
                 <element signature="e#104#137#0" expanded="true" />
               </folding>
@@ -384,12 +351,12 @@
       <workItem from="1547775073945" duration="2119000" />
       <workItem from="1547777203061" duration="20209000" />
       <workItem from="1547832075063" duration="6163000" />
-      <workItem from="1548034674646" duration="21458000" />
+      <workItem from="1548034674646" duration="21513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107166000" />
+    <option name="totallyTimeSpent" value="107221000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="2054" height="1336" extended-state="0" />
@@ -402,7 +369,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49902058" weight="0.32938388" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6063618" visible="true" weight="0.17786561" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6063618" weight="0.17786561" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -823,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="364">
+          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
           <folding>
             <element signature="e#104#137#0" expanded="true" />
           </folding>
