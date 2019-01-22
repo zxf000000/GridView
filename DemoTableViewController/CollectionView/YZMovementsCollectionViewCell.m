@@ -67,8 +67,47 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 
         [self addSubview:_titleLabel];
 
+        [self setupLayers];
+
+        CGFloat width = self.bounds.size.width;
+        CGFloat height = self.bounds.size.height;
+
+//        UIBezierPath *leftBorderPath = [UIBezierPath bezierPath];
+//        [leftBorderPath moveToPoint:(CGPointMake(0 , 0))];
+//        [leftBorderPath addLineToPoint:(CGPointMake(0, height))];
+//        _leftBorderLayer.path = leftBorderPath.CGPath;
+//
+//        UIBezierPath *rightBorderPath = [UIBezierPath bezierPath];
+//        [rightBorderPath moveToPoint:(CGPointMake(width , 0))];
+//        [rightBorderPath addLineToPoint:(CGPointMake(width, height))];
+//        _rightBorderLayer.path = rightBorderPath.CGPath;
+
+
     }
     return self;
+}
+
+- (void)setupLayers {
+    _allPath = [UIBezierPath bezierPath];
+    [_allPath moveToPoint:(CGPointMake(0 , 0))];
+    [_allPath addLineToPoint:(CGPointMake(self.bounds.size.width, 0))];
+    [_allPath addLineToPoint:(CGPointMake(self.bounds.size.width, self.bounds.size.height))];
+    [_allPath addLineToPoint:(CGPointMake(0, self.bounds.size.height))];
+    [_allPath closePath];
+
+    _squarePath = [UIBezierPath bezierPath];
+    CGFloat length = MIN(self.bounds.size.width, self.bounds.size.height) - YZMovementsCellBallMargin * 2;
+    CGFloat leftPadding = (MAX(self.bounds.size.width, self.bounds.size.height) - MIN(self.bounds.size.width, self.bounds.size.height))/2;
+    CGFloat topPadding = YZMovementsCellBallMargin;
+    [_squarePath moveToPoint:(CGPointMake(leftPadding , topPadding))];
+    [_squarePath addLineToPoint:(CGPointMake(leftPadding + length, topPadding))];
+    [_squarePath addLineToPoint:(CGPointMake(length + leftPadding, length + topPadding))];
+    [_squarePath addLineToPoint:(CGPointMake(leftPadding, length + topPadding))];
+    [_squarePath closePath];
+
+    _circlepath = [UIBezierPath bezierPath];
+    CGFloat radius = (MIN(self.bounds.size.width, self.bounds.size.height)) / 2 - YZMovementsCellBallMargin;
+    [_circlepath addArcWithCenter:CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
 }
 
 - (void)setModel:(YZMovementsModel *)model {
@@ -130,25 +169,19 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         break;
     }
 
+    if (_model.isPercent) {
+        _bgLayer.hidden = NO;
+        _bgLayer.strokeColor = [UIColor redColor].CGColor;
+        _bgLayer.fillColor = [UIColor redColor].CGColor;
+        _bgLayer.path = [self percentPathWithPercent:self.model.percent * 3].CGPath;
+        _titleLabel.textColor = [UIColor clearColor];
+    }
+
     [self setNeedsLayout];
 }
 
 - (void)layoutSubviews {
-    [super layoutSubviews];
-
-    CGFloat width = self.bounds.size.width;
-    CGFloat height = self.bounds.size.height;
-    CGFloat margin = YZMovementsCellBallMargin;
-
-    UIBezierPath *leftBorderPath = [UIBezierPath bezierPath];
-    [leftBorderPath moveToPoint:(CGPointMake(0 , 0))];
-    [leftBorderPath addLineToPoint:(CGPointMake(0, height))];
-    self.leftBorderLayer.path = leftBorderPath.CGPath;
-
-    UIBezierPath *rightBorderPath = [UIBezierPath bezierPath];
-    [rightBorderPath moveToPoint:(CGPointMake(width , 0))];
-    [rightBorderPath addLineToPoint:(CGPointMake(width, height))];
-    self.rightBorderLayer.path = rightBorderPath.CGPath;
+//    [super layoutSubviews];
 
     self.titleLabel.frame = self.bounds;
 
@@ -187,13 +220,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         }
             break;
     }
-    if (self.model.isPercent) {
-        self.bgLayer.hidden = NO;
-        self.bgLayer.strokeColor = [UIColor redColor].CGColor;
-        self.bgLayer.fillColor = [UIColor redColor].CGColor;
-        self.bgLayer.path = [self percentPathWithPercent:self.model.percent * 3].CGPath;
-        self.titleLabel.textColor = [UIColor clearColor];
-    }
+
 }
 
 - (UIBezierPath *)circlepath {
