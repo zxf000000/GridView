@@ -812,4 +812,63 @@
     allDatas[key] = datas;
 }
 
+// 排列5
++ (void)convertPailie5DataToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"jbzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"yilou1", @"yilou2", @"yilou3", @"yilou4", @"yilou5"];
+        for (int k = 0; k < keys.count; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            // 获取开奖号码
+            NSArray *openCodes = singleRowData[@"opencode"];
+            // 所有的拼起来
+            [singleRowData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                if (![keys containsObject:key]) {
+
+                } else {
+                    // 第几位 ( 0 - 6)
+                    NSInteger yilouIndex = [keys indexOfObject:key];
+                    // 当前这一位的开奖号码
+                    NSString *currentOpenCode = openCodes[yilouIndex];
+                    // 获取当前这一位的所有号码
+                    NSArray *singleYilouArr = (NSArray *) obj;
+                    for (NSInteger singleYilouIndex = 0, length = singleYilouArr.count; singleYilouIndex < length; singleYilouIndex++) {
+                        NSString *number = singleYilouArr[singleYilouIndex];
+                        YZMovementsModel *model;
+                        if ([number isEqualToString:@"0"]) {
+                            model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:YES bgType:BgTypeCircle title:currentOpenCode row:i column:singleYilouIndex lineSerialNumber:yilouIndex type:YZMovementsModelPositionDefault];
+                        } else {
+                            model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:i column:singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+                        }
+                        NSMutableArray *currentData = allDatas[yilouIndex];
+                        [currentData addObject:model];
+                        allDatas[yilouIndex] = currentData;
+                    }
+                }
+            }];
+        }
+        NSMutableArray *topArr = [NSMutableArray arrayWithCapacity:20];
+        for (int j = 0; j < 10; ++j) {
+            YZMovementsModel *model;
+            model = [[YZMovementsModel alloc]
+                                       initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", j % 10] row:0 column:j lineSerialNumber:0 type:YZMovementsModelPositionTop];
+            [topArr addObject:model];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles, topArr, allDatas);
+        });
+    });
+}
+
 @end

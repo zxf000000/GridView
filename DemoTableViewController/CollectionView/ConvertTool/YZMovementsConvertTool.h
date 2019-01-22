@@ -48,4 +48,8 @@ typedef void(^ConvertDataCompleteHandle)(NSArray *leftTitles, NSArray *topTitles
                                            complete:(ConvertDataCompleteHandle)complete;
 // 福彩3D 冷热分析
 + (void)convertFucai3DLengreDataToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+
+// 排列5
++ (void)convertPailie5DataToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+
 @end

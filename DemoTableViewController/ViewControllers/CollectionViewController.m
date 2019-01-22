@@ -16,6 +16,7 @@
 #import "YZFucai3DMovementsDataSource.h"
 #import "YZFucai3DDaxiaoMovementsDataSource.h"
 #import "YZQileDaxiaoMovementsDataSource.h"
+#import "YZPailie5MovementsDataSource.h"
 
 
 @interface CollectionViewController () <YZMovementsViewDelegate>
@@ -79,6 +80,11 @@
                 _movementsDataSource = [[YZQileDaxiaoMovementsDataSource alloc] init];
                 break;
             }
+            case 11:
+            {
+                _movementsDataSource = [[YZPailie5MovementsDataSource alloc] init];
+                break;
+            }
         }
     }
     return self;
@@ -104,6 +110,10 @@
         case 3:
         {
             self.segment = [[UISegmentedControl alloc] initWithItems:@[@"百位",@"十位",@"个位",@"不分位"]];
+            break;
+        }
+        case 11: {
+            self.segment = [[UISegmentedControl alloc] initWithItems:@[@"第一位",@"第二位",@"第三位",@"第四位",@"第五位"]];
             break;
         }
     }
@@ -145,14 +155,17 @@
             [weakSelf.demoView reloadData];
             [weakSelf.indicatorView stopAnimating];
         }];
-    } else  {
+    } else if (self.type == 11) {
+        [((YZPailie5MovementsDataSource *)self.movementsDataSource) loadDataWithHandle:^{
+            [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        }];
+    } else {
         [self.movementsDataSource loadDataWithHandle:^{
             [weakSelf.demoView reloadData];
             [weakSelf.indicatorView stopAnimating];
         }];
     }
-
-
 }
 
 - (void)changed {
@@ -170,6 +183,10 @@
         case 3:
         {
             ((YZFucai3DMovementsDataSource *)self.movementsDataSource).index = index;
+            break;
+        }
+        case 11:{
+            ((YZPailie5MovementsDataSource *)self.movementsDataSource).index = index;
             break;
         }
     }
@@ -200,6 +217,12 @@
         case 4:
         {
             _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+            break;
+        }
+        case 11:
+        {
+            self.segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+            _demoView.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
             break;
         }
         default:

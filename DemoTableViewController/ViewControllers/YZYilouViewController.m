@@ -21,6 +21,10 @@ static CGFloat const kTitleHeight = 40.f;
 
 @implementation YZYilouViewController
 
+- (void)dealloc {
+    NSLog(@"销毁 ====>>>> %s",__func__);
+}
+
 - (instancetype)initWithType:(YZYilouViewControllerType)type {
     if (self = [super init]) {
         _type = type;

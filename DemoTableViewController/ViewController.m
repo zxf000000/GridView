@@ -59,6 +59,8 @@
         cell.textLabel.text = @"UICollectionView(福彩3D/遗漏分析)";
     } else if (indexPath.row == 9) {
         cell.textLabel.text = @"UICollectionView(福彩3D/冷热分析)";
+    } else if (indexPath.row == 10) {
+        cell.textLabel.text = @"UICollectionView(排列5)";
     } else {
         cell.textLabel.text = @"CAShapeLayer(1)";
     }
@@ -66,7 +68,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 11;
+    return 12;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,6 +101,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 9){
         YZYilouViewController *vc = [[YZYilouViewController alloc] initWithType:YZYilouViewControllerTypeLengre];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 10){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:11];
         [self.navigationController pushViewController:vc animated:YES];
     } else  {
         ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];

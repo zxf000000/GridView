@@ -12,6 +12,7 @@
 		1F4C60A49983044F34E3AF7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6A605CA1AAF19A25CDB7 /* main.m */; };
 		1F4C61605385D029850E809B /* YZMovementsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C612132E59ADB0389CE3E /* YZMovementsView.m */; };
 		1F4C617E7B48C29976D70F50 /* movements.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6EFE76C428E402F072F2 /* movements.json */; };
+		1F4C61D277AC673D6B2F44CE /* YZPailie5MovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6F7398CAB70E4882ED3E /* YZPailie5MovementsDataSource.m */; };
 		1F4C61EF96D0D13F40364D43 /* DemoTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C69BC5793F0C29DF3457F /* DemoTableViewControllerTests.m */; };
 		1F4C627BCF8FAA43D8B3A8D2 /* YZQileMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C638CA5A69C446A7DB1AA /* YZQileMovementsDataSource.m */; };
 		1F4C62A17AD71DDDA37BB597 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */; };
@@ -37,6 +38,7 @@
 		1F4C699CDBACF8CBB3F8BC8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6093E5F0BC6865FF8C5C /* LaunchScreen.storyboard */; };
 		1F4C69AAF3B425A32BC3917C /* YZFucai3DYilouMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6D047C48A739467ABF66 /* YZFucai3DYilouMovementsDataSource.m */; };
 		1F4C69D4E1D25DB652149E74 /* qilejiou.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C685A95FC42F18518D3F2 /* qilejiou.json */; };
+		1F4C69E93A508988E6038354 /* pailie5.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6A492C84A7ED1F510562 /* pailie5.json */; };
 		1F4C6A38AF0E9DEFEE8B98CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C63C7FB4ECA5EB174A3EC /* Main.storyboard */; };
 		1F4C6A843024310AA99B747A /* YZFucai3DMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6D0E4312D62C6358B3D7 /* YZFucai3DMovementsDataSource.m */; };
 		1F4C6A8CCD687EEF5A7EC96D /* YZYilouCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6C4308FC65B9CB92284C /* YZYilouCell.m */; };
@@ -110,6 +112,7 @@
 		1F4C650DDC20CEFEBA3539CF /* fucai3Djiou.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fucai3Djiou.json; sourceTree = "<group>"; };
 		1F4C659224EDA1F7857EE6D1 /* fucai3Dzhihe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fucai3Dzhihe.json; sourceTree = "<group>"; };
 		1F4C65F1EFAD1F876CF9181E /* YZMovementsConvertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsConvertTool.m; sourceTree = "<group>"; };
+		1F4C6614F9817572E1F415DF /* YZPailie5MovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZPailie5MovementsDataSource.h; sourceTree = "<group>"; };
 		1F4C6643DB399D79A0CAC29B /* ZXFFormItemLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFFormItemLayout.h; sourceTree = "<group>"; };
 		1F4C664629CE45CF9D2EB540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1F4C664F28FFC2A20637116A /* CATextLayer+Quick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+Quick.h"; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		1F4C6A1B5D297DDAEF74747F /* DemoTableViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTableViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4C6A1BB43BF162D5391F67 /* YZQileDaxiaoMovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZQileDaxiaoMovementsDataSource.h; sourceTree = "<group>"; };
 		1F4C6A38F644FC7B876ED0B5 /* DemoGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoGridView.h; sourceTree = "<group>"; };
+		1F4C6A492C84A7ED1F510562 /* pailie5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pailie5.json; sourceTree = "<group>"; };
 		1F4C6A605CA1AAF19A25CDB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F4C6AB5576187893BBD348D /* ZXFFormItemLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFFormItemLayer.h; sourceTree = "<group>"; };
 		1F4C6AB6173B556E4BE0F468 /* YZFucai3DDaxiaoMovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFucai3DDaxiaoMovementsDataSource.h; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		1F4C6EE51757A0C18B12EF3B /* YZYilouViewBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZYilouViewBottomView.h; sourceTree = "<group>"; };
 		1F4C6EEC7A3086D232C4B6CE /* YZMovementsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsCollectionView.h; sourceTree = "<group>"; };
 		1F4C6EFE76C428E402F072F2 /* movements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movements.json; sourceTree = "<group>"; };
+		1F4C6F7398CAB70E4882ED3E /* YZPailie5MovementsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZPailie5MovementsDataSource.m; sourceTree = "<group>"; };
 		1F4C6F858926FB6964E3D83A /* YZLengreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZLengreCell.h; sourceTree = "<group>"; };
 		1F4C6FF7C22FDAEF0A63AA39 /* YZFucai3DMovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFucai3DMovementsDataSource.h; sourceTree = "<group>"; };
 		1F4C6FFA1D6C669F8C89C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -355,6 +360,8 @@
 				1F4C6A1BB43BF162D5391F67 /* YZQileDaxiaoMovementsDataSource.h */,
 				1F4C6D047C48A739467ABF66 /* YZFucai3DYilouMovementsDataSource.m */,
 				1F4C63E2662A5F0DB31D4631 /* YZFucai3DYilouMovementsDataSource.h */,
+				1F4C6F7398CAB70E4882ED3E /* YZPailie5MovementsDataSource.m */,
+				1F4C6614F9817572E1F415DF /* YZPailie5MovementsDataSource.h */,
 			);
 			path = MovementsDatasources;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 				1F4C685A95FC42F18518D3F2 /* qilejiou.json */,
 				1F4C6DEF0B1F1D566D8D08A0 /* fucai3Dyilou.json */,
 				1F4C6C97F275431DF6D225A9 /* fucai3Dlengre.json */,
+				1F4C6A492C84A7ED1F510562 /* pailie5.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -585,6 +593,7 @@
 				1F4C69D4E1D25DB652149E74 /* qilejiou.json in Resources */,
 				1F4C6FF278CAB40BA24C05A8 /* fucai3Dyilou.json in Resources */,
 				1F4C6DE661DEF98FAB9384F7 /* fucai3Dlengre.json in Resources */,
+				1F4C69E93A508988E6038354 /* pailie5.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +679,7 @@
 				1F4C69AAF3B425A32BC3917C /* YZFucai3DYilouMovementsDataSource.m in Sources */,
 				1F4C68FE5825EA716030C9FC /* YZYilouViewBottomView.m in Sources */,
 				1F4C686C38BE2EB880C92351 /* YZLengreCell.m in Sources */,
+				1F4C61D277AC673D6B2F44CE /* YZPailie5MovementsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
