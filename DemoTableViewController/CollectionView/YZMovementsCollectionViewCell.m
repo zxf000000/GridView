@@ -61,7 +61,6 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
 
 
-
         _titleColor = [UIColor colorWithRed:240/255.0 green:235/255.0 blue:229/255.0 alpha:1.0];
         _dataColor = [UIColor colorWithRed:248/255.0 green:247/255.0 blue:243/255.0 alpha:1.0];
         _darkDataColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];

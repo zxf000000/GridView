@@ -17,11 +17,16 @@
 #import "YZFucai3DDaxiaoMovementsDataSource.h"
 #import "YZQileDaxiaoMovementsDataSource.h"
 #import "YZPailie5MovementsDataSource.h"
+#import "YZ11Xuan5MovementsDataSource.h"
+#import "YZ11Xuan5OtherMovementsDataSource.h"
+#import "YZ11Xuan5HezhiMovementsDataSource.h"
+#import "YZShengfucaiHaomaMovementsDataSource.h"
 
 
 @interface CollectionViewController () <YZMovementsViewDelegate>
 
 @property (strong, nonatomic) YZMovementsView  *demoView;
+@property (strong, nonatomic) YZMovementsView  *demoView1;
 
 
 @property (strong, nonatomic) UISegmentedControl  *segment;
@@ -29,6 +34,7 @@
 @property(nonatomic, strong) UIActivityIndicatorView *indicatorView;
 
 @property(nonatomic, strong) YZBaseMovementsDataSource *movementsDataSource;
+@property(nonatomic, strong) YZBaseMovementsDataSource *movementsDataSource1;
 
 @property(nonatomic, assign) NSInteger type;
 
@@ -85,6 +91,27 @@
                 _movementsDataSource = [[YZPailie5MovementsDataSource alloc] init];
                 break;
             }
+            case 12: {
+                _movementsDataSource = [[YZ11Xuan5MovementsDataSource alloc] init];
+                _movementsDataSource1 = [[YZ11Xuan5OtherMovementsDataSource alloc] init];
+                break;
+            }
+            case 13:
+            {
+                _movementsDataSource = [[YZ11Xuan5HezhiMovementsDataSource alloc] init];
+                break;
+            }
+            case 14:
+            {
+                _movementsDataSource = [[YZ11Xuan5HezhiMovementsDataSource alloc] init];
+                break;
+            }
+            case 16:
+            case 15:
+            {
+                _movementsDataSource = [[YZShengfucaiHaomaMovementsDataSource alloc] init];
+                break;
+            }
         }
     }
     return self;
@@ -116,6 +143,18 @@
             self.segment = [[UISegmentedControl alloc] initWithItems:@[@"第一位",@"第二位",@"第三位",@"第四位",@"第五位"]];
             break;
         }
+        case 12: {
+            self.segment = [[UISegmentedControl alloc] initWithItems:@[@"分布",@"大小",@"奇偶",@"质和"]];
+            break;
+        }
+        case 15: {
+            self.segment = [[UISegmentedControl alloc] initWithItems:@[@"三",@"一",@"零"]];
+            break;
+        }
+        case 16: {
+            self.segment = [[UISegmentedControl alloc] initWithItems:@[@"平负场数",@"胜负场数",@"胜平场数"]];
+            break;
+        }
     }
     [self.segment addTarget:self action:@selector(changed) forControlEvents:UIControlEventValueChanged];
     self.segment.tintColor = [UIColor colorWithWhite:0.7 alpha:1];
@@ -124,8 +163,18 @@
     _demoView = [[YZMovementsView alloc] initWithDelegate:self.movementsDataSource];
     _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
     [self.view addSubview:_demoView];
-
     _demoView.backgroundColor = [UIColor redColor];
+    if (self.type == 12) {
+        _demoView.hidden = YES;
+
+        _demoView1 = [[YZMovementsView alloc] initWithDelegate:self.movementsDataSource1];
+        _demoView1.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+        [self.view addSubview:_demoView1];
+        _demoView1.backgroundColor = [UIColor redColor];
+        _demoView1.hidden = NO;
+    }
+
+
 
     _indicatorView = [[UIActivityIndicatorView alloc]
                                                initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -160,9 +209,23 @@
             [weakSelf.demoView reloadData];
             [weakSelf.indicatorView stopAnimating];
         }];
+    } else if (self.type == 14) {
+        [((YZ11Xuan5HezhiMovementsDataSource *)self.movementsDataSource) loadQianyiDataWithHandle:^{
+            [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        }];
+    } else if (self.type == 16) {
+        [((YZShengfucaiHaomaMovementsDataSource *)self.movementsDataSource) loadSaiguoDataWithHandle:^{
+            [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        }];
     } else {
         [self.movementsDataSource loadDataWithHandle:^{
             [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        }];
+        [self.movementsDataSource1 loadDataWithHandle:^{
+            [weakSelf.demoView1 reloadData];
             [weakSelf.indicatorView stopAnimating];
         }];
     }
@@ -187,6 +250,26 @@
         }
         case 11:{
             ((YZPailie5MovementsDataSource *)self.movementsDataSource).index = index;
+            break;
+        }
+        case 12:{
+            if (index == 0) {
+                self.demoView.hidden = NO;
+                self.demoView1.hidden = YES;
+            } else {
+                ((YZ11Xuan5OtherMovementsDataSource *)self.movementsDataSource1).index = index;
+                self.demoView.hidden = YES;
+                self.demoView1.hidden = NO;
+                [self.demoView1 reloadData];
+            }
+            break;
+        }
+        case 15:{
+            ((YZShengfucaiHaomaMovementsDataSource *)self.movementsDataSource).index = index;
+            break;
+        }
+        case 16:{
+            ((YZShengfucaiHaomaMovementsDataSource *)self.movementsDataSource).index = index;
             break;
         }
     }
@@ -219,10 +302,19 @@
             _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
             break;
         }
+        case 15:
+        case 16:
         case 11:
         {
             self.segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
             _demoView.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+            break;
+        }
+        case 12:
+        {
+            self.segment.frame = CGRectMake(0, 0, self.view.bounds.size.width, 30);
+            _demoView.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+            _demoView1.frame = CGRectMake(0, 30, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
             break;
         }
         default:

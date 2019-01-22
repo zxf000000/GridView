@@ -54,6 +54,7 @@ static CGFloat const kTitleHeight = 40.f;
 
     switch (self.type) {
 
+
         case YZYilouViewControllerTypeYilou:
         {
             [YZMovementsConvertTool convertFucai3DYilouDataToModelsWithFileName:@"fucai3Dyilou" complete:^(NSArray *leftTitles, NSArray *topTitles, NSArray *allDatas) {

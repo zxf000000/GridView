@@ -871,4 +871,347 @@
     });
 }
 
+// 11选5
++ (void)convert11xuan5JsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"fbzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"yilou", @"xsyilou", @"jsyilou", @"zsyilou"];
+        for (int k = 0; k < keys.count; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            [self add11Xuan5SingleLineDataWith:singleRowData allDatas:allDatas row:i keys:keys];
+        }
+        NSMutableArray *allTopTitles = [NSMutableArray array];
+        for (NSInteger keyIndex = 0, length = keys.count; keyIndex < length; keyIndex++) {
+            NSInteger count = 11;
+            BOOL add = YES;
+            NSInteger width = 2;
+            if (keyIndex != 0) {
+                count = 6;
+                add = NO;
+                width = 1;
+            }
+            NSMutableArray *topArr = [NSMutableArray arrayWithCapacity:20];
+            for (int j = 0; j < count; ++j) {
+                YZMovementsModel *model;
+                model = [[YZMovementsModel alloc]
+                                           initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", add ? j + 1 : j] row:0 column:j lineSerialNumber:0 type:YZMovementsModelPositionTop];
+                [topArr addObject:model];
+            }
+            [allTopTitles addObject:topArr];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles.copy, allTopTitles.copy, allDatas.copy);
+        });
+    });
+}
+
++ (void)add11Xuan5SingleLineDataWith:(NSDictionary *)datas allDatas:(NSMutableArray *)allDatas row:(NSInteger)row keys:(NSArray *)keys {
+    for (NSInteger keyIndex = 0, length = keys.count; keyIndex < length; keyIndex ++) {
+        NSString *key = keys[keyIndex];
+        NSMutableArray *singleRowData = allDatas[keyIndex];
+        NSArray *titles = datas[keys[keyIndex]];
+        // 根据key判断关键字背景类型
+        BgType selectedBgType = BgTypeCircle;
+        BOOL add = YES;
+        if ([key isEqualToString:@"jsyilou"] || [key isEqualToString:@"xsyilou"] || [key isEqualToString:@"zsyilou"]) {
+            selectedBgType = BgTypeFull;
+            add = NO;
+        }
+        for (NSInteger titleIndex = 0, length = titles.count ; titleIndex < length; titleIndex++) {
+            NSString *title = titles[titleIndex];
+            YZMovementsModel *model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:title row:row column:titleIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+            if ([title integerValue] == 0) {
+                model.title = [NSString stringWithFormat:@"%zd",add ? titleIndex + 1 : titleIndex];
+                model.bgType = selectedBgType;
+            }
+            model.hasLinePoint = NO;
+            [singleRowData addObject:model];
+        }
+        allDatas[keyIndex] = singleRowData;
+    }
+}
+// 11选5奇偶
++ (void)convert11xuan5HezhiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"hzzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"hzyilou"];
+        for (int k = 0; k < keys.count; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            [self add11Xuan5HezhiSingleRowDataWithLeftTitles:leftTitles allDatas:allDatas singleRowData:singleRowData keys:keys hasLine:YES row:i];
+        }
+
+        NSMutableArray *topArr = [NSMutableArray array];
+        for (int j = 15; j < 46; ++j) {
+            YZMovementsModel *model;
+            model = [[YZMovementsModel alloc]
+                                       initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", j] row:0 column:j - 15 lineSerialNumber:0 type:YZMovementsModelPositionTop];
+            [topArr addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles, topArr, allDatas);
+        });
+    });
+}
+
++ (void)add11Xuan5HezhiSingleRowDataWithLeftTitles:(NSMutableArray *)leftTitles
+                              allDatas:(NSMutableArray *)allDatas
+                         singleRowData:(NSDictionary *)singleRowData
+                                  keys:(NSArray *)keys
+                               hasLine:(BOOL)hasLine
+                                   row:(NSInteger)row {
+
+    // 获取开奖号码
+    NSArray *openCodes = singleRowData[@"opencode"];
+    // 所有的拼起来
+    [singleRowData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (![keys containsObject:key]) {
+
+        } else {
+            // 第几位 ( 0 - 3)
+            NSInteger yilouIndex = [keys indexOfObject:key];
+            // 获取当前这一位的所有号码
+            NSArray *singleYilouArr = (NSArray *) obj;
+            for (NSInteger singleYilouIndex = 0, length = singleYilouArr.count; singleYilouIndex < length; singleYilouIndex++) {
+                NSString *number = singleYilouArr[singleYilouIndex];
+                // 当前这一位的开奖号码
+                NSString *currentOpenCode;
+                YZMovementsModel *model;
+                if (!hasLine) {
+                    model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column:singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+
+                } else {
+
+                    if ([number integerValue] == 0) {
+                        number = [NSString stringWithFormat:@"%zd", singleYilouIndex + 15];
+                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:YES bgType:BgTypeCircle title:number row:row column:singleYilouIndex lineSerialNumber:yilouIndex type:YZMovementsModelPositionDefault];
+                    } else {
+                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column: singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+                    }
+                }
+
+                NSMutableArray *currentData = allDatas[yilouIndex];
+                [currentData addObject:model];
+                allDatas[yilouIndex] = currentData;
+            }
+        }
+    }];
+}
+
+// 11选5前一分部
++ (void)convert11xuan5QianyiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"qyzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"yilou"];
+        for (int k = 0; k < keys.count; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            [self add11Xuan5QianyiSingleRowDataWithLeftTitles:leftTitles allDatas:allDatas singleRowData:singleRowData keys:keys hasLine:YES row:i];
+        }
+
+        NSMutableArray *topArr = [NSMutableArray array];
+        for (int j = 0; j < 11; ++j) {
+            YZMovementsModel *model;
+            model = [[YZMovementsModel alloc]
+                                       initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", j + 1] row:0 column:j lineSerialNumber:0 type:YZMovementsModelPositionTop];
+            [topArr addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles, topArr, allDatas);
+        });
+    });
+}
++ (void)add11Xuan5QianyiSingleRowDataWithLeftTitles:(NSMutableArray *)leftTitles
+                                          allDatas:(NSMutableArray *)allDatas
+                                     singleRowData:(NSDictionary *)singleRowData
+                                              keys:(NSArray *)keys
+                                           hasLine:(BOOL)hasLine
+                                               row:(NSInteger)row {
+
+    // 获取开奖号码
+    NSArray *openCodes = singleRowData[@"opencode"];
+    // 所有的拼起来
+    [singleRowData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (![keys containsObject:key]) {
+
+        } else {
+            // 第几位 ( 0 - 3)
+            NSInteger yilouIndex = [keys indexOfObject:key];
+            // 获取当前这一位的所有号码
+            NSArray *singleYilouArr = (NSArray *) obj;
+            for (NSInteger singleYilouIndex = 0, length = singleYilouArr.count; singleYilouIndex < length; singleYilouIndex++) {
+                NSString *number = singleYilouArr[singleYilouIndex];
+                // 当前这一位的开奖号码
+                NSString *currentOpenCode;
+                YZMovementsModel *model;
+                if (!hasLine) {
+                    model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column:singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+                } else {
+                    if ([number integerValue] == 0) {
+                        number = [NSString stringWithFormat:@"%zd", singleYilouIndex + 1];
+                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:YES bgType:BgTypeCircle title:number row:row column:singleYilouIndex lineSerialNumber:yilouIndex type:YZMovementsModelPositionDefault];
+                    } else {
+                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column: singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+                    }
+                }
+                NSMutableArray *currentData = allDatas[yilouIndex];
+                [currentData addObject:model];
+                allDatas[yilouIndex] = currentData;
+            }
+        }
+    }];
+}
+
+// 胜负彩
++ (void)convertShengfucaiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"jbzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"yilou"];
+        for (int k = 0; k < 3; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            [self addShengfucaiSingleRowDataWithLeftTitles:leftTitles allDatas:allDatas singleRowData:singleRowData keys:keys hasLine:YES row:i];
+        }
+        NSMutableArray *topArr = [NSMutableArray array];
+        for (int j = 0; j < 15; ++j) {
+            YZMovementsModel *model;
+            model = [[YZMovementsModel alloc]
+                                       initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", j ] row:0 column:j lineSerialNumber:0 type:YZMovementsModelPositionTop];
+            [topArr addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles, topArr, allDatas);
+        });
+    });
+}
+// 胜负彩  --- 赛过统计
++ (void)convertShengfucaiSaiguoJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *jsonString = [YZMovementsConvertTool stringFromFile:fileName];
+        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        NSArray *datas = jsonDic[@"page"][@"dxzs"];
+        NSMutableArray *leftTitles = [NSMutableArray array];
+        NSMutableArray *allDatas = [NSMutableArray array];
+        NSArray *keys = @[@"yilou"];
+        for (int k = 0; k < 3; ++k) {
+            [allDatas addObject:[NSMutableArray array]];
+        }
+        for (int i = 0, length = datas.count; i < length; ++i) {
+            NSDictionary *singleRowData = datas[i];
+            // 添加标题
+            [leftTitles addObject:[YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:singleRowData[@"expect"] row:i column:0 lineSerialNumber:0 type:YZMovementsModelPositionLeft]];
+            [self addShengfucaiSingleRowDataWithLeftTitles:leftTitles allDatas:allDatas singleRowData:singleRowData keys:keys hasLine:YES row:i];
+        }
+        NSMutableArray *topArr = [NSMutableArray array];
+        for (int j = 0; j < 15; ++j) {
+            YZMovementsModel *model;
+            model = [[YZMovementsModel alloc]
+                                       initWithWidth:1 height:1 hasLinePoint:NO bgType:(BgTypeNone) title:[NSString stringWithFormat:@"%zd", j ] row:0 column:j lineSerialNumber:0 type:YZMovementsModelPositionTop];
+            [topArr addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            complete(leftTitles, topArr, allDatas);
+        });
+    });
+}
+
++ (void)addShengfucaiSingleRowDataWithLeftTitles:(NSMutableArray *)leftTitles
+                                           allDatas:(NSMutableArray *)allDatas
+                                      singleRowData:(NSDictionary *)singleRowData
+                                               keys:(NSArray *)keys
+                                            hasLine:(BOOL)hasLine
+                                                row:(NSInteger)row {
+    NSMutableArray *datas = [NSMutableArray array];
+    for (NSInteger i = 0 ; i < 3 ; i ++) {
+        // 获取数组
+        NSArray *singleYilouArr = [singleRowData[keys.lastObject] subarrayWithRange:NSMakeRange(i * 15, 15)];
+//        [datas addObject:array];
+
+        // 在这里处理数组
+        NSMutableArray *singleMapData = allDatas[i];
+        for (NSInteger singleYilouIndex = 0, length = singleYilouArr.count; singleYilouIndex < length; singleYilouIndex++) {
+            NSString *number = singleYilouArr[singleYilouIndex];
+            YZMovementsModel *model;
+            if ([number isKindOfClass:[NSNull class]]) {
+                number = @"";
+                model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column: singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+            } else if ([number integerValue] == 0) {
+                number = [NSString stringWithFormat:@"%zd", singleYilouIndex];
+                model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:YES bgType:BgTypeCircle title:number row:row column:singleYilouIndex lineSerialNumber:i type:YZMovementsModelPositionDefault];
+            }
+            NSMutableArray *currentData = allDatas[i];
+            [currentData addObject:model];
+            allDatas[i] = currentData;
+        }
+    }
+
+    // 所有的拼起来
+//    [singleRowData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        if (![keys containsObject:key]) {
+//        } else {
+//            // 第几位 ( 0 - 3)
+//            NSInteger yilouIndex = [keys indexOfObject:key];
+//            // 获取当前这一位的所有号码
+//            NSArray *singleYilouArr = (NSArray *) obj;
+//            for (NSInteger singleYilouIndex = 0, length = singleYilouArr.count; singleYilouIndex < length; singleYilouIndex++) {
+//                NSString *number = singleYilouArr[singleYilouIndex];
+//                YZMovementsModel *model;
+//                if (!hasLine) {
+//                    model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column:singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+//                } else {
+//                    if ([number isKindOfClass:[NSNull class]]) {
+//                        number = @"";
+//                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column: singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+//                    } else if ([number integerValue] == 0) {
+//                        number = [NSString stringWithFormat:@"%zd", singleYilouIndex];
+//                        model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:YES bgType:BgTypeCircle title:number row:row column:singleYilouIndex lineSerialNumber:yilouIndex type:YZMovementsModelPositionDefault];
+//                    }
+//                }
+//                NSMutableArray *currentData = allDatas[yilouIndex];
+//                [currentData addObject:model];
+//                allDatas[yilouIndex] = currentData;
+//            }
+//        }
+//    }];
+}
+
 @end

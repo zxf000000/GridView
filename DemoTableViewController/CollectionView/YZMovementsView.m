@@ -61,6 +61,7 @@
 
 
 - (void)reloadData {
+
     if (self.shouldShowTitle) {
         [self.topTitleView reloadData];
         [self.leftTitleView reloadData];
@@ -68,6 +69,45 @@
     } else {
         [self.collectionView reloadData];
     }
+}
+
+- (void)reloadLayout {
+    CGSize itemSize = [self.delegate itemSizeForMovementsView:self];
+    _itemWidth = itemSize.width;
+    _itemHeight = itemSize.height;
+
+    _topTitleHeight = _itemHeight * [self.delegate topTitleRowCountForMovementsView:self];
+    _leftTitleWidth = _itemWidth * [self.delegate leftTitleColumnCountForMovementsView:self];
+    _shouldShowTitle = YES;
+    if ([self.delegate respondsToSelector:@selector(movementsViewShouldShowTitleWith:)]) {
+        _shouldShowTitle  = [self.delegate movementsViewShouldShowTitleWith:self];
+    }
+
+    YZMovementCollectionViewLayout *leftLayout = [[YZMovementCollectionViewLayout alloc] init];
+    leftLayout.delegate = self;
+    leftLayout.itemWidth = _itemWidth;
+    leftLayout.itemHeight = _itemHeight;
+
+    [_leftTitleView.collectionViewLayout invalidateLayout];
+    _leftTitleView.collectionViewLayout = leftLayout;
+
+    YZMovementCollectionViewLayout *layout = [[YZMovementCollectionViewLayout alloc] init];
+    layout.delegate = self;
+    layout.itemWidth = _itemWidth;
+    layout.itemHeight = _itemHeight;
+    _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:layout];
+
+    [_collectionView.collectionViewLayout invalidateLayout];
+    _collectionView.collectionViewLayout = layout;
+
+    YZMovementCollectionViewLayout *topLayout = [[YZMovementCollectionViewLayout alloc] init];
+    topLayout.delegate = self;
+    topLayout.itemWidth = _itemWidth;
+    topLayout.itemHeight = _itemHeight;
+
+    [_topTitleView.collectionViewLayout invalidateLayout];
+    _topTitleView.collectionViewLayout = topLayout;
+
 }
 
 - (void)layoutSubviews {

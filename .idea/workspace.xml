@@ -24,15 +24,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8b3a93-6ab0-4a54-95ff-9cc9479cb6fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/pailie5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5hezhi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5qianyi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/shenfucaihaoma.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/ViewController.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,40 +70,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="44" />
-              <folding>
-                <element signature="e#104#144#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="193" column="1" lean-forward="true" selection-start-line="193" selection-start-column="1" selection-end-line="193" selection-end-column="1" />
+            <state relative-caret-position="312">
+              <caret line="259" column="43" lean-forward="true" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
               <folding>
                 <element signature="e#151#187#0" expanded="true" />
               </folding>
@@ -99,14 +81,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/shenfucaihaoma.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding>
-                <element signature="e#104#137#0" expanded="true" />
+                <element signature="e#104#152#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="428">
+              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -114,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+            <state relative-caret-position="895">
+              <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
               <folding>
                 <element signature="e#142#168#0" expanded="true" />
               </folding>
@@ -126,43 +126,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="532">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.h">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1115">
+              <caret line="193" column="88" lean-forward="true" selection-start-line="193" selection-start-column="88" selection-end-line="193" selection-end-column="88" />
+              <folding>
+                <element signature="e#156#197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="67" column="170" selection-start-line="67" selection-start-column="170" selection-end-line="67" selection-end-column="170" />
+              <folding>
+                <element signature="e#104#137#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="1124" column="16" selection-start-line="1124" selection-start-column="16" selection-end-line="1124" selection-end-column="16" />
+              <folding>
+                <element signature="e#104#138#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" column="14" selection-start-line="12" selection-end-line="13" />
               <folding>
                 <element signature="e#104#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-              <folding>
-                <element signature="e#104#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="16" />
-              <folding>
-                <element signature="e#104#143#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,6 +191,7 @@
       <find>福彩</find>
       <find>convertFucai3DYilouDataToModelsWithFileName</find>
       <find>七星彩</find>
+      <find>itemWi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,18 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DemoTableViewController/Layers/TestMovementsView.m" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZMovementsLoadDataDataSource.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/Demo.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZBaseMovementsDataSource.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/YZMovementsConvertTool.m" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/movements.json" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3D.json" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/BaseDataSource/YZBaseMovementsDataSource.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DMovementsDataSource.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.m" />
@@ -214,7 +215,6 @@
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionViewController.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileDaxiaoMovementsDataSource.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Dyilou" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Dyilou.json" />
@@ -229,15 +229,28 @@
         <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZLengreCell.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZLengreCell.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.h" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/pailie5.json" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.h" />
         <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.m" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/ViewController.m" />
-        <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m" />
         <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.h" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.h" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5.json" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5hezhi.json" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5qianyi.json" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.h" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/shenfucaihaoma.json" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/ViewController.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.h" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.m" />
+        <option value="$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m" />
       </list>
     </option>
   </component>
@@ -371,15 +384,16 @@
       <workItem from="1547777203061" duration="20209000" />
       <workItem from="1547832075063" duration="6163000" />
       <workItem from="1548034674646" duration="21513000" />
-      <workItem from="1548119327808" duration="12554000" />
+      <workItem from="1548119327808" duration="23926000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119775000" />
+    <option name="totallyTimeSpent" value="131147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="2054" height="1336" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17047714" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -388,15 +402,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49850896" weight="0.32885376" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5805169" visible="true" weight="0.2347826" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.54920477" visible="true" weight="0.08853755" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4194831" side_tool="true" visible="true" weight="0.2347826" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.2668986" weight="0.3019763" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.45079523" side_tool="true" visible="true" weight="0.08853755" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.23558648" weight="0.3019763" />
       <window_info anchor="bottom" id="TeamCity" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -427,112 +441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/BaseDataSource/YZBaseMovementsDataSource.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/movements.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3D.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="64" />
-          <folding>
-            <element signature="e#104#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/DemoTableView.m">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/BaseDataSource/YZBaseMovementsDataSource.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <element signature="e#104#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Ddaxiao.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DMovementsDataSource.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="22" selection-start-line="6" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Djiou.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="471" column="22" selection-start-line="471" selection-start-column="22" selection-end-line="471" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementCollectionViewLayout.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DMovementsDataSource.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#104#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Dzhihe.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="634" column="14" selection-start-line="634" selection-start-column="14" selection-end-line="634" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/qiledaxiao.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="215" column="7" selection-start-line="215" selection-start-column="7" selection-end-line="215" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DDaxiaoMovementsDataSource.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" selection-start-line="24" selection-end-line="90" />
-          <folding>
-            <element signature="e#104#150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZFucai3DDaxiaoMovementsDataSource.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -584,13 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQileMovementsDataSource.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -603,16 +504,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/fucai3Dyilou">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="187" column="42" selection-start-line="187" selection-start-column="42" selection-end-line="187" selection-end-column="42" />
-          <folding>
-            <element signature="e#104#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="appcode.project-settings://c1fb03d6">
       <provider selected="true" editor-type-id="AppCode.ProjectSettings" />
@@ -729,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding>
-            <element signature="e#156#197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/pailie5.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1437">
@@ -746,27 +627,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="814" selection-start-line="814" selection-end-line="815" selection-end-column="114" />
-          <folding>
-            <element signature="e#104#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#104#137#0" expanded="true" />
           </folding>
@@ -776,29 +640,9 @@
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZQixingMovementsDataSource.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="16" />
+          <caret line="10" selection-start-line="10" selection-end-line="16" />
           <folding>
             <element signature="e#104#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#104#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <element signature="e#104#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,37 +654,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewController.m">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="105" column="23" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+        <state relative-caret-position="364">
+          <caret line="13" column="45" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="13" selection-end-column="45" />
           <folding>
-            <element signature="e#142#168#0" expanded="true" />
+            <element signature="e#104#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.h">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZPailie5MovementsDataSource.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="868">
+          <caret line="89" lean-forward="true" selection-start-line="19" selection-end-line="89" />
+          <folding>
+            <element signature="e#104#144#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m">
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="193" column="1" lean-forward="true" selection-start-line="193" selection-start-column="1" selection-end-line="193" selection-end-column="1" />
+        <state relative-caret-position="837">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1048">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
-            <element signature="e#151#187#0" expanded="true" />
+            <element signature="e#104#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="2492" column="10" selection-start-line="2492" selection-start-column="10" selection-end-line="2492" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" column="45" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5OtherMovementsDataSource.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="20" selection-start-line="20" selection-end-line="37" selection-end-column="1" />
+          <folding>
+            <element signature="e#104#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementCollectionViewLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="37" column="92" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5hezhi.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" column="66" selection-start-line="13" selection-end-line="14" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5HezhiMovementsDataSource.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#104#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/11xuan5qianyi.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1337">
+          <caret line="344" column="15" selection-start-line="344" selection-start-column="15" selection-end-line="344" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementCollectionViewLayout.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="81" column="83" lean-forward="true" selection-start-line="81" selection-start-column="83" selection-end-line="81" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" column="40" selection-start-line="13" selection-end-line="14" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZ11Xuan5MovementsDataSource.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="32" selection-start-line="32" selection-end-line="35" selection-end-column="1" />
+          <folding>
+            <element signature="e#104#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/YZYilouViewController.m">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="67" column="170" selection-start-line="67" selection-start-column="170" selection-end-line="67" selection-end-column="170" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/YZMovementsCollectionViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1115">
+          <caret line="193" column="88" lean-forward="true" selection-start-line="193" selection-start-column="88" selection-end-line="193" selection-end-column="88" />
+          <folding>
+            <element signature="e#156#197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/Json/shenfucaihaoma.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1124" column="16" selection-start-line="1124" selection-start-column="16" selection-end-line="1124" selection-end-column="16" />
+          <folding>
+            <element signature="e#104#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#104#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="895">
+          <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
+          <folding>
+            <element signature="e#142#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/ConvertTool/YZMovementsConvertTool.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/ViewControllers/CollectionViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="259" column="43" lean-forward="true" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
+          <folding>
+            <element signature="e#151#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DemoTableViewController/CollectionView/MovementsDatasources/YZShengfucaiHaomaMovementsDataSource.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="14" selection-start-line="12" selection-end-line="13" />
           <folding>
             <element signature="e#104#137#0" expanded="true" />
           </folding>

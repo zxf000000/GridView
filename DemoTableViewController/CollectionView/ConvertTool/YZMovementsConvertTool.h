@@ -51,5 +51,16 @@ typedef void(^ConvertDataCompleteHandle)(NSArray *leftTitles, NSArray *topTitles
 
 // 排列5
 + (void)convertPailie5DataToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+// 11选5
++ (void)convert11xuan5JsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+// 11选5奇偶
++ (void)convert11xuan5HezhiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+// 11选5前一分部
++ (void)convert11xuan5QianyiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+
+// 胜负彩 -- 号码分布
++ (void)convertShengfucaiJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
+// 赛过统计
++ (void)convertShengfucaiSaiguoJsonToModelsWithFileName:(NSString *)fileName complete:(ConvertDataCompleteHandle)complete;
 
 @end

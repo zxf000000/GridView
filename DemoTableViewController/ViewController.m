@@ -61,6 +61,16 @@
         cell.textLabel.text = @"UICollectionView(福彩3D/冷热分析)";
     } else if (indexPath.row == 10) {
         cell.textLabel.text = @"UICollectionView(排列5)";
+    } else  if (indexPath.row == 11) {
+        cell.textLabel.text = @"UICollectionView(11选5/走势)";
+    } else if (indexPath.row == 12) {
+        cell.textLabel.text = @"UICollectionView(11选5/和值)";
+    } else if (indexPath.row == 13) {
+        cell.textLabel.text = @"UICollectionView(11选5/前一分部)";
+    } else  if (indexPath.row == 14) {
+        cell.textLabel.text = @"UICollectionView(胜负彩/号码分布)";
+    } else  if (indexPath.row == 15) {
+        cell.textLabel.text = @"UICollectionView(胜负彩/赛果统计)";
     } else {
         cell.textLabel.text = @"CAShapeLayer(1)";
     }
@@ -68,7 +78,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 12;
+    return 17;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,6 +114,21 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 10){
         CollectionViewController *vc = [[CollectionViewController alloc] initWithType:11];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 11){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:12];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 12){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:13];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 13){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:14];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 14){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:15];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 15){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:16];
         [self.navigationController pushViewController:vc animated:YES];
     } else  {
         ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];
