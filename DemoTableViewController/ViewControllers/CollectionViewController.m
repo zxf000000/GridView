@@ -74,6 +74,11 @@
                 _movementsDataSource = [[YZQileDaxiaoMovementsDataSource alloc] init];
                 break;
             }
+            case 8:
+            {
+                _movementsDataSource = [[YZQileDaxiaoMovementsDataSource alloc] init];
+                break;
+            }
         }
     }
     return self;
@@ -132,6 +137,11 @@
         }];
     } else if (self.type == 7) {
         [((YZQileDaxiaoMovementsDataSource *)self.movementsDataSource) loadDaxiaoWithHandle:^{
+            [weakSelf.demoView reloadData];
+            [weakSelf.indicatorView stopAnimating];
+        }];
+    } else if (self.type == 8) {
+        [((YZQileDaxiaoMovementsDataSource *)self.movementsDataSource) loadJiouDataWithhHandle:^{
             [weakSelf.demoView reloadData];
             [weakSelf.indicatorView stopAnimating];
         }];

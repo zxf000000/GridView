@@ -64,6 +64,9 @@ typedef NS_ENUM(NSInteger, YZMovementsModelTitleColor) {
 @property(nonatomic, assign) BOOL hasBadge;
 // 角标的数字
 @property(nonatomic, assign) NSInteger badgeNumber;
+// 柱状图
+@property(nonatomic, assign) BOOL isPercent;
+@property(nonatomic, assign) CGFloat percent;
 
 - (instancetype)initWithWidth:(NSInteger)width
                        height:(NSInteger)height

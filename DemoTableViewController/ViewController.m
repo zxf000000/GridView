@@ -11,6 +11,7 @@
 #import "CollectionViewController.h"
 #import "ZXFFormViewController.h"
 #import "YYFPSLabel.h"
+#import "YZYilouViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -52,6 +53,12 @@
         cell.textLabel.text = @"UICollectionView(福彩3D/质和分析)";
     } else if (indexPath.row == 6) {
         cell.textLabel.text = @"UICollectionView(七乐彩/大小)";
+    } else if (indexPath.row == 7) {
+        cell.textLabel.text = @"UICollectionView(七乐彩/奇偶)";
+    } else if (indexPath.row == 8) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/遗漏分析)";
+    } else if (indexPath.row == 9) {
+        cell.textLabel.text = @"UICollectionView(福彩3D/冷热分析)";
     } else {
         cell.textLabel.text = @"CAShapeLayer(1)";
     }
@@ -59,7 +66,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 11;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,6 +90,15 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 6){
         CollectionViewController *vc = [[CollectionViewController alloc] initWithType:7];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 7){
+        CollectionViewController *vc = [[CollectionViewController alloc] initWithType:8];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 8){
+        YZYilouViewController *vc = [[YZYilouViewController alloc] initWithType:YZYilouViewControllerTypeYilou];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 9){
+        YZYilouViewController *vc = [[YZYilouViewController alloc] initWithType:YZYilouViewControllerTypeLengre];
         [self.navigationController pushViewController:vc animated:YES];
     } else  {
         ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];

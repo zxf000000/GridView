@@ -188,6 +188,13 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         }
             break;
     }
+    if (self.model.isPercent) {
+        self.bgLayer.hidden = NO;
+        self.bgLayer.strokeColor = [UIColor redColor].CGColor;
+        self.bgLayer.fillColor = [UIColor redColor].CGColor;
+        self.bgLayer.path = [self percentPathWithPercent:self.model.percent * 3].CGPath;
+        self.titleLabel.textColor = [UIColor clearColor];
+    }
 }
 
 - (UIBezierPath *)circlepath {
@@ -225,6 +232,19 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         [_allPath closePath];
     }
     return _allPath;
+}
+
+- (UIBezierPath *)percentPathWithPercent:(CGFloat)percent {
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGFloat topMargin = self.bounds.size.height / 4;
+    CGFloat height = self.bounds.size.height / 2;
+    CGFloat totalWidth = self.bounds.size.width * percent;
+    [path moveToPoint:CGPointMake(0, topMargin)];
+    [path addLineToPoint:CGPointMake(totalWidth, topMargin)];
+    [path addLineToPoint:CGPointMake(totalWidth, topMargin + height)];
+    [path addLineToPoint:CGPointMake(0, topMargin + height)];
+    [path closePath];
+    return path;
 }
 
 - (void)drawRect:(CGRect)rect {

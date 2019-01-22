@@ -34,6 +34,9 @@ typedef void(^LoadDataCompleteHandle)(void);
 
 - (CGSize)itemSizeForMovementsView:(YZMovementsView *)view;
 
+// 是否展示title
+- (BOOL)movementsViewShouldShowTitleWith:(YZMovementsView *)view;
+
 @end
 
 

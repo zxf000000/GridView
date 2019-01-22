@@ -1,47 +1,23 @@
 //
-// Created by 云舟02 on 2019-01-21.
+// Created by 云舟02 on 2019-01-22.
 // Copyright (c) 2019 ___FULLUSERNAME___. All rights reserved.
 //
 
-#import "YZQileDaxiaoMovementsDataSource.h"
-#import "YZMovementsConvertTool.h"
+#import "YZFucai3DYilouMovementsDataSource.h"
 
 
-@implementation YZQileDaxiaoMovementsDataSource
-
-- (void)loadJiouDataWithhHandle:(LoadDataCompleteHandle)complete {
-    [YZMovementsConvertTool convertQilecaiJiouJsonToModelsWithFile:@"qilejiou" complete:^(NSArray *leftTitles, NSArray *topTitles, NSArray *allDatas) {
-        self.leftTitles = leftTitles;
-        self.datas = allDatas;
-        self.topTitles = topTitles;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            complete();
-        });
-    }];
-}
-
-- (void)loadDaxiaoWithHandle:(LoadDataCompleteHandle)complete {
-    [YZMovementsConvertTool convertQilecaiDaxiaoJsonToModelsWithFile:@"qiledaxiao" complete:^(NSArray *leftTitles, NSArray *topTitles, NSArray *allDatas) {
-        self.leftTitles = leftTitles;
-        self.datas = allDatas;
-        self.topTitles = topTitles;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            complete();
-        });
-    }];
-
-}
+@implementation YZFucai3DYilouMovementsDataSource
 
 - (BOOL)movementsViewShouldShowTitleWith:(YZMovementsView *)view {
-    return YES;
+    return NO;
 }
 
 // 行列数
 - (NSInteger)numberOfColumnsForMovementsView:(YZMovementsView *)view {
-    return self.topTitles.count / 3 * 2;
+    return self.columnCount;
 }
 - (NSInteger)rowOfColumnsForMovementsView:(YZMovementsView *)view {
-    return self.leftTitles.count;
+    return self.datas.count / self.columnCount;
 }
 
 // 头部标题
@@ -78,8 +54,14 @@
 }
 
 - (CGSize)itemSizeForMovementsView:(YZMovementsView *)view {
-    return CGSizeMake(kScreenWidth / 12.f, kScreenWidth / 12.f);
+    return self.itemSize;
 }
 
+- (NSInteger)columnCount {
+    if (_columnCount == 0) {
+        return 1;
+    }
+    return _columnCount;
+}
 
 @end

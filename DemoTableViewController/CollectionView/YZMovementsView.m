@@ -26,7 +26,7 @@
 @property(nonatomic, assign) CGFloat topTitleHeight;
 @property(nonatomic, assign) CGFloat leftTitleWidth;
 
-@property(nonatomic, assign) BOOL pagingEnabled;
+@property(nonatomic, assign) BOOL shouldShowTitle;
 
 @end
 
@@ -53,36 +53,85 @@
 
     _topTitleHeight = _itemHeight * [self.delegate topTitleRowCountForMovementsView:self];
     _leftTitleWidth = _itemWidth * [self.delegate leftTitleColumnCountForMovementsView:self];
-
+    _shouldShowTitle = YES;
+    if ([self.delegate respondsToSelector:@selector(movementsViewShouldShowTitleWith:)]) {
+        _shouldShowTitle  = [self.delegate movementsViewShouldShowTitleWith:self];
+    }
 }
 
 
 - (void)reloadData {
-    [self.topTitleView reloadData];
-    [self.leftTitleView reloadData];
-    [self.collectionView reloadData];
-
+    if (self.shouldShowTitle) {
+        [self.topTitleView reloadData];
+        [self.leftTitleView reloadData];
+        [self.collectionView reloadData];
+    } else {
+        [self.collectionView reloadData];
+    }
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.collectionView.frame = CGRectMake(_leftTitleWidth, _topTitleHeight, self.bounds.size.width - _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
-    self.topTitleView.frame = CGRectMake(_leftTitleWidth, 0, self.bounds.size.width - _leftTitleWidth, _topTitleHeight);
-    self.leftTitleView.frame = CGRectMake(0, _topTitleHeight, _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
-    self.titleLabel.frame = CGRectMake(0, 0, _leftTitleWidth, _topTitleHeight);
+    if (self.shouldShowTitle) {
+        self.collectionView.frame = CGRectMake(_leftTitleWidth, _topTitleHeight, self.bounds.size.width - _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
+        self.topTitleView.frame = CGRectMake(_leftTitleWidth, 0, self.bounds.size.width - _leftTitleWidth, _topTitleHeight);
+        self.leftTitleView.frame = CGRectMake(0, _topTitleHeight, _leftTitleWidth, self.bounds.size.height - _topTitleHeight);
+        self.titleLabel.frame = CGRectMake(0, 0, _leftTitleWidth, _topTitleHeight);
+    } else {
+        self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    }
+
 }
 
 - (void)setupUI {
 
     self.backgroundColor = [UIColor yellowColor];
 
-    _titleLabel = [[UILabel alloc] init];
-    _titleLabel.text = @"期号";
-    _titleLabel.font = [UIFont systemFontOfSize:14];
-    _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
-    _titleLabel.backgroundColor = [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0];
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:_titleLabel];
+    if (_shouldShowTitle) {
+        YZMovementCollectionViewLayout *topLayout = [[YZMovementCollectionViewLayout alloc] init];
+        topLayout.delegate = self;
+        topLayout.itemWidth = _itemWidth;
+        topLayout.itemHeight = _itemHeight;
+
+        _topTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 0, self.bounds.size.width - 50, self.bounds.size.height - 100)) collectionViewLayout:topLayout];
+        _topTitleView.backgroundColor = [UIColor yellowColor];
+        [self addSubview:_topTitleView];
+
+        _topTitleView.dataSource = self;
+        _topTitleView.delegate = self;
+        _topTitleView.backgroundColor = [UIColor whiteColor];
+
+        [_topTitleView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
+
+        _topTitleView.bounces = NO;
+
+
+        YZMovementCollectionViewLayout *leftLayout = [[YZMovementCollectionViewLayout alloc] init];
+        leftLayout.delegate = self;
+        leftLayout.itemWidth = _itemWidth;
+        leftLayout.itemHeight = _itemHeight;
+
+        _leftTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:leftLayout];
+        _leftTitleView.backgroundColor = [UIColor yellowColor];
+        [self addSubview:_leftTitleView];
+
+        _leftTitleView.dataSource = self;
+        _leftTitleView.delegate = self;
+        _leftTitleView.backgroundColor = [UIColor whiteColor];
+        [_leftTitleView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
+
+        _leftTitleView.bounces = NO;
+
+
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.text = @"期号";
+        _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
+        _titleLabel.backgroundColor = [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:_titleLabel];
+    }
+
 
     YZMovementCollectionViewLayout *layout = [[YZMovementCollectionViewLayout alloc] init];
     layout.delegate = self;
@@ -102,42 +151,6 @@
     layout.complete = ^(NSArray *attrs, NSDictionary *linePoints) {
         [weakSelf addLinesForAttrs:attrs linePoints:linePoints];
     };
-
-
-    YZMovementCollectionViewLayout *topLayout = [[YZMovementCollectionViewLayout alloc] init];
-    topLayout.delegate = self;
-    topLayout.itemWidth = _itemWidth;
-    topLayout.itemHeight = _itemHeight;
-
-    _topTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 0, self.bounds.size.width - 50, self.bounds.size.height - 100)) collectionViewLayout:topLayout];
-    _topTitleView.backgroundColor = [UIColor yellowColor];
-    [self addSubview:_topTitleView];
-
-    _topTitleView.dataSource = self;
-    _topTitleView.delegate = self;
-    _topTitleView.backgroundColor = [UIColor whiteColor];
-
-    [_topTitleView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
-
-    _topTitleView.bounces = NO;
-
-
-    YZMovementCollectionViewLayout *leftLayout = [[YZMovementCollectionViewLayout alloc] init];
-    leftLayout.delegate = self;
-    leftLayout.itemWidth = _itemWidth;
-    leftLayout.itemHeight = _itemHeight;
-
-    _leftTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:leftLayout];
-    _leftTitleView.backgroundColor = [UIColor yellowColor];
-    [self addSubview:_leftTitleView];
-
-    _leftTitleView.dataSource = self;
-    _leftTitleView.delegate = self;
-    _leftTitleView.backgroundColor = [UIColor whiteColor];
-    [_leftTitleView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
-
-    _leftTitleView.bounces = NO;
-
 }
 
 #pragma mark titleLayoutDelegate
