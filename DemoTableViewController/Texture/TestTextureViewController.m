@@ -22,6 +22,9 @@
     layout.delegate = self;
     layout.itemWidth = 30;
     layout.itemHeight = 30;
+    layout.itemCount = 100;
+    
+    
     _collectionNode = [[ASCollectionNode alloc]
             initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:layout];
     [self.view addSubnode:_collectionNode];
@@ -33,7 +36,7 @@
 }
 
 - (NSInteger)columnCountForTitleLayout:(YZMovementCollectionViewLayout *)layout {
-    return 20;
+    return 30;
 }
 
 
@@ -46,7 +49,7 @@
  * @see @c collectionView:numberOfItemsInSection:
  */
 - (NSInteger)collectionNode:(ASCollectionNode *)collectionNode numberOfItemsInSection:(NSInteger)section {
-    return 2000;
+    return 100;
 }
 
 /**

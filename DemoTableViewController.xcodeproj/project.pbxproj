@@ -33,6 +33,7 @@
 		1F4C66C070DD54CB747CB4FB /* DemoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C634C5DFE21E042596073 /* DemoDataModel.m */; };
 		1F4C678FDED1916161549077 /* YZ11Xuan5HezhiMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6C4D9740DEFC952AC9F5 /* YZ11Xuan5HezhiMovementsDataSource.m */; };
 		1F4C67A1AFAE4AC83C4150FB /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6D5C0933DFC9D2E5125C /* CollectionViewController.m */; };
+		1F4C67DF3DE5898685F78A5E /* YZMovementsBarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6984D0231AA8402B036C /* YZMovementsBarNode.m */; };
 		1F4C68375E4117CD8DA5D429 /* DemoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C64CB2EACBFEEC98CECFD /* DemoTableView.m */; };
 		1F4C686C38BE2EB880C92351 /* YZLengreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6E5CC1E81B3B74FBE10D /* YZLengreCell.m */; };
 		1F4C689A56B398026B2C40C9 /* YZ11Xuan5MovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C64E34F2B0780EBBC446F /* YZ11Xuan5MovementsDataSource.m */; };
@@ -66,6 +67,9 @@
 		1F4C6FD93B53F2F5A8A4C031 /* shenfucaihaoma.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6A9731FDD37515A609B2 /* shenfucaihaoma.json */; };
 		1F4C6FDD29B52D1AE3CEF481 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C671A627FF609393C367D /* DemoViewController.m */; };
 		1F4C6FF278CAB40BA24C05A8 /* fucai3Dyilou.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6DEF0B1F1D566D8D08A0 /* fucai3Dyilou.json */; };
+		87171D9121F82E5200C251B7 /* YZMovementsNormalCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 87171D9021F82E5200C251B7 /* YZMovementsNormalCellNode.m */; };
+		87171D9421F84B4A00C251B7 /* YZMovementsLayoutDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87171D9321F84B4A00C251B7 /* YZMovementsLayoutDelegate.m */; };
+		87171D9721F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 87171D9521F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.m */; };
 		872944AF21F162000048170A /* YZMovementCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 872944AE21F162000048170A /* YZMovementCollectionViewLayout.m */; };
 		872944B221F1630B0048170A /* YZMovementsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 872944B121F1630B0048170A /* YZMovementsModel.m */; };
 		872944B521F163A90048170A /* YZMovementsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872944B421F163A90048170A /* YZMovementsCollectionViewCell.m */; };
@@ -138,6 +142,7 @@
 		1F4C674A33230D43093CBB0A /* YZ11Xuan5MovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZ11Xuan5MovementsDataSource.h; sourceTree = "<group>"; };
 		1F4C6760CFA3173928263404 /* YZMovementsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsCollectionView.m; sourceTree = "<group>"; };
 		1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		1F4C678FA436ACA3B1683A96 /* YZMovementsBarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsBarNode.h; sourceTree = "<group>"; };
 		1F4C67C6F4B111456B03256C /* YZShengfucaiHaomaMovementsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZShengfucaiHaomaMovementsDataSource.m; sourceTree = "<group>"; };
 		1F4C67D5C31A6550EC4767E2 /* YZYilouViewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZYilouViewBottomView.m; sourceTree = "<group>"; };
 		1F4C680431F3D108A4223C18 /* TestTextureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextureViewController.h; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 		1F4C685BD3687707B63427A5 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		1F4C68730461A17BD972F1C3 /* DemoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDataModel.h; sourceTree = "<group>"; };
 		1F4C68882E3ABB8A2C34CF99 /* TestTextureCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextureCellNode.m; sourceTree = "<group>"; };
+		1F4C6984D0231AA8402B036C /* YZMovementsBarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsBarNode.m; sourceTree = "<group>"; };
 		1F4C69A3C9A4DC37E71C0177 /* TestTextureCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextureCellNode.h; sourceTree = "<group>"; };
 		1F4C69A951E1E4A76B8189CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F4C69BC5793F0C29DF3457F /* DemoTableViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewControllerTests.m; sourceTree = "<group>"; };
@@ -200,6 +206,12 @@
 		1F4C6F858926FB6964E3D83A /* YZLengreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZLengreCell.h; sourceTree = "<group>"; };
 		1F4C6FF7C22FDAEF0A63AA39 /* YZFucai3DMovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFucai3DMovementsDataSource.h; sourceTree = "<group>"; };
 		1F4C6FFA1D6C669F8C89C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		87171D8F21F82E5200C251B7 /* YZMovementsNormalCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZMovementsNormalCellNode.h; sourceTree = "<group>"; };
+		87171D9021F82E5200C251B7 /* YZMovementsNormalCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZMovementsNormalCellNode.m; sourceTree = "<group>"; };
+		87171D9221F84B4A00C251B7 /* YZMovementsLayoutDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZMovementsLayoutDelegate.h; sourceTree = "<group>"; };
+		87171D9321F84B4A00C251B7 /* YZMovementsLayoutDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZMovementsLayoutDelegate.m; sourceTree = "<group>"; };
+		87171D9521F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZMovementsCollectionLayoutInfo.m; sourceTree = "<group>"; };
+		87171D9621F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsCollectionLayoutInfo.h; sourceTree = "<group>"; };
 		872944AD21F162000048170A /* YZMovementCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZMovementCollectionViewLayout.h; sourceTree = "<group>"; };
 		872944AE21F162000048170A /* YZMovementCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZMovementCollectionViewLayout.m; sourceTree = "<group>"; };
 		872944B021F1630B0048170A /* YZMovementsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZMovementsModel.h; sourceTree = "<group>"; };
@@ -294,6 +306,8 @@
 				1F4C60A51AC8738206955B30 /* FPSLabel */,
 				1F4C69D94756ABE7149FBFFE /* ViewControllers */,
 				1F4C6AD30D4D8CA128F3C3F0 /* Texture */,
+				1F4C6984D0231AA8402B036C /* YZMovementsBarNode.m */,
+				1F4C678FA436ACA3B1683A96 /* YZMovementsBarNode.h */,
 			);
 			path = DemoTableViewController;
 			sourceTree = "<group>";
@@ -470,6 +484,10 @@
 		872944AC21F161A60048170A /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				87171D9621F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.h */,
+				87171D9521F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.m */,
+				87171D9221F84B4A00C251B7 /* YZMovementsLayoutDelegate.h */,
+				87171D9321F84B4A00C251B7 /* YZMovementsLayoutDelegate.m */,
 				872944AD21F162000048170A /* YZMovementCollectionViewLayout.h */,
 				872944AE21F162000048170A /* YZMovementCollectionViewLayout.m */,
 				872944B021F1630B0048170A /* YZMovementsModel.h */,
@@ -483,6 +501,8 @@
 				1F4C6CF4947CD25B6009F670 /* MovementsDatasources */,
 				1F4C6BB3E3BF415A7BCA3C92 /* ConvertTool */,
 				1F4C6E9624DAA5FD18979F07 /* Json */,
+				87171D8F21F82E5200C251B7 /* YZMovementsNormalCellNode.h */,
+				87171D9021F82E5200C251B7 /* YZMovementsNormalCellNode.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -700,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87D8899F21EEBE3A00762662 /* TestModel.m in Sources */,
+				87171D9721F84CF300C251B7 /* YZMovementsCollectionLayoutInfo.m in Sources */,
 				8761278221F07B9A00A81DEE /* ZXFLeftTitleViewDelegate.m in Sources */,
 				1F4C60A49983044F34E3AF7F /* main.m in Sources */,
 				87A089FD21EDE8FB00A9BCE8 /* DemoCollectionViewCell.m in Sources */,
@@ -716,6 +737,8 @@
 				1F4C66C070DD54CB747CB4FB /* DemoDataModel.m in Sources */,
 				87A089FA21EDE70E00A9BCE8 /* DemoLayout.m in Sources */,
 				872944AF21F162000048170A /* YZMovementCollectionViewLayout.m in Sources */,
+				87171D9421F84B4A00C251B7 /* YZMovementsLayoutDelegate.m in Sources */,
+				87171D9121F82E5200C251B7 /* YZMovementsNormalCellNode.m in Sources */,
 				87D8899B21EEBC4900762662 /* TestCollectionViewCell.m in Sources */,
 				1F4C6E6FDBA70847FAB94DD0 /* ZXFFormSheetView.m in Sources */,
 				872944B221F1630B0048170A /* YZMovementsModel.m in Sources */,
@@ -748,6 +771,7 @@
 				1F4C601E097EC99348F7D16E /* YZShengfucaiHaomaMovementsDataSource.m in Sources */,
 				1F4C66B42B6EC27EC3EDE862 /* TestTextureViewController.m in Sources */,
 				1F4C65B50C8D13B04B9DBA8B /* TestTextureCellNode.m in Sources */,
+				1F4C67DF3DE5898685F78A5E /* YZMovementsBarNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

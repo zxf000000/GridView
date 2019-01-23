@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YZMovementsModel.h"
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
 
 @protocol YZMovementCollectionViewLayoutDelegate;
 
-@interface YZMovementCollectionViewLayout : UICollectionViewLayout
+@interface YZMovementCollectionViewLayout : UICollectionViewLayout <ASDataControllerLayoutDelegate>
 
 
 @property (weak, nonatomic) id<YZMovementCollectionViewLayoutDelegate>  delegate;
@@ -23,6 +24,14 @@
 @property (nonatomic, assign) CGFloat itemWidth;
 
 @property (nonatomic, assign) CGFloat itemHeight;
+
+// TODO: 测试数据
+@property (nonatomic, assign) NSInteger itemCount;
+
+
+@property (weak, nonatomic) ASCollectionNode  *collectionNode;
+
+
 
 @end
 

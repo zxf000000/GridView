@@ -9,9 +9,9 @@
 #import "YZMovementsCollectionViewCell.h"
 #import <YYText.h>
 #import "YZMovementsModel.h"
+#import <YYAsyncLayer.h>
 
 #define ssRGBHex(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 
 CGFloat const YZMovementsCellBallMargin = 5.f;
 @interface YZMovementsCollectionViewCell()
@@ -33,6 +33,8 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
 @end
 
 @implementation YZMovementsCollectionViewCell
+
+
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -59,6 +61,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         _titleLabel = [[YYLabel alloc] init];
         _titleLabel.font = [UIFont systemFontOfSize:10];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.frame = self.bounds;
 
 
         _titleColor = [UIColor colorWithRed:240/255.0 green:235/255.0 blue:229/255.0 alpha:1.0];
@@ -68,9 +71,9 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         [self addSubview:_titleLabel];
 
         [self setupLayers];
-
-        CGFloat width = self.bounds.size.width;
-        CGFloat height = self.bounds.size.height;
+//
+//        CGFloat width = self.bounds.size.width;
+//        CGFloat height = self.bounds.size.height;
 
 //        UIBezierPath *leftBorderPath = [UIBezierPath bezierPath];
 //        [leftBorderPath moveToPoint:(CGPointMake(0 , 0))];
@@ -176,15 +179,7 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         _bgLayer.path = [self percentPathWithPercent:self.model.percent * 3].CGPath;
         _titleLabel.textColor = [UIColor clearColor];
     }
-
-    [self setNeedsLayout];
-}
-
-- (void)layoutSubviews {
-//    [super layoutSubviews];
-
-    self.titleLabel.frame = self.bounds;
-
+    
     switch (self.model.bgType) {
         case BgTypeCircle:
         {
@@ -220,6 +215,15 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
         }
             break;
     }
+
+//    [self setNeedsLayout];
+}
+
+- (void)layoutSubviews {
+//    [super layoutSubviews];
+
+    _titleLabel.frame = self.bounds;
+    
 
 }
 
