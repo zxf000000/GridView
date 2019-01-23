@@ -15,7 +15,6 @@
 
 @property(nonatomic, assign) CGFloat itemWidth;
 @property(nonatomic, assign) CGFloat itemHeight;
-//@property(strong, nonatomic) UICollectionView *collectionView;
 @property(strong, nonatomic) ASCollectionNode *collectionView;
 
 @property(strong, nonatomic) UICollectionView *topTitleView;
@@ -255,6 +254,7 @@
     [linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber *lineNumber, NSMutableArray *points, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSInteger count = 0;
+        // 颜色问题
 //        UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
 //        if ([lineNumber integerValue] == 1) {
 //            color = [UIColor brownColor];
@@ -316,6 +316,7 @@
 
 }
 
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == self.collectionView.view) {
         CGPoint offset = self.topTitleView.contentOffset;
@@ -325,6 +326,7 @@
         self.topTitleView.contentOffset = offset;
         self.leftTitleView.contentOffset = offsetLeft;
     }
+    // 暂时不允许标题栏主动拖拽,联动代码会引起卡顿,后期再处理
 //    } else if (scrollView == self.leftTitleView) {
 //        CGPoint offset = self.collectionView.contentOffset;
 //        offset.y = self.leftTitleView.contentOffset.y;
