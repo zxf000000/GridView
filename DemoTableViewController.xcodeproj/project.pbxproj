@@ -27,7 +27,9 @@
 		1F4C64BE8A5FCAB94299250F /* YZMovementsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6760CFA3173928263404 /* YZMovementsCollectionView.m */; };
 		1F4C64C87579D74021075283 /* fucai3Ddaxiao.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C635E9891A6090C447E25 /* fucai3Ddaxiao.json */; };
 		1F4C65632F450DE9FCE57B29 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C636BF145B5EE69742F65 /* YYFPSLabel.m */; };
+		1F4C65B50C8D13B04B9DBA8B /* TestTextureCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C68882E3ABB8A2C34CF99 /* TestTextureCellNode.m */; };
 		1F4C6605909B6558A63359C5 /* YZQixingMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6D2C4C68FB9E4DCDCCED /* YZQixingMovementsDataSource.m */; };
+		1F4C66B42B6EC27EC3EDE862 /* TestTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6F5F05FAEE51D2E20191 /* TestTextureViewController.m */; };
 		1F4C66C070DD54CB747CB4FB /* DemoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C634C5DFE21E042596073 /* DemoDataModel.m */; };
 		1F4C678FDED1916161549077 /* YZ11Xuan5HezhiMovementsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6C4D9740DEFC952AC9F5 /* YZ11Xuan5HezhiMovementsDataSource.m */; };
 		1F4C67A1AFAE4AC83C4150FB /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C6D5C0933DFC9D2E5125C /* CollectionViewController.m */; };
@@ -138,10 +140,13 @@
 		1F4C6785F83BD3586DE5CB14 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		1F4C67C6F4B111456B03256C /* YZShengfucaiHaomaMovementsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZShengfucaiHaomaMovementsDataSource.m; sourceTree = "<group>"; };
 		1F4C67D5C31A6550EC4767E2 /* YZYilouViewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZYilouViewBottomView.m; sourceTree = "<group>"; };
+		1F4C680431F3D108A4223C18 /* TestTextureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextureViewController.h; sourceTree = "<group>"; };
 		1F4C6830D9C8C025DF7379A9 /* DemoTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4C685A95FC42F18518D3F2 /* qilejiou.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qilejiou.json; sourceTree = "<group>"; };
 		1F4C685BD3687707B63427A5 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		1F4C68730461A17BD972F1C3 /* DemoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDataModel.h; sourceTree = "<group>"; };
+		1F4C68882E3ABB8A2C34CF99 /* TestTextureCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextureCellNode.m; sourceTree = "<group>"; };
+		1F4C69A3C9A4DC37E71C0177 /* TestTextureCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextureCellNode.h; sourceTree = "<group>"; };
 		1F4C69A951E1E4A76B8189CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F4C69BC5793F0C29DF3457F /* DemoTableViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewControllerTests.m; sourceTree = "<group>"; };
 		1F4C69F115CE3B1C4B31367F /* qilecai.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qilecai.json; sourceTree = "<group>"; };
@@ -190,6 +195,7 @@
 		1F4C6EE51757A0C18B12EF3B /* YZYilouViewBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZYilouViewBottomView.h; sourceTree = "<group>"; };
 		1F4C6EEC7A3086D232C4B6CE /* YZMovementsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZMovementsCollectionView.h; sourceTree = "<group>"; };
 		1F4C6EFE76C428E402F072F2 /* movements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movements.json; sourceTree = "<group>"; };
+		1F4C6F5F05FAEE51D2E20191 /* TestTextureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextureViewController.m; sourceTree = "<group>"; };
 		1F4C6F7398CAB70E4882ED3E /* YZPailie5MovementsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZPailie5MovementsDataSource.m; sourceTree = "<group>"; };
 		1F4C6F858926FB6964E3D83A /* YZLengreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZLengreCell.h; sourceTree = "<group>"; };
 		1F4C6FF7C22FDAEF0A63AA39 /* YZFucai3DMovementsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFucai3DMovementsDataSource.h; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 				1F4C68772C848DF84866A44F /* Layers */,
 				1F4C60A51AC8738206955B30 /* FPSLabel */,
 				1F4C69D94756ABE7149FBFFE /* ViewControllers */,
+				1F4C6AD30D4D8CA128F3C3F0 /* Texture */,
 			);
 			path = DemoTableViewController;
 			sourceTree = "<group>";
@@ -348,6 +355,17 @@
 				1F4C6F858926FB6964E3D83A /* YZLengreCell.h */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1F4C6AD30D4D8CA128F3C3F0 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				1F4C6F5F05FAEE51D2E20191 /* TestTextureViewController.m */,
+				1F4C680431F3D108A4223C18 /* TestTextureViewController.h */,
+				1F4C68882E3ABB8A2C34CF99 /* TestTextureCellNode.m */,
+				1F4C69A3C9A4DC37E71C0177 /* TestTextureCellNode.h */,
+			);
+			path = Texture;
 			sourceTree = "<group>";
 		};
 		1F4C6BB3E3BF415A7BCA3C92 /* ConvertTool */ = {
@@ -728,6 +746,8 @@
 				1F4C68C577F1E4E54F3D4194 /* YZ11Xuan5OtherMovementsDataSource.m in Sources */,
 				1F4C678FDED1916161549077 /* YZ11Xuan5HezhiMovementsDataSource.m in Sources */,
 				1F4C601E097EC99348F7D16E /* YZShengfucaiHaomaMovementsDataSource.m in Sources */,
+				1F4C66B42B6EC27EC3EDE862 /* TestTextureViewController.m in Sources */,
+				1F4C65B50C8D13B04B9DBA8B /* TestTextureCellNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,7 +872,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6Y58RU5LV6;
 				INFOPLIST_FILE = DemoTableViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxf.test.DemoTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -946,7 +966,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6Y58RU5LV6;
 				INFOPLIST_FILE = DemoTableViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zxf.test.DemoTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";

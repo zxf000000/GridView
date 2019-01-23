@@ -12,6 +12,7 @@
 #import "ZXFFormViewController.h"
 #import "YYFPSLabel.h"
 #import "YZYilouViewController.h"
+#import "TestTextureViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -131,8 +132,10 @@
         CollectionViewController *vc = [[CollectionViewController alloc] initWithType:16];
         [self.navigationController pushViewController:vc animated:YES];
     } else  {
-        ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];
-        [self.navigationController pushViewController:formVC animated:YES];
+//        ZXFFormViewController *formVC = [[ZXFFormViewController alloc] init];
+//        [self.navigationController pushViewController:formVC animated:YES];
+        TestTextureViewController *vc = [[TestTextureViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -52,6 +52,7 @@
 
     // 开始创建每一个cell对应的布局属性
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
+    
 
     for (int i = 0; i < count; i++) {
         // 创建位置
