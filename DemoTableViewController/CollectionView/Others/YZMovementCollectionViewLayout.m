@@ -32,7 +32,6 @@
     }
     return self;
 }
-
 /**
  * 初始化
  */
@@ -52,7 +51,13 @@
     [self.attrsArr removeAllObjects];
 
     // 开始创建每一个cell对应的布局属性
-    NSInteger count = [self.collectionView numberOfItemsInSection:0];
+    NSInteger count = 0;
+    
+    if (self.collectionNode) {
+        count = [self.collectionNode numberOfItemsInSection:0];
+    } else {
+        count = [self.collectionView numberOfItemsInSection:0];
+    }
     
     for (int i = 0; i < count; i++) {
         // 创建位置
@@ -87,7 +92,6 @@
     attrs.frame = CGRectMake(x, y, size.width, size.height);
 
     _lastY = y;
-
 
     // 计算line count
     if (model.hasLinePoint) {

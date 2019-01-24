@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, YZMovementsModelBallColor) {
     YZMovementsModelBallColorBlue,
     YZMovementsModelBallColorBig,
     YZMovementsModelBallColorSmall,
+    YZMovementsModelBallColorCyan,
     YZMovementsModelBallColorOther
 };
 

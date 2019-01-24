@@ -493,6 +493,7 @@
 
     // 获取开奖号码
     NSArray *openCodes = singleRowData[@"opencode"];
+    NSDictionary *openCodeDic = singleRowData[@"num"];
     // 所有的拼起来
     [singleRowData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if (![keys containsObject:key]) {
@@ -516,6 +517,12 @@
                     if ([number integerValue] == 0) {
                         number = [NSString stringWithFormat:@"%zd", singleYilouIndex];
                         model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeCircle title:number row:row column:singleYilouIndex lineSerialNumber:yilouIndex type:YZMovementsModelPositionDefault];
+                        NSInteger count = [openCodeDic[number] integerValue];
+                        if (count > 1) {
+                            model.hasBadge = YES;
+                            model.badgeNumber = count;
+                        }
+                        
                     } else {
                         model = [YZMovementsModel modelWithWidth:1 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column: singleYilouIndex lineSerialNumber:0 type:YZMovementsModelPositionDefault];
                     }
@@ -664,12 +671,14 @@
                 NSString *currentOpenCode;
                 YZMovementsModel *model;
                 if (!hasLine) {
-                    if ([number integerValue] == 0) {
-                        number = topTitles[singleYilouIndex];
-                    }
-                    model = [YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column:singleYilouIndex * 2  lineSerialNumber:0 type:YZMovementsModelPositionDefault];
-                    // 直接在这里处理
 
+                    model = [YZMovementsModel modelWithWidth:2 height:1 hasLinePoint:NO bgType:BgTypeNone title:number row:row column:singleYilouIndex * 2  lineSerialNumber:0 type:YZMovementsModelPositionDefault];
+                    if ([number integerValue] == 0) {
+                        model.title = topTitles[singleYilouIndex];
+                        model.bgType = BgTypeFull;
+                        model.ballColor = YZMovementsModelBallColorCyan;
+                    }
+                    // 直接在这里处理
                 } else {
                     if ([key isEqualToString:@"yilou"]) {
                         // 不分位的时候不使用openCode, 开奖号码对应的位置添加背景,并且将0 赋值为开奖号码

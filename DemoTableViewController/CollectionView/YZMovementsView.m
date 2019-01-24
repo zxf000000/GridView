@@ -6,12 +6,16 @@
 #import "YZMovementsView.h"
 #import "YZMovementCollectionViewLayout.h"
 #import "YZMovementsCollectionViewCell.h"
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
+#import "YZMovementsNormalCellNode.h"
+#import "YZMovementsLayoutDelegate.h"
+#import "YZMovementsBarNode.h"
 
-@interface YZMovementsView () <YZMovementCollectionViewLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface YZMovementsView () <YZMovementCollectionViewLayoutDelegate, UICollectionViewDelegate, UICollectionViewDataSource, ASCollectionDelegate, ASCollectionDataSource, HelpDelegate>
 
 @property(nonatomic, assign) CGFloat itemWidth;
 @property(nonatomic, assign) CGFloat itemHeight;
-@property(strong, nonatomic) UICollectionView *collectionView;
+@property(strong, nonatomic) ASCollectionNode *collectionView;
 
 @property(strong, nonatomic) UICollectionView *topTitleView;
 @property(strong, nonatomic) UICollectionView *leftTitleView;
@@ -57,6 +61,9 @@
     if ([self.delegate respondsToSelector:@selector(movementsViewShouldShowTitleWith:)]) {
         _shouldShowTitle  = [self.delegate movementsViewShouldShowTitleWith:self];
     }
+
+    [[NSNotificationCenter defaultCenter]
+            addObserver:self selector:@selector(drawLine:) name:@"testNotification" object:nil];
 }
 
 
@@ -71,44 +78,6 @@
     }
 }
 
-- (void)reloadLayout {
-    CGSize itemSize = [self.delegate itemSizeForMovementsView:self];
-    _itemWidth = itemSize.width;
-    _itemHeight = itemSize.height;
-
-    _topTitleHeight = _itemHeight * [self.delegate topTitleRowCountForMovementsView:self];
-    _leftTitleWidth = _itemWidth * [self.delegate leftTitleColumnCountForMovementsView:self];
-    _shouldShowTitle = YES;
-    if ([self.delegate respondsToSelector:@selector(movementsViewShouldShowTitleWith:)]) {
-        _shouldShowTitle  = [self.delegate movementsViewShouldShowTitleWith:self];
-    }
-
-    YZMovementCollectionViewLayout *leftLayout = [[YZMovementCollectionViewLayout alloc] init];
-    leftLayout.delegate = self;
-    leftLayout.itemWidth = _itemWidth;
-    leftLayout.itemHeight = _itemHeight;
-
-    [_leftTitleView.collectionViewLayout invalidateLayout];
-    _leftTitleView.collectionViewLayout = leftLayout;
-
-    YZMovementCollectionViewLayout *layout = [[YZMovementCollectionViewLayout alloc] init];
-    layout.delegate = self;
-    layout.itemWidth = _itemWidth;
-    layout.itemHeight = _itemHeight;
-    _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:layout];
-
-    [_collectionView.collectionViewLayout invalidateLayout];
-    _collectionView.collectionViewLayout = layout;
-
-    YZMovementCollectionViewLayout *topLayout = [[YZMovementCollectionViewLayout alloc] init];
-    topLayout.delegate = self;
-    topLayout.itemWidth = _itemWidth;
-    topLayout.itemHeight = _itemHeight;
-
-    [_topTitleView.collectionViewLayout invalidateLayout];
-    _topTitleView.collectionViewLayout = topLayout;
-
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -125,7 +94,7 @@
 
 - (void)setupUI {
 
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor whiteColor];
 
     if (_shouldShowTitle) {
         YZMovementCollectionViewLayout *topLayout = [[YZMovementCollectionViewLayout alloc] init];
@@ -134,13 +103,12 @@
         topLayout.itemHeight = _itemHeight;
 
         _topTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 0, self.bounds.size.width - 50, self.bounds.size.height - 100)) collectionViewLayout:topLayout];
-        _topTitleView.backgroundColor = [UIColor yellowColor];
         [self addSubview:_topTitleView];
 
         _topTitleView.dataSource = self;
         _topTitleView.delegate = self;
         _topTitleView.backgroundColor = [UIColor whiteColor];
-
+        [_topTitleView removeGestureRecognizer:_topTitleView.panGestureRecognizer];
         [_topTitleView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
 
         _topTitleView.bounces = NO;
@@ -152,9 +120,8 @@
         leftLayout.itemHeight = _itemHeight;
 
         _leftTitleView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:leftLayout];
-        _leftTitleView.backgroundColor = [UIColor yellowColor];
         [self addSubview:_leftTitleView];
-
+        [_leftTitleView removeGestureRecognizer:_leftTitleView.panGestureRecognizer];
         _leftTitleView.dataSource = self;
         _leftTitleView.delegate = self;
         _leftTitleView.backgroundColor = [UIColor whiteColor];
@@ -171,36 +138,62 @@
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_titleLabel];
     }
+    CGSize itemSize = [self.delegate itemSizeForMovementsView:self];
+    YZMovementsLayoutDelegate *layoutDelegate = [[YZMovementsLayoutDelegate alloc] init];
+    layoutDelegate.itemWidth = itemSize.width;
+    layoutDelegate.itemHeight = itemSize.height;
+    layoutDelegate.itemCount = [self.delegate numberOfItemForMovementsView:self];
+    layoutDelegate.delegate = self;
+    self.collectionView = [[ASCollectionNode alloc] initWithLayoutDelegate:layoutDelegate layoutFacilitator:nil];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.view.bounces = NO;
+    [self addSubnode:self.collectionView];
 
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
 
-    YZMovementCollectionViewLayout *layout = [[YZMovementCollectionViewLayout alloc] init];
-    layout.delegate = self;
-    layout.itemWidth = _itemWidth;
-    layout.itemHeight = _itemHeight;
-    _collectionView = [[UICollectionView alloc] initWithFrame:(CGRectMake(0, 100, self.bounds.size.width, self.bounds.size.height - 100)) collectionViewLayout:layout];
-    _collectionView.backgroundColor = [UIColor redColor];
-    [self addSubview:_collectionView];
+}
 
-    _collectionView.dataSource = self;
-    _collectionView.delegate = self;
-    _collectionView.backgroundColor = [UIColor whiteColor];
-    [_collectionView registerClass:[YZMovementsCollectionViewCell class] forCellWithReuseIdentifier:@"YZMovementsCollectionViewCell"];
+- (NSInteger)collectionNode:(ASCollectionNode *)collectionNode numberOfItemsInSection:(NSInteger)section {
 
-    _collectionView.bounces = NO;
-    __weak typeof(self) weakSelf = self;
-    layout.complete = ^(NSArray *attrs, NSDictionary *linePoints) {
-        [weakSelf addLinesForAttrs:attrs linePoints:linePoints];
+    return [self.delegate numberOfItemForMovementsView:self];
+}
+
+- (NSInteger)numberOfSectionsInCollectionNode:(ASCollectionNode *)collectionNode {
+    return 1;
+}
+
+- (ASCellNodeBlock)collectionNode:(ASCollectionNode *)collectionNode nodeBlockForItemAtIndexPath:(NSIndexPath *)indexPath {
+    YZMovementsModel *model = [self.delegate movementsView:self dataModelForIndex:indexPath.item];
+    ASCellNode *(^cellNodeBlock)(void) = ^ASCellNode *() {
+        if (model.isPercent) {
+            YZMovementsBarNode *cellNode = [[YZMovementsBarNode alloc] initWithModel:model];
+            return cellNode;
+        } else {
+            YZMovementsNormalCellNode *cellNode = [[YZMovementsNormalCellNode alloc] initWithModel:model];
+            return cellNode;
+        }
     };
+    return cellNodeBlock;
+}
+
+
+- (NSInteger)columnCountForDelegate:(YZMovementsLayoutDelegate *)layout {
+    return [self.delegate numberOfColumnsForMovementsView:self];
+}
+
+
+- (YZMovementsModel *)titleDelegate:(YZMovementsLayoutDelegate *)layout modelForIndexPath:(NSIndexPath *)indexPath {
+    return [self.delegate movementsView:self dataModelForIndex:indexPath.item];
 }
 
 #pragma mark titleLayoutDelegate
 
 - (YZMovementsModel *)titleLayout:(YZMovementCollectionViewLayout *)layout modelForIndexPath:(NSIndexPath *)indexPath {
 
-    if (layout.collectionView == self.collectionView) {
-        return [self.delegate movementsView:self dataModelForIndex:indexPath.item];
-
-    } else if (layout.collectionView == self.topTitleView) {
+    if (layout.collectionView == self.topTitleView) {
         return [self.delegate movementsView:self topTitleModelForIndex:indexPath.item];
 
     } else if (layout.collectionView == self.leftTitleView) {
@@ -223,11 +216,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    if (collectionView == self.collectionView) {
-
-        return [self.delegate numberOfItemForMovementsView:self];
-
-    } else if (collectionView == self.topTitleView) {
+    if (collectionView == self.topTitleView) {
         return [self.delegate numberOfTopTitleForMovementsView:self];
 
     } else if (collectionView == self.leftTitleView) {
@@ -239,14 +228,19 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     YZMovementsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"YZMovementsCollectionViewCell" forIndexPath:indexPath];
-    if (collectionView == self.collectionView) {
-        cell.model = [self.delegate movementsView:self dataModelForIndex:indexPath.item];
-    } else if (collectionView == self.topTitleView) {
+    if (collectionView == self.topTitleView) {
         cell.model = [self.delegate movementsView:self topTitleModelForIndex:indexPath.item];
     } else if (collectionView == self.leftTitleView) {
         cell.model = [self.delegate movementsView:self leftTitleModelForIndex:indexPath.item];
     }
     return cell;
+}
+
+- (void)drawLine:(NSNotification *)notification {
+    NSDictionary *linePoints = notification.object[@"linePoints"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self addLinesForAttrs:nil linePoints:linePoints];
+    });
 }
 
 - (void)addLinesForAttrs:(NSArray *)attrs linePoints:(NSDictionary *)linePoints {
@@ -260,14 +254,16 @@
     [linePoints enumerateKeysAndObjectsUsingBlock:^(NSNumber *lineNumber, NSMutableArray *points, BOOL *stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSInteger count = 0;
-        UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
-        if ([lineNumber integerValue] == 1) {
-            color = [UIColor brownColor];
-        } else if ([lineNumber integerValue] == 2) {
-            color = [UIColor redColor];
-        } else {
-            color = [UIColor blueColor];
-        }
+        // 颜色问题
+//        UIColor *color = [lineNumber integerValue] == 1 ? [UIColor redColor] : [UIColor blueColor];
+//        if ([lineNumber integerValue] == 1) {
+//            color = [UIColor brownColor];
+//        } else if ([lineNumber integerValue] == 2) {
+//            color = [UIColor redColor];
+//        } else {
+//            color = [UIColor blueColor];
+//        }
+        UIColor *color = [UIColor redColor];
         CGPoint lastCenter;
         CGFloat offsetOblique = (strongSelf.itemHeight - YZMovementsCellBallMargin * 2) / 2;
         CGFloat radius = offsetOblique;
@@ -305,7 +301,7 @@
                 [path addLineToPoint:currentLinePoint];
 
                 CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-                shapeLayer.lineWidth = 1.f;
+                shapeLayer.lineWidth = 0.5f;
                 shapeLayer.strokeColor = color.CGColor;
                 shapeLayer.fillColor = [UIColor clearColor].CGColor;
                 shapeLayer.path = path.CGPath;
@@ -320,22 +316,25 @@
 
 }
 
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.collectionView) {
+    if (scrollView == self.collectionView.view) {
         CGPoint offset = self.topTitleView.contentOffset;
         CGPoint offsetLeft = self.leftTitleView.contentOffset;
-        offset.x = self.collectionView.contentOffset.x;
-        offsetLeft.y = self.collectionView.contentOffset.y;
+        offset.x = self.collectionView.view.contentOffset.x;
+        offsetLeft.y = self.collectionView.view.contentOffset.y;
         self.topTitleView.contentOffset = offset;
         self.leftTitleView.contentOffset = offsetLeft;
-    } else if (scrollView == self.leftTitleView) {
-        CGPoint offset = self.collectionView.contentOffset;
-        offset.y = self.leftTitleView.contentOffset.y;
-        self.collectionView.contentOffset = offset;
-    } else if (scrollView == self.topTitleView) {
-        CGPoint offset = self.collectionView.contentOffset;
-        offset.x = self.topTitleView.contentOffset.x;
-        self.collectionView.contentOffset = offset;
     }
+    // 暂时不允许标题栏主动拖拽,联动代码会引起卡顿,后期再处理
+//    } else if (scrollView == self.leftTitleView) {
+//        CGPoint offset = self.collectionView.contentOffset;
+//        offset.y = self.leftTitleView.contentOffset.y;
+//        self.collectionView.contentOffset = offset;
+//    } else if (scrollView == self.topTitleView) {
+//        CGPoint offset = self.collectionView.contentOffset;
+//        offset.x = self.topTitleView.contentOffset.x;
+//        self.collectionView.contentOffset = offset;
+//    }
 }
 @end

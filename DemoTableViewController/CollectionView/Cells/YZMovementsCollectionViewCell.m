@@ -217,6 +217,14 @@ CGFloat const YZMovementsCellBallMargin = 5.f;
     }
 
 //    [self setNeedsLayout];
+
+}
+
+- (void)layoutSubviews {
+//    [super layoutSubviews];
+
+    _titleLabel.frame = self.bounds;
+
 }
 
 //- (void)layoutSubviews {

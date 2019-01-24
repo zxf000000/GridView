@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YZMovementsModel.h"
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
 
 @protocol YZMovementCollectionViewLayoutDelegate;
 
-@interface YZMovementCollectionViewLayout : UICollectionViewLayout
+@interface YZMovementCollectionViewLayout : UICollectionViewLayout <ASDataControllerLayoutDelegate>
 
 
 @property (weak, nonatomic) id<YZMovementCollectionViewLayoutDelegate>  delegate;

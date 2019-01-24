@@ -163,14 +163,12 @@
     _demoView = [[YZMovementsView alloc] initWithDelegate:self.movementsDataSource];
     _demoView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
     [self.view addSubview:_demoView];
-    _demoView.backgroundColor = [UIColor redColor];
     if (self.type == 12) {
         _demoView.hidden = YES;
 
         _demoView1 = [[YZMovementsView alloc] initWithDelegate:self.movementsDataSource1];
         _demoView1.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
         [self.view addSubview:_demoView1];
-        _demoView1.backgroundColor = [UIColor redColor];
         _demoView1.hidden = NO;
     }
 
