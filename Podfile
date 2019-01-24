@@ -5,5 +5,6 @@ target 'DemoTableViewController' do
 
   pod 'YYText'
   pod 'Texture'
+  pod 'YYAsyncLayer'
 
 end

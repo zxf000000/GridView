@@ -7,6 +7,7 @@
 //
 
 #import "YZMovementCollectionViewLayout.h"
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
 
 @interface YZMovementCollectionViewLayout()
 
@@ -53,7 +54,6 @@
     // 开始创建每一个cell对应的布局属性
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
     
-
     for (int i = 0; i < count; i++) {
         // 创建位置
         NSIndexPath * indexPath = [NSIndexPath indexPathForItem:i inSection:0];

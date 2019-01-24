@@ -21,10 +21,12 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.13)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - YYAsyncLayer (1.0)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - Texture
+  - YYAsyncLayer
   - YYText
 
 SPEC REPOS:
@@ -33,6 +35,7 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - Texture
+    - YYAsyncLayer
     - YYText
 
 SPEC CHECKSUMS:
@@ -40,8 +43,9 @@ SPEC CHECKSUMS:
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 4c709b776a052fbf122409e90f1ae725da6132b0
+PODFILE CHECKSUM: 0e2fbc189a553b2882a3e3bfb1b230746d4181ed
 
 COCOAPODS: 1.5.3

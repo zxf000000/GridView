@@ -24,6 +24,10 @@
 
 @property (nonatomic, assign) CGFloat itemHeight;
 
+// TODO: 测试数据
+@property (nonatomic, assign) NSInteger itemCount;
+
+
 @end
 
 
