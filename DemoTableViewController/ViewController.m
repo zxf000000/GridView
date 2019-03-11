@@ -34,7 +34,9 @@
 
     self.fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(100, self.navigationController.navigationBar.bounds.size.height, 50, 30)];
     [self.navigationController.view addSubview:self.fpsLabel];
-
+    
+    
+    
 }
 
 
